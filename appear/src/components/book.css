@@ -1,0 +1,15 @@
+.sketchbook {
+    height: 500px;
+    width: 100px;
+
+}
+
+.sketchbook:hover {
+    animation: inspect-book 100ms both;
+}
+
+@keyframes inspect-book {
+    to {
+        width: 300px;
+    }
+}

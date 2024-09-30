@@ -1,5 +1,4 @@
-import tris from './assets/triangles.svg'
-import './App.css'
+import tris from '/triangles.svg'
 
 function Triangles() {
 
