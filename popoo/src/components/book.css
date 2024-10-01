@@ -5,13 +5,12 @@
 }
 
 .book-side {
-
     height: 100%;
     width: 100px;
     filter: saturate(50%);
 }
 
-.rotate {
+.book-title {
     transform: rotate(90deg);
 }
 
