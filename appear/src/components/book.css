@@ -1,15 +1,23 @@
-.sketchbook {
-    height: 500px;
+.book-neck {
+    height: 100%;
     width: 100px;
-
+    text-align: center;
 }
 
-.sketchbook:hover {
-    animation: inspect-book 100ms both;
+.book-side {
+
+    height: 100%;
+    width: 100px;
+    filter: saturate(50%);
 }
 
-@keyframes inspect-book {
-    to {
-        width: 300px;
-    }
+.rotate {
+    transform: rotate(90deg);
+}
+
+.book {
+    perspective: 3000px;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
 }
