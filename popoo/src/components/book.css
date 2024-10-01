@@ -12,10 +12,10 @@
 
 .book-title {
     transform: rotate(90deg);
+    text-wrap: nowrap;
 }
 
 .book {
-    perspective: 3000px;
     display: flex;
     flex-direction: row;
     height: 100%;
