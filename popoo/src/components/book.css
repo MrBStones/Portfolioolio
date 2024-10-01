@@ -1,16 +1,17 @@
 .book-neck {
     height: 100%;
-    width: 100px;
+    width: 5rem;
     text-align: center;
 }
 
 .book-side {
     height: 100%;
-    width: 100px;
+    width: 0;
     filter: saturate(50%);
 }
 
 .book-title {
+
     transform: rotate(90deg);
     text-wrap: nowrap;
 }
@@ -18,5 +19,6 @@
 .book {
     display: flex;
     flex-direction: row;
+    wrap-option: nowrap;
     height: 100%;
 }

@@ -14,7 +14,7 @@ function App() {
 
                 <div className="bento">
                     <div className={"shelf"}>
-                        <Sketchbook color={"red"} bookTitle={"book 1y"}/>
+                        <Sketchbook color={"baby-blue"} bookTitle={"book 1y"}/>
                         <Sketchbook color={"green"} bookTitle={"book 2"}/>
                         <Sketchbook color={"blue"} bookTitle={"book 3"}/>
                     </div>

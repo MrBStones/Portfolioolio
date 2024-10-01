@@ -6,29 +6,36 @@ import {useRef} from "react";
 
 function Sketchbook({color, bookTitle}) {
     const container = useRef(null);
+    const neck = useRef(null);
+    const side = useRef(null);
     const tl = useRef(null);
 
 
-
-    useGSAP(()=>{
+    useGSAP(() => {
         tl.current = gsap.timeline({paused: true})
-            .to(container.current, {scaleX:3})
-    })
+            .to(".book", {rotateY: -45})
+            .to(".book-side", {width: 300,}, '<')
 
-    container.current.addEventListener("mouseenter", () =>{
-        tl.current.play()
-    })
-    container.current.addEventListener("mouseout", () =>{
-        tl.current.reverse()
-    })
+        container.current.addEventListener("mouseover", () => {
+            tl.current.play()
+        })
+        container.current.addEventListener("mouseout", () => {
+            tl.current.reverse()
+        })
+    }, {scope: container});
+
 
     return (
         <>
-            <div className="book" ref={container}>
-                <div className="book-neck" style={{backgroundColor: color}}>
-                    <h1 className="book-title">{bookTitle}</h1>
+            <a className={"container"} ref={container} style={{color: "floralwhite"}}>
+                <div className="book">
+                    <div className="book-neck" ref={neck} style={{backgroundColor: color}}>
+                        <h1 className="book-title">{bookTitle}</h1>
+                    </div>
+                    <div className={"book-side"} ref={side} style={{backgroundColor: color}}/>
                 </div>
-            </div>
+            </a>
+
         </>
     )
 }

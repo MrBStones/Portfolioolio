@@ -1,7 +1,7 @@
 .bento-grid-container {
   display: grid;
   align-items: center;
-
+  margin: 4rem;
 }
 
 .shelf {
@@ -21,5 +21,6 @@
 
   outline: lightgreen dashed;
   height: 50vh;
+  width: 50vw;
   align-items: center;
 }
