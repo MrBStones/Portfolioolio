@@ -14,9 +14,15 @@ function App() {
 
                 <div className="bento">
                     <div className={"shelf"}>
-                        <Sketchbook color={"baby-blue"} bookTitle={"book 1y"}/>
-                        <Sketchbook color={"green"} bookTitle={"book 2"}/>
-                        <Sketchbook color={"blue"} bookTitle={"book 3"}/>
+                        <Sketchbook color={"#140d07"} bookTitle={"skill issues"}/>
+                        <Sketchbook color={"#89CFF0"} bookTitle={"scrunches"}/>
+                        <Sketchbook color={"#987554"} bookTitle={"train book"}/>
+                        <Sketchbook color={"#140d07"} bookTitle={"skill issues"}/>
+                        <Sketchbook color={"#89CFF0"} bookTitle={"scrunches"}/>
+                        <Sketchbook color={"#987554"} bookTitle={"train book"}/>
+                        <Sketchbook color={"#140d07"} bookTitle={"skill issues"}/>
+                        <Sketchbook color={"#89CFF0"} bookTitle={"scrunches"}/>
+                        <Sketchbook color={"#987554"} bookTitle={"train book"}/>
                     </div>
                 </div>
             </div>
