@@ -1,8 +1,13 @@
 .bento-grid-container {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 20vw 60vw;
+  grid-template-rows: repeat(2, 40vh);
   flex-wrap: wrap;
-  margin: 4rem;
+  margin-top: 6.6vh;
+  margin-left: 6.6vw;
+  margin-right: 6.6vw;
+  column-gap: 6.6vw;
+  row-gap: 6.6vh;
 }
 
 .shelf {
@@ -21,7 +26,6 @@
   border-radius: 1rem;
 
   outline: lightgreen dashed;
-  height: 50vh;
+  height: 40vh;
   align-items: center;
-  margin: 4rem;
 }

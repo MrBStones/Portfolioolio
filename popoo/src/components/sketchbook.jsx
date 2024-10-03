@@ -1,5 +1,5 @@
 import "./book.css"
-import PropTypes, {func} from "prop-types";
+import PropTypes from "prop-types";
 import {gsap} from "gsap";
 import {useGSAP} from "@gsap/react";
 import {useRef} from "react";
@@ -11,28 +11,46 @@ function Sketchbook({color, bookTitle}) {
     const tl = useRef(null);
     let neckHeight = useRef(null);
 
+
     function UpdateWindowHeight() {
         neckHeight.current = window.getComputedStyle(document.querySelector(".book-neck")).height
     }
+
 
     window.addEventListener("resize", UpdateWindowHeight)
 
 
 
-    useGSAP(() => {
-
+    useGSAP((context, contextSafe) => {
+        UpdateWindowHeight()
         console.log(neckHeight)
         tl.current = gsap.timeline({paused: true, onStart: UpdateWindowHeight  })
-            .to(".book", {rotateY: -45})
-            .to(".book-side", {width: (neckHeight.current),}, '<')
+            .fromTo(".book", {rotateY: 0}, {rotateY: -45})
+            .fromTo(".book-side", {width: 0}, {width: (neckHeight.current),}, '<')
 
-        container.current.addEventListener("mouseover", () => {
+
+        const mouseOver = contextSafe(() => {
             console.log(neckHeight.current);
-            tl.current.play()
+            if (tl.current.isActive()) {
+                tl.current.play();
+            } else {
+                tl.current = gsap.timeline({paused: false})
+                    .fromTo(".book", {rotateY: 0}, {rotateY: -45})
+                    .fromTo(".book-side", {width: 0}, {width: (neckHeight.current),}, '<')
+            }
         })
-        container.current.addEventListener("mouseout", () => {
+
+        const mouseOut = contextSafe(() => {
             tl.current.reverse()
         })
+
+        container.current.addEventListener("mouseover", mouseOver)
+        container.current.addEventListener("mouseout", mouseOut)
+
+        return () => {
+            container.current.removeEventListener("mouseover", mouseOver)
+            container.current.removeEventListener("mouseout", mouseOut)
+        }
     }, {scope: container});
 
 

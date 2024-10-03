@@ -11,9 +11,9 @@
 }
 
 .book-title {
-
     transform: rotate(90deg);
     text-wrap: nowrap;
+    user-select: none;
 }
 
 .book {
