@@ -11,9 +11,11 @@ function Sketchbook({color, bookTitle}) {
     const tl = useRef(null);
     let neckHeight = useRef(null);
 
+    const sideWidth = 1.5;
+
 
     function UpdateWindowHeight() {
-        neckHeight.current = window.getComputedStyle(document.querySelector(".book-neck")).height
+        neckHeight.current = parseFloat(window.getComputedStyle(document.querySelector(".book-neck")).height)
     }
 
 
@@ -26,7 +28,7 @@ function Sketchbook({color, bookTitle}) {
         console.log(neckHeight)
         tl.current = gsap.timeline({paused: true, onStart: UpdateWindowHeight  })
             .fromTo(".book", {rotateY: 0}, {rotateY: -45})
-            .fromTo(".book-side", {width: 0}, {width: (neckHeight.current),}, '<')
+            .fromTo(".book-side", {width: 0}, {width: (neckHeight.current / sideWidth),}, '<')
 
 
         const mouseOver = contextSafe(() => {
@@ -36,7 +38,7 @@ function Sketchbook({color, bookTitle}) {
             } else {
                 tl.current = gsap.timeline({paused: false})
                     .fromTo(".book", {rotateY: 0}, {rotateY: -45})
-                    .fromTo(".book-side", {width: 0}, {width: (neckHeight.current),}, '<')
+                    .fromTo(".book-side", {width: 0}, {width: (neckHeight.current / sideWidth),}, '<')
             }
         })
 

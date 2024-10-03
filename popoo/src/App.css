@@ -3,9 +3,7 @@
   grid-template-columns: 20vw 60vw;
   grid-template-rows: repeat(2, 40vh);
   flex-wrap: wrap;
-  margin-top: 6.6vh;
-  margin-left: 6.6vw;
-  margin-right: 6.6vw;
+  margin: 6.6vh 6.6vw;
   column-gap: 6.6vw;
   row-gap: 6.6vh;
 }
@@ -22,10 +20,11 @@
 .bento {
   display: flex;
   flex-direction: column;
-  background-color: #1a1a1a;
-  border-radius: 1rem;
-
-  outline: lightgreen dashed;
-  height: 40vh;
+  overflow: clip;
   align-items: center;
+
+  background-color: #1a1a1a;
+  outline: lightgreen dashed;
+  border-radius: 1rem;
+  height: 40vh;
 }
