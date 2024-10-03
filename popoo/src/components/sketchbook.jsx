@@ -1,5 +1,5 @@
 import "./book.css"
-import PropTypes from "prop-types";
+import PropTypes, {func} from "prop-types";
 import {gsap} from "gsap";
 import {useGSAP} from "@gsap/react";
 import {useRef} from "react";
@@ -9,20 +9,36 @@ function Sketchbook({color, bookTitle}) {
     const neck = useRef(null);
     const side = useRef(null);
     const tl = useRef(null);
+    let neckHeight = useRef(null);
+
+    function UpdateWindowHeight() {
+        neckHeight.current = window.getComputedStyle(document.querySelector(".book-neck")).height
+    }
+
+    window.addEventListener("resize", UpdateWindowHeight)
+
 
 
     useGSAP(() => {
-        tl.current = gsap.timeline({paused: true})
+
+        console.log(neckHeight)
+        tl.current = gsap.timeline({paused: true, onStart: UpdateWindowHeight  })
             .to(".book", {rotateY: -45})
-            .to(".book-side", {width: 300,}, '<')
+            .to(".book-side", {width: (neckHeight.current),}, '<')
 
         container.current.addEventListener("mouseover", () => {
+            console.log(neckHeight.current);
             tl.current.play()
         })
         container.current.addEventListener("mouseout", () => {
             tl.current.reverse()
         })
     }, {scope: container});
+
+
+
+
+
 
 
     return (

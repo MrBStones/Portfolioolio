@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import Sketchbook from "./components/sketchbook.jsx";
 import './App.css'
+import Bookshelf from "./components/bookshelf.jsx";
 
 function App() {
     const [count, setCount] = useState(0)
@@ -25,6 +26,8 @@ function App() {
                         <Sketchbook color={"#987554"} bookTitle={"train book"}/>
                     </div>
                 </div>
+
+                <Bookshelf color={"red"} bookTitle={"books"}/>
             </div>
 
 

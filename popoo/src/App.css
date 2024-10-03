@@ -1,6 +1,7 @@
 .bento-grid-container {
   display: grid;
-  align-items: center;
+  grid-template-columns: 2fr 1fr;
+  flex-wrap: wrap;
   margin: 4rem;
 }
 
@@ -22,4 +23,5 @@
   outline: lightgreen dashed;
   height: 50vh;
   align-items: center;
+  margin: 4rem;
 }
