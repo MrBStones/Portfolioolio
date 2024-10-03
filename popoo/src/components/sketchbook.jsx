@@ -53,23 +53,16 @@ function Sketchbook({color, bookTitle}) {
         }
     }, {scope: container});
 
-
-
-
-
-
-
     return (
         <>
             <a className={"container"} ref={container} style={{color: "floralwhite"}}>
                 <div className="book">
                     <div className="book-neck" ref={neck} style={{backgroundColor: color}}>
-                        <h1 className="book-title">{bookTitle}</h1>
+                        <h1 className="book-title" style={{color: color}}>{bookTitle}</h1>
                     </div>
                     <div className={"book-side"} ref={side} style={{backgroundColor: color}}/>
                 </div>
             </a>
-
         </>
     )
 }

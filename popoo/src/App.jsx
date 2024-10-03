@@ -13,6 +13,7 @@ function App() {
                         <Sketchbook color={"#140d07"} bookTitle={"skill issues"}/>
                         <Sketchbook color={"#89CFF0"} bookTitle={"scrunches"}/>
                         <Sketchbook color={"#987554"} bookTitle={"train book"}/>
+                        <Sketchbook color={"white"} bookTitle={"dalux"}/>
                     </div>
                 </div>
                 <div className="bento" style={{width: '100%'}}>
