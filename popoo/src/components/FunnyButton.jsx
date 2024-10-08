@@ -1,4 +1,4 @@
-import "../App.css"
+import "../css/App.css"
 import {useEffect, useState} from "react";
 
 function FunnyButton() {

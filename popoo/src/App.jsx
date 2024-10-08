@@ -1,5 +1,5 @@
 import Sketchbook from "./components/sketchbook.jsx";
-import './App.css'
+import './css/App.css'
 import FunnyButton from "./components/FunnyButton.jsx";
 
 function App() {

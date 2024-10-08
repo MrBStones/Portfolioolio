@@ -1,4 +1,4 @@
-import "./book.css"
+import "../css/book.css"
 import PropTypes from "prop-types";
 import {gsap} from "gsap";
 import {useGSAP} from "@gsap/react";
