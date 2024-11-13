@@ -19,10 +19,10 @@ export default function Ratio({leftText, rightText, odd}: RatioProps) {
         let side2 = odd ? '#ratio-right' : '#ratio-left';
 
         let tl = gsap.timeline({ repeat: -1, yoyo: false });
-        tl.to(side1, { width: '12rem', })
-            .to(side2, { width: '24rem', }, "<")
-            .to(side1, { width: '24rem', }, )
-            .to(side2, { width: '12rem', }, "<");
+        tl.to(side1, { width: '12rem', duration: 1, ease: 'easeInOut' })
+            .to(side2, { width: '24rem', duration: 1, ease: 'easeInOut'}, "<")
+            .to(side1, { width: '24rem', duration: 1, ease: 'easeInOut'}, )
+            .to(side2, { width: '12rem', duration: 1, ease: 'easeInOut'}, "<");
 
     },
     {scope : container}
@@ -32,13 +32,13 @@ export default function Ratio({leftText, rightText, odd}: RatioProps) {
         <div ref={container} className="container flex flex-row items-center justify-center gap-12 px4 py-16">
 
             <div
-                className={`container flex flex-col items-center justify-center shadow-inner shadow-cambridge-blue rounded-xl md:p-0 h-48 ${odd? "w-96 bg-celadon" : "w-48 bg-spring-green"}`} id={"ratio-left"}>
+                className={`container flex flex-col items-center justify-center shadow-inner shadow-white rounded-xl md:p-0 h-48 ${odd? "w-96 bg-celadon" : "w-48 bg-spring-green"}`} id={"ratio-left"}>
                 <p className="text-center text-2xl text-black">
                     {leftText}
                 </p>
             </div>
             <div
-                className={`container flex flex-col items-center justify-center shadow-inner shadow-cambridge-blue rounded-xl md:p-0 h-48 ${odd? "w-48 bg-spring-green" : "w-96 bg-celadon"}`} id={"ratio-right"}>
+                className={`container flex flex-col items-center justify-center shadow-inner shadow-white rounded-xl md:p-0 h-48 ${odd? "w-48 bg-spring-green" : "w-96 bg-celadon"}`} id={"ratio-right"}>
                 <p className="text-center text-2xl text-black">
                     {rightText}
                 </p>

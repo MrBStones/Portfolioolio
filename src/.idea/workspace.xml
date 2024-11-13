@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="633f5c93-f7d1-4f58-93df-fc661580b53c" name="Changes" comment="some temp site elements">
-      <change afterPath="$PROJECT_DIR$/../prort/src/app/_components/ratio.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prort/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../prort/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prort/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../prort/package.json" afterDir="false" />
+    <list default="true" id="633f5c93-f7d1-4f58-93df-fc661580b53c" name="Changes" comment="dancing gsap blocks">
       <change beforePath="$PROJECT_DIR$/../prort/src/app/_components/nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../prort/src/app/_components/nav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prort/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../prort/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prort/src/app/_components/ratio.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../prort/src/app/_components/ratio.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +93,7 @@
       <updated>1731420084882</updated>
       <workItem from="1731420085884" duration="636000" />
       <workItem from="1731423519303" duration="10153000" />
-      <workItem from="1731512792446" duration="7368000" />
+      <workItem from="1731512792446" duration="7760000" />
     </task>
     <task id="LOCAL-00001" summary="t3 project and typescrpit">
       <option name="closed" value="true" />
@@ -122,7 +119,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731426457663</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="dancing gsap blocks">
+      <option name="closed" value="true" />
+      <created>1731522383818</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1731522383818</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +149,7 @@
     <MESSAGE value="rename project" />
     <MESSAGE value="changed configs" />
     <MESSAGE value="some temp site elements" />
-    <option name="LAST_COMMIT_MESSAGE" value="some temp site elements" />
+    <MESSAGE value="dancing gsap blocks" />
+    <option name="LAST_COMMIT_MESSAGE" value="dancing gsap blocks" />
   </component>
 </project>
