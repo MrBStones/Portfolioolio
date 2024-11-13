@@ -9,7 +9,7 @@ export default async function Nav() {
 
     return (
 
-        <div className="container backdrop-filter flex flex-row items-center justify-center gap-2 bg-black/30 backdrop-blur-xl rounded-xl">
+        <div className="container backdrop-filter flex flex-row items-center justify-center gap-2 bg-black/50 backdrop-blur-xl rounded-xl p-2">
 
             <p className="text-2xl text-white">
                 {hello ? hello.greeting : "Loading tRPC query..."}
