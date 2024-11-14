@@ -1,8 +1,11 @@
 "use client"
 
 import Link from "next/link";
+import {useState} from "react";
+import Hamburger from "~/app/_components/hamburger";
 
 export default function Nav({hasSession}: {hasSession : boolean}) {
+    const [isOpen, setOpen] = useState(false);
 
 
     return (
@@ -11,7 +14,7 @@ export default function Nav({hasSession}: {hasSession : boolean}) {
 
 
             <div className="container backdrop-filter flex flex-row items-center justify-end gap-2">
-
+                <Hamburger toggled={isOpen} toggleAction={setOpen} />
                 <p className="text-2xl text-white">
                     |||
                 </p>
@@ -25,17 +28,21 @@ export default function Nav({hasSession}: {hasSession : boolean}) {
                     {hasSession ? "Sign out" : "Sign in"}
                 </Link>
             </div>
-            <p className="text-center text-2xl text-white">
-                PLACEHOLDER LINK NAME →
-            </p>
-            <p className="text-center text-2xl text-white">
-                PLACEHOLDER LINK NAME →
-            </p>
-            <p className="text-center text-2xl text-white">
-                PLACEHOLDER LINK NAME →
-            </p>
+            <FakeLink isOpen={isOpen}/>
+            <FakeLink isOpen={isOpen}/>
+            <FakeLink isOpen={isOpen}/>
         </div>
 
 
     )
+}
+
+function FakeLink({isOpen}: {isOpen: boolean }) {
+    if (isOpen){
+        return (
+            <p className="text-center text-2xl text-white">
+                PLACEHOLDER LINK NAME →
+            </p>
+        )
+    }
 }
