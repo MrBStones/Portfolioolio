@@ -1,30 +1,40 @@
+"use client"
 
-import { auth } from "~/server/auth";
 import Link from "next/link";
-import {api} from "~/trpc/server";
 
-export default async function Nav() {
-    const hello = await api.post.hello({ text: "is here!" });
-    const session = await auth();
+export default function Nav({hasSession}: {hasSession : boolean}) {
+
 
     return (
+        <div
+            className={"container backdrop-filter flex flex-col p-2 rounded-xl backdrop-blur-xl bg-black/50 gap-2 divide-y divide-spring-green"}>
 
-        <div className="container backdrop-filter flex flex-row items-center justify-center gap-2 bg-black/50 backdrop-blur-xl rounded-xl p-2">
 
-            <p className="text-2xl text-white">
-                {hello ? hello.greeting : "Loading tRPC query..."}
+            <div className="container backdrop-filter flex flex-row items-center justify-end gap-2">
+
+                <p className="text-2xl text-white">
+                    |||
+                </p>
+                {/*<p className="text-center text-2xl text-white">
+                    {session && <span>Logged in as {session.user?.name}</span>}
+                </p>*/}
+                <Link
+                    href={hasSession ? "/api/auth/signout" : "/api/auth/signin"}
+                    className="rounded-full bg-spring-green/10 px-10 py-3 font-semibold no-underline transition hover:bg-spring-green/20"
+                >
+                    {hasSession ? "Sign out" : "Sign in"}
+                </Link>
+            </div>
+            <p className="text-center text-2xl text-white">
+                PLACEHOLDER LINK NAME →
             </p>
             <p className="text-center text-2xl text-white">
-                {session && <span>Logged in as {session.user?.name}</span>}
+                PLACEHOLDER LINK NAME →
             </p>
-            <Link
-                href={session ? "/api/auth/signout" : "/api/auth/signin"}
-                className="rounded-full bg-spring-green/10 px-10 py-3 font-semibold no-underline transition hover:bg-spring-green/20"
-            >
-                {session ? "Sign out" : "Sign in"}
-            </Link>
+            <p className="text-center text-2xl text-white">
+                PLACEHOLDER LINK NAME →
+            </p>
         </div>
-
 
 
     )

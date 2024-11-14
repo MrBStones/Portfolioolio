@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="633f5c93-f7d1-4f58-93df-fc661580b53c" name="Changes" comment="dancing gsap blocks">
-      <change beforePath="$PROJECT_DIR$/../prort/src/server/api/routers/post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../prort/src/server/api/routers/post.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prort/src/app/_components/sign-in.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prort/src/app/_components/nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../prort/src/app/_components/nav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prort/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../prort/src/app/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,18 +26,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "MrBStones"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MrBStones&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/MrBStones/ScrunchesPortfolio.git",
-    "accountId": "c8516d3e-1286-4d69-8304-f5f7f10cd4a4"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MrBStones/ScrunchesPortfolio.git&quot;,
+    &quot;accountId&quot;: &quot;c8516d3e-1286-4d69-8304-f5f7f10cd4a4&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -93,6 +95,8 @@
       <workItem from="1731420085884" duration="636000" />
       <workItem from="1731423519303" duration="10153000" />
       <workItem from="1731512792446" duration="7877000" />
+      <workItem from="1731584455605" duration="760000" />
+      <workItem from="1731599385674" duration="4375000" />
     </task>
     <task id="LOCAL-00001" summary="t3 project and typescrpit">
       <option name="closed" value="true" />
