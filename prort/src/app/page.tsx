@@ -17,7 +17,7 @@ export default async function Home() {
   return (
     <HydrateClient>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#454545] to-[#000000] text-white">
-        <div className="fixed top-5 right-5 "><Nav hasSession={session != null}/></div>
+        <div className="fixed top-10 right-10 "><Nav hasSession={session != null}/></div>
 
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
           <br/>
