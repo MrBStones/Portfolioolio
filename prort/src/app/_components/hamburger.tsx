@@ -7,8 +7,12 @@ export default function Hamburger({toggled, toggleAction}: {toggled: boolean, to
         toggleAction(!toggled)
     }
     return (
-        <div className={`size-10  ${toggled ? 'bg-spring-green' : 'bg-celadon'}`} onClick={handleToggle}>
-            
+        <div
+            className={`container flex flex-col gap-1 items-center justify-center size-12 rounded  ${toggled ? 'bg-spring-green' : 'bg-celadon'}`}
+            onClick={handleToggle}>
+            <div className={`bg-black w-7 h-1 rounded`}></div>
+            <div className={`bg-black w-7 h-1 rounded`}></div>
+            <div className={`bg-black w-7 h-1 rounded`}></div>
         </div>
     )
 

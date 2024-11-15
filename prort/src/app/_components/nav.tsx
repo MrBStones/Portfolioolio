@@ -15,9 +15,6 @@ export default function Nav({hasSession}: {hasSession : boolean}) {
 
             <div className="container backdrop-filter flex flex-row items-center justify-end gap-2">
                 <Hamburger toggled={isOpen} toggleAction={setOpen} />
-                <p className="text-2xl text-white">
-                    |||
-                </p>
                 {/*<p className="text-center text-2xl text-white">
                     {session && <span>Logged in as {session.user?.name}</span>}
                 </p>*/}

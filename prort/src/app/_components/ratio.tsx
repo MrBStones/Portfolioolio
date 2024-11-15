@@ -19,7 +19,7 @@ export default function Ratio({leftText, rightText, odd}: RatioProps) {
         let side2 = odd ? '#ratio-right' : '#ratio-left';
 
         let tl = gsap.timeline({ repeat: -1, yoyo: false });
-        tl.to(side1, { width: '12rem', duration: 1, ease: 'easeInOut' })
+        tl.to(side1, { width: '12rem', duration: 1, ease: 'easeInOut'})
             .to(side2, { width: '24rem', duration: 1, ease: 'easeInOut'}, "<")
             .to(side1, { width: '24rem', duration: 1, ease: 'easeInOut'}, )
             .to(side2, { width: '12rem', duration: 1, ease: 'easeInOut'}, "<");
