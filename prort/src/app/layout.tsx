@@ -8,7 +8,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 export const metadata: Metadata = {
   title: "Portfolio",
   description: "Colon Three",
-  icons: [{ rel: "icon", url: "/scrunchesvg.svg" }],
+  icons: [{ rel: "icon", url: "/scrunchesvgwithbg.svg" }],
 };
 
 export default function RootLayout({
