@@ -7,7 +7,7 @@
    viewBox="0 0 111 111"
    version="1.1"
    id="svg1"
-   sodipodi:docname="scrunchesvgwhite.svg"
+   sodipodi:docname="scrunchesvgwhitewithbg.svg"
    inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -37,7 +37,7 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="black"
-     style="display:none">
+     style="display:inline">
     <rect
        style="fill:#000000"
        id="rect1"

@@ -17,6 +17,11 @@ export default {
         'celadon' : '#ABEBD2',
         'spring-green': '#04F06A'
       },
+      spacing: {
+        '18': '4.5rem',
+        '24': '6rem',
+        '128': '32rem',
+      }
     },
   },
   plugins: [],

@@ -2,6 +2,7 @@
 import { LatestPost } from "~/app/_components/post";
 import Nav from "~/app/_components/nav";
 import Ratio from "~/app/_components/ratio";
+import Logo from "~/app/_components/logo";
 import { auth } from "~/server/auth";
 import { api, HydrateClient } from "~/trpc/server";
 
@@ -17,7 +18,9 @@ export default async function Home() {
   return (
     <HydrateClient>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#454545] to-[#000000] text-white">
-        <div className="fixed top-10 right-10 "><Nav hasSession={session != null}/></div>
+        <div className="fixed top-9 left-10"><Logo/></div>
+        <div className="fixed top-12 right-10 "><Nav hasSession={session != null}/></div>
+
 
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
           <br/>
