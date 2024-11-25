@@ -15,10 +15,10 @@ interface RatioProps {
 export default function Ratio({leftText, rightText, odd}: RatioProps) {
     const container = useRef<HTMLDivElement>(null);
     useGSAP(()=>{
-        let side1 = odd ? '#ratio-left' : '#ratio-right';
-        let side2 = odd ? '#ratio-right' : '#ratio-left';
+        const side1 = odd ? '#ratio-left' : '#ratio-right';
+        const side2 = odd ? '#ratio-right' : '#ratio-left';
 
-        let tl = gsap.timeline({ repeat: -1, yoyo: false });
+        const tl = gsap.timeline({ repeat: -1, yoyo: false });
         tl.to(side1, { width: '12rem', duration: 1, ease: 'easeInOut'})
             .to(side2, { width: '24rem', duration: 1, ease: 'easeInOut'}, "<")
             .to(side1, { width: '24rem', duration: 1, ease: 'easeInOut'}, )
