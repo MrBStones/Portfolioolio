@@ -4,6 +4,7 @@ import Link from "next/link";
 import {useState} from "react";
 import Hamburger from "~/app/_components/hamburger";
 
+
 export default function Nav({hasSession}: {hasSession : boolean}) {
     const [isOpen, setOpen] = useState(false);
 
@@ -20,7 +21,7 @@ export default function Nav({hasSession}: {hasSession : boolean}) {
                 </p>*/}
                 <Link
                     href={hasSession ? "/api/auth/signout" : "/api/auth/signin"}
-                    className="rounded-full bg-spring-green/10 px-10 py-3 font-semibold no-underline transition hover:bg-spring-green/20"
+                    className="rounded-full bg-spring-green/70 px-10 py-3 font-semibold no-underline transition hover:bg-spring-green hover:text-black select-none"
                 >
                     {hasSession ? "Sign out" : "Sign in"}
                 </Link>
