@@ -7,6 +7,7 @@ import { auth } from "~/server/auth";
 import { api, HydrateClient } from "~/trpc/server";
 import Image from 'next/image'
 import BgLogo from "~/app/_components/bglogo";
+import SpeechBubble from "~/app/_components/speechBubble";
 
 
 export default async function Home() {
@@ -44,7 +45,7 @@ export default async function Home() {
           </div>
 
           <div className="container flex flex-row h-sc" style={{height:"50vh"}}>
-            <Image src={"/hisketch.png"} width={694} height={841} alt={"Sketch of scrunches"} objectFit={'contain'}
+            <Image src={"/hisketch.png"} width={694} height={841} alt={"Sketch of scrunches"}
                    style={{width: 'auto', height: '100%',}}/>
             <SpeechBubble text={"HI IM SCRUNCHES!"}/>
           </div>

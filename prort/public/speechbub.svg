@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="90.075211mm"
+   height="30.445063mm"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch4">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4" />
+    </linearGradient>
+  </defs>
+  <g
+     id="layer1">
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.32292;stroke-dasharray:none;stroke-opacity:1"
+       d="M 1.4264831,21.50752 29.14854,0.66224953 89.320446,0.87714953 85.667156,28.3843 27.751694,29.78115 Z"
+       id="path1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.5;font-family:System-ui;-inkscape-font-specification:System-ui;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;inline-size:56.7191;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.740833;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       x="55.741558"
+       y="11.461107"
+       id="text2"><tspan
+         x="55.741558"
+         y="11.461107"
+         id="tspan1">Welcome to my 
+</tspan><tspan
+         x="55.741558"
+         y="22.044447"
+         id="tspan2">Website!</tspan></text>
+  </g>
+</svg>
