@@ -3,6 +3,7 @@
 import {Dispatch, SetStateAction, useRef} from "react";
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
+import tailwindConfig from "../../../tailwind.config";
 gsap.registerPlugin(useGSAP);
 
 export default function Hamburger({toggled, toggleAction}: {toggled: boolean, toggleAction: Dispatch<SetStateAction<boolean>>}) {
@@ -17,8 +18,8 @@ export default function Hamburger({toggled, toggleAction}: {toggled: boolean, to
 
     const easeMode = "power2.out"
     const duration = 0.25;
-    const originalColor = "#ABEBD2"
-    const newColor = "#04F06A"
+    const originalColor = tailwindConfig.theme.extend.colors["dark-hero"]
+    const newColor = tailwindConfig.theme.extend.colors.hero
 
     const { contextSafe } = useGSAP({scope: container});
 
@@ -77,7 +78,7 @@ export default function Hamburger({toggled, toggleAction}: {toggled: boolean, to
     return (
         <div ref={container}>
             <div id={"container"}
-                 className={`container flex flex-col gap-1 items-center justify-center size-12 rounded bg-celadon`}
+                 className={`container flex flex-col gap-1 items-center justify-center size-12 rounded bg-dark-hero`}
                  onClick={handleToggle}>
                 <svg
                     width="30px"

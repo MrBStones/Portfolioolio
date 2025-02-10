@@ -20,7 +20,7 @@ export default async function Home() {
   return (
     <HydrateClient>
       <main
-          className="flex min-h-screen select-none flex-col items-center justify-center bg-gradient-to-b from-[#454545] to-[#000000] text-white -z-20">
+          className="flex min-h-screen select-none flex-col items-center justify-center bg-background text-white -z-20">
         <div className="fixed left-10 top-9 z-10">
           <Logo/>
         </div>
@@ -33,7 +33,7 @@ export default async function Home() {
 
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 z-0">
           <div className={"container flex flex-col h-sc items-center justify-center"} style={{height: "70vh"}}>
-            <h1 className="text-7xl text-white">
+            <h1 className="text-7xl text-light">
               Hello (portfolio in progress)
             </h1>
           </div>
@@ -47,7 +47,7 @@ export default async function Home() {
 
           </div>
 
-          <div className={"container flex flex-row h-sc h-128 bg-wenge rounded-xl shadow-inner shadow-black"}>
+          <div className={"container flex flex-row h-sc h-128 bg-dark rounded-xl shadow-inner shadow-black"}>
             <p className={"p-5 text-5xl"}>BOOKSHELF</p>
           </div>
 

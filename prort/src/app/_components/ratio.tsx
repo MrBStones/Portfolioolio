@@ -32,13 +32,13 @@ export default function Ratio({leftText, rightText, odd}: RatioProps) {
         <div ref={container} className="container flex flex-row items-center justify-center gap-12 px4 py-16">
 
             <div
-                className={`container flex flex-col items-center justify-center shadow-inner shadow-white rounded-xl md:p-0 h-48 ${odd? "w-96 bg-celadon" : "w-48 bg-spring-green"}`} id={"ratio-left"}>
+                className={`container flex flex-col items-center justify-center shadow-inner shadow-white rounded-xl md:p-0 h-48 ${odd? "w-96 bg-dark-hero" : "w-48 bg-hero"}`} id={"ratio-left"}>
                 <p className="text-center text-2xl text-black">
                     {leftText}
                 </p>
             </div>
             <div
-                className={`container flex flex-col items-center justify-center shadow-inner shadow-white rounded-xl md:p-0 h-48 ${odd? "w-48 bg-spring-green" : "w-96 bg-celadon"}`} id={"ratio-right"}>
+                className={`container flex flex-col items-center justify-center shadow-inner shadow-white rounded-xl md:p-0 h-48 ${odd? "w-48 bg-hero" : "w-96 bg-dark-hero"}`} id={"ratio-right"}>
                 <p className="text-center text-2xl text-black">
                     {rightText}
                 </p>

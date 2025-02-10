@@ -11,11 +11,7 @@ export default {
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
-        'onyx': '#454545',
-        'wenge': '#6D5959',
-        'cambridge-blue': '#9DCBBA',
-        'celadon' : '#ABEBD2',
-        'spring-green': '#04F06A'
+        'background': '#2e282a', 'dark': '#cd5334', 'light': '#fad8d6', 'hero' : '#17bebb', 'dark-hero': '#edb88b',
       },
       spacing: {
         '18': '4.5rem',
