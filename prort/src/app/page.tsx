@@ -32,19 +32,21 @@ export default async function Home() {
         </div>
 
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 z-0">
-          <div className={"container flex flex-col h-sc items-center justify-center"} style={{height: "70vh"}}>
-            <h1 className="text-7xl text-light">
-              Hello (portfolio in progress)
-            </h1>
+          <div className={"container flex flex-col h-screen"}>
+            <div className={"container flex flex-col h-sc items-center justify-center h-3/4"}>
+              <h1 className="text-7xl text-light">
+                Hello (portfolio in progress)
+              </h1>
+            </div>
+            <p className="text-2xl text-white">
+              {hello ? hello.greeting : "Loading tRPC query..."}
+            </p>
           </div>
-          <p className="text-2xl text-white">
-            {hello ? hello.greeting : "Loading tRPC query..."}
-          </p>
 
-          <div className="container flex flex-row h-sc h-128">
+          <div className="container flex flex-row h-sc" style={{height:"50vh"}}>
             <Image src={"/hisketch.png"} width={694} height={841} alt={"Sketch of scrunches"} objectFit={'contain'}
                    style={{width: 'auto', height: '100%',}}/>
-
+            <SpeechBubble text={"HI IM SCRUNCHES!"}/>
           </div>
 
           <div className={"container flex flex-row h-sc h-128 bg-dark rounded-xl shadow-inner shadow-black"}>
