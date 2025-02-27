@@ -18,9 +18,9 @@ export default function Logo() {
     return (
         <div ref={container}>
             <div onClick={handleClick} 
-            className={"container backdrop-filter p-2 rounded-xl backdrop-blur-xl bg-black/50"}>
+            className={"container backdrop-filter p-2 rounded-xl backdrop-blur-sm bg-dark/50"}>
                 <div className={"size-18"}>
-                    <Image src={"/scrunchesvgwhite.svg"} alt={"Scrunches Logo"} layout="fill"  className={"p-2"} />
+                    <Image src={"/scrunchesvgwhite.svg"} alt={"Scrunches Logo"} layout="fill"  className={"p-2 "} />
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@ export default function Logo() {
     )
 }
 
-function getRandomIntInclusive(min: int, max: int) {
+function getRandomIntInclusive(min: number, max: number) {
     const minCeiled = Math.ceil(min);
     const maxFloored = Math.floor(max);
     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive

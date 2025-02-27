@@ -11,7 +11,7 @@ export default function Nav({hasSession}: {hasSession : boolean}) {
 
     return (
         <div
-            className={"container backdrop-filter flex flex-col p-2 rounded-xl backdrop-blur-xl bg-black/50 gap-2 divide-y divide-Hero"}>
+            className={"container backdrop-filter flex flex-col p-2 rounded-xl backdrop-blur-xl bg-dark/50 gap-2 divide-y divide-Hero"}>
 
 
             <div className="container backdrop-filter flex flex-row items-center justify-end gap-2">
