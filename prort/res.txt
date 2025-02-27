@@ -1,0 +1,1 @@
+'background': '#2e282a', 'dark': '#cd5334', 'light': '#fad8d6', 'hero' : '#17bebb', 'dark-hero': '#edb88b',

@@ -5,15 +5,21 @@ import {useRef} from "react";
 export default function SpeechBubble({text} :{text: string}) {
     const container = useRef<HTMLDivElement>(null);
 
+
+
     return (
         <div ref={container} >
             <div id={"container"} className={"w-full h-full "}>
                 <svg
-                    width="320px"
-                    height="120px"
+                    width="500px"
+                    height="300px"
                     version="1.1"
                     id="svg1"
-                    xmlns="http://www.w3.org/2000/svg">
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{
+                        width: "500px",
+                        height: "100%",
+                    }}>
                     <defs
                         id="defs1">
                     </defs>
@@ -72,10 +78,6 @@ export default function SpeechBubble({text} :{text: string}) {
                         </text>
                     </g>
                 </svg>
-
-                <div className={"bg-light rounded-lg h-fit w-fit p-5"}>
-                    <p className={"text-background text-4xl font-bold"}>{text}</p>
-                </div>
             </div>
         </div>
     )
