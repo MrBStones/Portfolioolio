@@ -1,23 +1,46 @@
 "use client"
 
 import {useRef} from "react";
+import { useState } from "react";
 
-export default function SpeechBubble({text} :{text: string}) {
+export default function SpeechBubble({text1, text2} :{text1: string, text2: string}) {
     const container = useRef<HTMLDivElement>(null);
 
+    const firstX = 2.0
+    const firstY = 30.0
+    const pointsXRest = [29.14854, 89.320446, 85.667156, 27.751694, 55.741558, 55.741558, 55.741558]
+    const pointsYRest = [0.66224953, 0.87714953, 28.3843, 29.78115, 11.461107, 11.461107, 22.044447].map((n) => n + 22.14854)
 
+    var [pointsX, setPointsX] = useState(pointsXRest)
+    var [pointsY, setPointsY] = useState(pointsYRest)
+
+    function resetPoints() {
+        setPointsX(pointsXRest)
+        setPointsY(pointsYRest)
+    }
+
+    function setPointsHalfMousePosition(event: React.MouseEvent) {
+        if (container.current) {
+            const rect = container.current.getBoundingClientRect();
+            const x = (event.clientX - rect.left) / 10;
+            const y = (event.clientY - rect.top- 220) / 10;
+            setPointsX(pointsXRest.map((xo) => xo + x));
+            setPointsY(pointsYRest.map((yo) => yo + y));
+        }
+    }
 
     return (
-        <div ref={container} >
+        <div ref={container} onMouseMove={(event) => setPointsHalfMousePosition(event)} onMouseLeave={resetPoints}>
             <div id={"container"} className={"w-full h-full "}>
                 <svg
-                    width="500px"
-                    height="300px"
+                    width="500px"  // Adjusted width
+                    height="300px"  // Adjusted height
+                    viewBox="0 0 300 100"  // Ensures proper scaling
                     version="1.1"
                     id="svg1"
                     xmlns="http://www.w3.org/2000/svg"
                     style={{
-                        width: "500px",
+                        width: "1000px",
                         height: "100%",
                     }}>
                     <defs
@@ -34,7 +57,7 @@ export default function SpeechBubble({text} :{text: string}) {
                                 strokeDasharray: "none",
                                 strokeOpacity: 1,
                             }}
-                            d="M 1.4264831,21.50752 29.14854,0.66224953 89.320446,0.87714953 85.667156,28.3843 27.751694,29.78115 Z"
+                            d={`M ${firstX},${firstY} ${pointsX[0]},${pointsY[0]} ${pointsX[1]},${pointsY[1]} ${pointsX[2]},${pointsY[2]} ${pointsX[3]},${pointsY[3]} Z`}
                             id="path1" />
                         <text
                             style={{
@@ -60,20 +83,20 @@ export default function SpeechBubble({text} :{text: string}) {
                                 strokeDasharray:"none",
                                 strokeOpacity: 1,
                             }}
-                            x="55.741558"
-                            y="11.461107"
+                            x={pointsX[4]}
+                            y={pointsY[4]}
                             id="text2">
                             <tspan
-                                x="55.741558"
-                                y="11.461107"
+                                x={pointsX[5]}
+                                y={pointsY[5]}
                                 id="tspan1">
-                                Welcome to my
+                                {text1}
                             </tspan>
                             <tspan
-                                x="55.741558"
-                                y="22.044447"
+                                x={pointsX[6]}
+                                y={pointsY[6]}
                                 id="tspan2">
-                                Website!
+                                {text2}
                             </tspan>
                         </text>
                     </g>

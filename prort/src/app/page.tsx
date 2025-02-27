@@ -47,7 +47,7 @@ export default async function Home() {
           <div className="container flex flex-row h-sc" style={{height:"50vh"}}>
             <Image src={"/hisketch.png"} width={694} height={841} alt={"Sketch of scrunches"}
                    style={{width: 'auto', height: '100%',}}/>
-            <SpeechBubble text={"HI IM SCRUNCHES!"}/>
+            <SpeechBubble text1={"HI IM"} text2=" SCRUNCHES!"/>
           </div>
 
           <div className={"container flex flex-row h-sc h-128 bg-dark rounded-xl shadow-inner shadow-black"}>
