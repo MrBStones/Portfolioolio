@@ -21,7 +21,7 @@ export default async function Home() {
   return (
     <HydrateClient>
       <main
-          className="flex min-h-screen select-none flex-col items-center justify-center bg-background text-white -z-20">
+          className="flex min-h-screen select-none flex-col items-center justify-center bg-background text-light -z-20">
         <div className="fixed left-10 top-9 z-10">
           <Logo/>
         </div>
@@ -39,7 +39,7 @@ export default async function Home() {
                 Hello (portfolio in progress)
               </h1>
             </div>
-            <p className="text-2xl text-white">
+            <p className="text-2xl">
               {hello ? hello.greeting : "Loading tRPC query..."}
             </p>
           </div>
@@ -47,10 +47,10 @@ export default async function Home() {
           <div className="container flex flex-row h-sc" style={{height:"50vh"}}>
             <Image src={"/hisketch.png"} width={694} height={841} alt={"Sketch of scrunches"}
                    style={{width: 'auto', height: '100%',}}/>
-            <SpeechBubble text1={"HI IM"} text2=" SCRUNCHES!"/>
+            <SpeechBubble text1={"Welcome to"} text2={"the site brah!"}/>
           </div>
 
-          <div className={"container flex flex-row h-sc h-128 bg-dark rounded-xl shadow-inner shadow-black"}>
+          <div className={"container flex flex-row h-sc h-128 bg-dark/50 backdrop-blur-sm rounded-xl"}>
             <p className={"p-5 text-5xl"}>BOOKSHELF</p>
           </div>
 

@@ -11,7 +11,7 @@ export default {
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
-        'background': '#2e282a', 'dark': '#cd5334', 'light': '#fad8d6', 'hero' : '#17bebb', 'dark-hero': '#edb88b',
+        'background': '#246eb9', 'dark': '#4cb944', 'light': '#fdfffc', 'hero' : '#f5ee9e', 'dark-hero': '#f06543',
       },
       spacing: {
         '18': '4.5rem',

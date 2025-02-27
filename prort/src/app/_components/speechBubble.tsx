@@ -1,7 +1,7 @@
 "use client"
 
-import {useRef} from "react";
-import { useState } from "react";
+import {useRef, useState, useEffect} from "react";
+import { set } from "zod";
 
 export default function SpeechBubble({text1, text2} :{text1: string, text2: string}) {
     const container = useRef<HTMLDivElement>(null);
@@ -13,21 +13,56 @@ export default function SpeechBubble({text1, text2} :{text1: string, text2: stri
 
     var [pointsX, setPointsX] = useState(pointsXRest)
     var [pointsY, setPointsY] = useState(pointsYRest)
+    var [isActive, setIsActive] = useState(false)
+    var [targetPointsX, setTargetPointsX] = useState(pointsXRest)
+    var [targetPointsY, setTargetPointsY] = useState(pointsYRest)
+
+    function lerp(start: number, end: number, t: number): number {
+        return start + t * (end - start);
+    }
 
     function resetPoints() {
-        setPointsX(pointsXRest)
-        setPointsY(pointsYRest)
+        setTargetPointsX(pointsXRest);
+        setTargetPointsY(pointsYRest);
+        setIsActive(true);
     }
 
     function setPointsHalfMousePosition(event: React.MouseEvent) {
         if (container.current) {
             const rect = container.current.getBoundingClientRect();
             const x = (event.clientX - rect.left) / 10;
-            const y = (event.clientY - rect.top- 220) / 10;
-            setPointsX(pointsXRest.map((xo) => xo + x));
-            setPointsY(pointsYRest.map((yo) => yo + y));
+            const y = (event.clientY - rect.top - 220) / 10;
+
+            setTargetPointsX(pointsXRest.map((xo) => xo + x));
+            setTargetPointsY(pointsYRest.map((yo) => yo + y));
+            setIsActive(true);
         }
     }
+
+    useEffect(() => {
+        let animationFrameId: number;
+
+        const animate = () => {
+            setPointsX((prevPointsX) => prevPointsX.map((xo, i) => lerp(xo, targetPointsX[i] ?? xo, 0.1)));
+            setPointsY((prevPointsY) => prevPointsY.map((yo, i) => lerp(yo, targetPointsY[i] ?? yo, 0.1)));
+
+            animationFrameId = requestAnimationFrame(animate);
+        };
+
+        if (isActive) {
+            animationFrameId = requestAnimationFrame(animate);
+
+            const timeout = setTimeout(() => {
+                setIsActive(false);
+                cancelAnimationFrame(animationFrameId);
+            }, 1000); // duration of the lerp animation
+
+            return () => {
+                cancelAnimationFrame(animationFrameId);
+                clearTimeout(timeout);
+            };
+        }
+    }, [isActive, targetPointsX, targetPointsY]);
 
     return (
         <div ref={container} onMouseMove={(event) => setPointsHalfMousePosition(event)} onMouseLeave={resetPoints}>
@@ -49,17 +84,19 @@ export default function SpeechBubble({text1, text2} :{text1: string, text2: stri
                     <g
                         id="layer1">
                         <path
+                            className="fill-dark/50 stroke-light backdrop-blur-sm"
                             style={{
-                                fill: "#ffffff",
                                 fillOpacity: 1,
-                                stroke: "#000000",
                                 strokeWidth: 1.32292,
+                                strokeLinecap: "round",
+                                strokeLinejoin: "round",
                                 strokeDasharray: "none",
                                 strokeOpacity: 1,
                             }}
                             d={`M ${firstX},${firstY} ${pointsX[0]},${pointsY[0]} ${pointsX[1]},${pointsY[1]} ${pointsX[2]},${pointsY[2]} ${pointsX[3]},${pointsY[3]} Z`}
                             id="path1" />
                         <text
+                            className="fill-light"
                             style={{
                                 fontStyle: "normal",
                                 fontVariant: "normal",
@@ -68,19 +105,17 @@ export default function SpeechBubble({text1, text2} :{text1: string, text2: stri
                                 fontSize: "7.05556px",
                                 lineHeight: 1.5,
                                 fontFamily: "System-ui",
-                                textAlign:"center",
+                                textAlign: "center",
                                 letterSpacing: "0px",
                                 wordSpacing: "0px",
                                 direction: "ltr",
                                 textAnchor: "middle",
-                                whiteSpace:"pre",
+                                whiteSpace: "pre",
                                 inlineSize: 56.7191,
-                                fill: "#000000",
-                                fillOpacity: 1,
                                 stroke: "none",
-                                strokeWidth:0.740833,
-                                strokeLinejoin:"miter",
-                                strokeDasharray:"none",
+                                strokeWidth: 0.740833,
+                                strokeLinejoin: "miter",
+                                strokeDasharray: "none",
                                 strokeOpacity: 1,
                             }}
                             x={pointsX[4]}
