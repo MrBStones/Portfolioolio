@@ -1,9 +1,17 @@
 "use client"
 
-import {useRef, useState, useEffect} from "react";
+import {useRef, useState, useEffect, Dispatch, SetStateAction} from "react";
 import { set } from "zod";
 
-export default function SpeechBubble({text1, text2} :{text1: string, text2: string}) {
+interface SpeechBubbleProps {
+    text1: string;
+    text2: string;
+    mouseEvent: React.MouseEvent | undefined;
+    mouseOver: boolean;
+    setMouseOver: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function SpeechBubble({text1, text2, mouseEvent, mouseOver, setMouseOver} :Readonly<SpeechBubbleProps>) {
     const container = useRef<HTMLDivElement>(null);
 
     const firstX = 2.0
@@ -40,6 +48,14 @@ export default function SpeechBubble({text1, text2} :{text1: string, text2: stri
     }
 
     useEffect(() => {
+        if (mouseOver) {
+            setPointsHalfMousePosition(mouseEvent!);
+        } else {
+            resetPoints();
+        }
+    }, [mouseOver, mouseEvent]);
+
+    useEffect(() => {
         let animationFrameId: number;
 
         const animate = () => {
@@ -62,10 +78,10 @@ export default function SpeechBubble({text1, text2} :{text1: string, text2: stri
                 clearTimeout(timeout);
             };
         }
-    }, [isActive, targetPointsX, targetPointsY]);
+    }, [isActive, targetPointsX, targetPointsY, mouseOver]);
 
     return (
-        <div ref={container} onMouseMove={(event) => setPointsHalfMousePosition(event)} onMouseLeave={resetPoints}>
+        <div ref={container}>
             <div id={"container"} className={"w-full h-full "}>
                 <svg
                     width="500px"  // Adjusted width

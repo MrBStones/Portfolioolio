@@ -33,13 +33,13 @@ export default function Ratio({leftText, rightText, odd}: RatioProps) {
 
             <div
                 className={`container flex flex-col items-center justify-center shadow-inner backdrop-blur-sm shadow-white rounded-xl md:p-0 h-48 ${odd? "w-96 bg-dark-hero/50" : "w-48 bg-hero/50"}`} id={"ratio-left"}>
-                <p className="text-center text-2xl text-black">
+                <p className="text-center text-2xl text-dark">
                     {leftText}
                 </p>
             </div>
             <div
                 className={`container flex flex-col items-center justify-center shadow-inner backdrop-blur-sm shadow-white rounded-xl md:p-0 h-48 ${odd? "w-48 bg-hero/50" : "w-96 bg-dark-hero/50"}`} id={"ratio-right"}>
-                <p className="text-center text-2xl text-black">
+                <p className="text-center text-2xl text-dark">
                     {rightText}
                 </p>
             </div>
