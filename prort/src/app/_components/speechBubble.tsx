@@ -8,10 +8,9 @@ interface SpeechBubbleProps {
     text2: string;
     mouseEvent: React.MouseEvent | undefined;
     mouseOver: boolean;
-    setMouseOver: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function SpeechBubble({text1, text2, mouseEvent, mouseOver, setMouseOver} :Readonly<SpeechBubbleProps>) {
+export default function SpeechBubble({text1, text2, mouseEvent, mouseOver} :Readonly<SpeechBubbleProps>) {
     const container = useRef<HTMLDivElement>(null);
 
     const firstX = 2.0
@@ -36,7 +35,7 @@ export default function SpeechBubble({text1, text2, mouseEvent, mouseOver, setMo
     }
 
     function setPointsHalfMousePosition(event: React.MouseEvent) {
-        if (container.current) {
+        if (container.current && event !== undefined) {
             const rect = container.current.getBoundingClientRect();
             const x = (event.clientX - rect.left) / 10;
             const y = (event.clientY - rect.top - 220) / 10;

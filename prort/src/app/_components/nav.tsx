@@ -5,7 +5,7 @@ import {useState} from "react";
 import Hamburger from "~/app/_components/hamburger";
 
 
-export default function Nav({hasSession}: {hasSession : boolean}) {
+export default function Nav() {
     const [isOpen, setOpen] = useState(false);
 
 

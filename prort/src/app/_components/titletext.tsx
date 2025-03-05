@@ -22,36 +22,42 @@ export default function TitleText({text, subText}: Readonly<TitleTextProps>) {
     const { contextSafe } = useGSAP();
     const fullConfig = resolveConfig(tailwindConfig)
     const easeMode = "power2.Out"
-    const duration = 2;
+    const duration = 1;
     const hero = fullConfig.theme.colors.hero
     const light = fullConfig.theme.colors.light
+    const reversedText = text.split("").reverse().join("")
 
     useGSAP(() => {
-        const tl = gsap.timeline({repeat: -1, yoyo: true});
-        tl.to("#title", {
+        const tl = gsap.timeline({repeat: -1, yoyo: true, repeatDelay: 2, delay: 2});
+        tl.from("#title", {
             duration: duration,
             color: light,
             ease: easeMode,
+            rotateY: 180,
         })
         .to("#title", {
             duration: duration,
             color: hero,
             ease: easeMode,
-        })
+            text: {delimiter: "", value: text, rtl: true},
+        }, "<")
         .to("#scramble", {
             duration: 2,
-            text: subText,
+            text: {delimiter: "", value: subText,},
             ease: easeMode,
-            delimiter: " ",
         })
     }, {scope : container})
 
     return (
-        <div ref={container} >
-            <h1 id="title" className="text-6xl text-center text-light">
-                {text}
+        <div ref={container} className="w-[16rem]">
+            <h1 id="title" className="text-6xl text-light">
+            {reversedText}
             </h1>
-            <div id="scramble" className="text-light"></div>
+            <div className="flex flex-row">
+                <div id="scramble" className="text-light">(Scrunches</div>
+                <p>)</p>
+            </div>
+            
         </div>
     );
 }

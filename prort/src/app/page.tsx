@@ -3,8 +3,7 @@ import { LatestPost } from "~/app/_components/post";
 import Nav from "~/app/_components/nav";
 import Ratio from "~/app/_components/ratio";
 import Logo from "~/app/_components/logo";
-import { auth } from "~/server/auth";
-import { api, HydrateClient } from "~/trpc/server";
+import {HydrateClient } from "~/trpc/server";
 import Image from 'next/image'
 import BgLogo from "~/app/_components/bglogo";
 import SpeechBubble from "~/app/_components/speechBubble";
@@ -13,12 +12,6 @@ import TitleText from "./_components/titletext";
 
 
 export default async function Home() {
-  const hello = await api.post.hello({ text: "is here! Scroll ⇓" });
-  const session = await auth();
-
-  if (session?.user) {
-    void api.post.getLatest.prefetch();
-  }
 
   return (
     <HydrateClient>
@@ -28,7 +21,7 @@ export default async function Home() {
           <Logo/>
         </div>
         <div className="fixed right-10 top-12 z-10">
-          <Nav hasSession={session != null}/>
+          <Nav/>
         </div>
         <div className="fixed right-0 bottom-0 z-0">
           <BgLogo/>
@@ -37,10 +30,10 @@ export default async function Home() {
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 z-0">
           <div className={"container flex flex-col h-screen"}>
             <div className={"container flex flex-col h-sc items-center justify-center h-3/4"}>
-              <TitleText text={"Portfolio"} subText="(Still a work in progress... )"/>
+              <TitleText text={"Portfolio"} subText="(Still a work in progress... "/>
             </div>
             <p className="text-2xl">
-              {hello ? hello.greeting : "Loading tRPC query..."}
+              Latest Posts
             </p>
           </div>
 
@@ -71,8 +64,6 @@ export default async function Home() {
               rightText={"ヽ( ▀̿ Ĺ̯ ▀̿)ノ♪♬"}
               odd={false}
           />
-
-          {session?.user && <LatestPost/>}
         </div>
       </main>
     </HydrateClient>
