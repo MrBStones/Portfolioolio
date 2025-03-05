@@ -8,14 +8,18 @@ interface SpeechBubbleProps {
     text2: string;
     mouseEvent: React.MouseEvent | undefined;
     mouseOver: boolean;
+    left: boolean;
 }
 
-export default function SpeechBubble({text1, text2, mouseEvent, mouseOver} :Readonly<SpeechBubbleProps>) {
+export default function SpeechBubble({text1, text2, mouseEvent, mouseOver, left} :Readonly<SpeechBubbleProps>) {
     const container = useRef<HTMLDivElement>(null);
 
     const firstX = 2.0
     const firstY = 30.0
-    const pointsXRest = [29.14854, 89.320446, 85.667156, 27.751694, 55.741558, 55.741558, 55.741558]
+    const lastX = 298.0
+    const lastY = 30.0
+    const pointsXRestTemp = [29.14854, 89.320446, 85.667156, 27.751694, 55.741558, 55.741558, 55.741558]
+    const pointsXRest = left ? pointsXRestTemp : pointsXRestTemp.map((n) => n + 180) 
     const pointsYRest = [0.66224953, 0.87714953, 28.3843, 29.78115, 11.461107, 11.461107, 22.044447].map((n) => n + 22.14854)
 
     var [pointsX, setPointsX] = useState(pointsXRest)
@@ -37,7 +41,7 @@ export default function SpeechBubble({text1, text2, mouseEvent, mouseOver} :Read
     function setPointsHalfMousePosition(event: React.MouseEvent) {
         if (container.current && event !== undefined) {
             const rect = container.current.getBoundingClientRect();
-            const x = (event.clientX - rect.left) / 10;
+            const x = (event.clientX - (left ? rect.left : rect.right)) / 10;
             const y = (event.clientY - rect.top - 220) / 10;
 
             setTargetPointsX(pointsXRest.map((xo) => xo + x));
@@ -108,7 +112,7 @@ export default function SpeechBubble({text1, text2, mouseEvent, mouseOver} :Read
                                 strokeDasharray: "none",
                                 strokeOpacity: 1,
                             }}
-                            d={`M ${firstX},${firstY} ${pointsX[0]},${pointsY[0]} ${pointsX[1]},${pointsY[1]} ${pointsX[2]},${pointsY[2]} ${pointsX[3]},${pointsY[3]} Z`}
+                            d={`M ${left ? firstX + "," + firstY : ""} ${pointsX[0]},${pointsY[0]} ${pointsX[1]},${pointsY[1]} ${left ? "" : lastX + "," +  lastY} ${pointsX[2]},${pointsY[2]} ${pointsX[3]},${pointsY[3]}  Z`}
                             id="path1" />
                         <text
                             className="fill-light"

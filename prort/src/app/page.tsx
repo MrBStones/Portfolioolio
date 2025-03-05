@@ -9,6 +9,7 @@ import BgLogo from "~/app/_components/bglogo";
 import SpeechBubble from "~/app/_components/speechBubble";
 import SpeechWithImg from "./_components/speechwimg";
 import TitleText from "./_components/titletext";
+import ScrollIndicator from "./_components/scrollindicator";
 
 
 export default async function Home() {
@@ -32,9 +33,7 @@ export default async function Home() {
             <div className={"container flex flex-col h-sc items-center justify-center h-3/4"}>
               <TitleText text={"Portfolio"} subText="(Still a work in progress... "/>
             </div>
-            <p className="text-2xl">
-              Latest Posts
-            </p>
+            <ScrollIndicator text={"Try scrolling why dontcha?"} hoverText={"No like, using the scrool wheel..."}/>
           </div>
 
           <SpeechWithImg/>

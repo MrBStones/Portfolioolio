@@ -28,12 +28,10 @@ export default function TitleText({text, subText}: Readonly<TitleTextProps>) {
     const reversedText = text.split("").reverse().join("")
 
     useGSAP(() => {
-        const tl = gsap.timeline({repeat: -1, yoyo: true, repeatDelay: 2, delay: 2});
+        const tl = gsap.timeline({repeat: -1, yoyo: true, repeatDelay: 2});
         tl.from("#title", {
             duration: duration,
-            color: light,
             ease: easeMode,
-            rotateY: 180,
         })
         .to("#title", {
             duration: duration,
@@ -45,7 +43,7 @@ export default function TitleText({text, subText}: Readonly<TitleTextProps>) {
             duration: 2,
             text: {delimiter: "", value: subText,},
             ease: easeMode,
-        })
+        }, "<")
     }, {scope : container})
 
     return (
