@@ -9,6 +9,7 @@ import Image from 'next/image'
 import BgLogo from "~/app/_components/bglogo";
 import SpeechBubble from "~/app/_components/speechBubble";
 import SpeechWithImg from "./_components/speechwimg";
+import TitleText from "./_components/titletext";
 
 
 export default async function Home() {
@@ -36,9 +37,7 @@ export default async function Home() {
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 z-0">
           <div className={"container flex flex-col h-screen"}>
             <div className={"container flex flex-col h-sc items-center justify-center h-3/4"}>
-              <h1 className="text-7xl text-light">
-                Hello (portfolio in progress)
-              </h1>
+              <TitleText text={"Portfolio"} subText="(Still a work in progress... )"/>
             </div>
             <p className="text-2xl">
               {hello ? hello.greeting : "Loading tRPC query..."}
