@@ -37,7 +37,7 @@ export default function ScrollIndicator({text, hoverText}: {text: string, hoverT
     return (
         <div ref={container} className="container flex flex-row text-2xl text-light gap-2" >
             <p id={"text"} onMouseOver={handleMouseOver}>{text}</p>
-            <div id={"down"}>   ↓↓↓</div>
+            <div id={"down"}>↓↓↓</div>
         </div>
     );
 }
