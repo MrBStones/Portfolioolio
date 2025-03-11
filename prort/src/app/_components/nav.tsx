@@ -14,7 +14,7 @@ gsap.registerPlugin(TextPlugin);
 
 export default function Nav() {
     const container = useRef<HTMLDivElement>(null);
-    const [isOpen, setOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const containerDefault = {width: 65, height: 65};
 
@@ -25,9 +25,6 @@ export default function Nav() {
             tl.from("#nav", {duration: 0.5, width: containerDefault.width, height: containerDefault.height, ease: "power2.in"})
             .to("#nav", {duration: 0.5, width: 400, height: 200, ease: "power2.out"}, "<")
             .to("#nav p", {duration: 0.5, x: 0, opacity: 1, stagger: 0.1, ease: "power2.out"}, "<");
-            
-            // tl2.to("#nav p", {duration: 0.6, stagger: 0.6, x: 10, ease: "power2.out"})
-            // .to("#nav p", {duration: 1, stagger: 0.6, x: 0, ease: "power2.out"},);
         } else {
             tl.to("#nav p", {duration: 0.25, opacity: 0, x: 40, stagger: 0.1, ease: "power2.in"})
             .to("#nav", {duration: 0.5, width: containerDefault.width , height: containerDefault.height, ease: "power2.inOut"}, "<")
@@ -47,7 +44,7 @@ export default function Nav() {
 
 
                 <div className="container backdrop-filter flex flex-row items-center justify-end gap-2">
-                    <Hamburger toggled={isOpen} toggleAction={setOpen} />
+                    <Hamburger toggled={isOpen} toggleAction={setIsOpen} />
                     {/*<p className="text-center text-2xl text-white">
                         {session && <span>Logged in as {session.user?.name}</span>}
                     </p>*/}

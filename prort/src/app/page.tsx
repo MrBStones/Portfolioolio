@@ -17,7 +17,7 @@ export default async function Home() {
   return (
     <HydrateClient>
       <main
-          className="flex min-h-screen select-none flex-col items-center justify-center bg-background text-light -z-20">
+          className="flex min-h-screen select-none flex-col items-center justify-center text-light -z-20">
         <div className="fixed left-10 top-9 z-10">
           <Logo/>
         </div>
@@ -31,7 +31,7 @@ export default async function Home() {
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 z-0">
           <div className={"container flex flex-col h-screen"}>
             <div className={"container flex flex-col h-sc items-center justify-center h-3/4"}>
-              <TitleText text={"Portfolio"} subText="(Still a work in progress... "/>
+              <TitleText text={"Bjørn Møgelhøj"} subText="(Still a work in progress... "/>
             </div>
             <ScrollIndicator text={"Try scrolling why dontcha?"} hoverText={"No like, using the scrool wheel..."}/>
           </div>

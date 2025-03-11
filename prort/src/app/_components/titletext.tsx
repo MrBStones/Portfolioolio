@@ -37,7 +37,7 @@ export default function TitleText({text, subText}: Readonly<TitleTextProps>) {
             duration: duration,
             color: hero,
             ease: easeMode,
-            text: {delimiter: "", value: text, rtl: true},
+            text: {delimiter: "", value: text, rtl: true,},
         }, "<")
         .to("#scramble", {
             duration: 2,
@@ -47,7 +47,7 @@ export default function TitleText({text, subText}: Readonly<TitleTextProps>) {
     }, {scope : container})
 
     return (
-        <div ref={container} className="w-[16rem]">
+        <div ref={container} className="w-[26rem]">
             <h1 id="title" className="text-6xl text-light">
             {reversedText}
             </h1>
