@@ -15,22 +15,26 @@ gsap.registerPlugin(TextPlugin);
 export default function Nav() {
     const container = useRef<HTMLDivElement>(null);
     const [isOpen, setIsOpen] = useState(false);
-
+    let fst = true
     const containerDefault = {width: 65, height: 65};
 
     useGSAP(() => {
+        if (fst) {
+            gsap.set("#nav", {width: containerDefault.width, height: containerDefault.height});
+            gsap.set("#nav p", {opacity: 0, x: 40});
+            fst = false;
+        }
+
         const tl = gsap.timeline();
-        const tl2 = gsap.timeline({repeat: -1, repeatDelay: 5, delay: 5});
         if (isOpen) {
+            
+
             tl.from("#nav", {duration: 0.5, width: containerDefault.width, height: containerDefault.height, ease: "power2.in"})
             .to("#nav", {duration: 0.5, width: 400, height: 200, ease: "power2.out"}, "<")
             .to("#nav p", {duration: 0.5, x: 0, opacity: 1, stagger: 0.1, ease: "power2.out"}, "<");
         } else {
             tl.to("#nav p", {duration: 0.25, opacity: 0, x: 40, stagger: 0.1, ease: "power2.in"})
             .to("#nav", {duration: 0.5, width: containerDefault.width , height: containerDefault.height, ease: "power2.inOut"}, "<")
-
-            tl2.clear();
-            
         }
     }, [isOpen] );
 
