@@ -10,6 +10,7 @@ import SpeechBubble from "~/app/_components/speechBubble";
 import SpeechWithImg from "./_components/speechwimg";
 import TitleText from "./_components/titletext";
 import ScrollIndicator from "./_components/scrollindicator";
+import Bookshelf from "./_components/bookshelf";
 
 
 export default async function Home() {
@@ -31,6 +32,7 @@ export default async function Home() {
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 z-0">
           <div className={"container flex flex-col h-screen"}>
             <div className={"container flex flex-col h-sc items-center justify-center h-3/4"}>
+              <img src="logog.svg" className="text-hero"></img>
               <TitleText text={"Bjørn Møgelhøj"} subText="(Still a work in progress... "/>
             </div>
             <ScrollIndicator text={"Try scrolling why dontcha?"} hoverText={"No like, using the scrool wheel..."}/>
@@ -38,9 +40,19 @@ export default async function Home() {
 
           <SpeechWithImg/>
 
-          <div className={"container flex flex-row h-sc h-128 bg-dark/50 backdrop-blur-sm rounded-xl"}>
-            <p className={"p-5 text-5xl"}>BOOKSHELF</p>
+          <Bookshelf/>
+
+          <h1 className="text-2xl ">Current Colors:</h1>
+          <div className={"container flex flex-row outline-dashed outline-light outline-offset-4 rounded-xl gap-3 p-3"}>
+            <div className="bg-background h-28 w-full">background</div>
+            <div className="bg-dark h-28 w-full">dark</div>
+            <div className="bg-light h-28 w-full text-background">light</div>
+            <div className="bg-hero h-28 w-full text-background">hero</div>
+            <div className="bg-dark-hero h-28 w-full text-background">dark-hero</div>
+            
+            
           </div>
+
 
           <Ratio
               leftText={"～(■_■)～♪"}
