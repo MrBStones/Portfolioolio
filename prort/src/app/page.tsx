@@ -58,22 +58,6 @@ export default async function Home() {
               rightText={"(づ ᴗ _ᴗ)づ♡"}
               odd={false}
           />
-          <Ratio leftText={"♪((ヽ(ᐛ)ﾉ))♬"} rightText={"♪(๑ᴖ◡ᴖ๑)♪"} odd={true}/>
-          <Ratio
-              leftText={"( 〃● ₃● ) ~"}
-              rightText={"ヾ(⌐■_■)ノ♪"}
-              odd={false}
-          />
-          <Ratio
-              leftText={"♪♪♪ ヽ( ᐖゞ)"}
-              rightText={"☆ﾟ°˖* ᕕ( ᐛ )ᕗ"}
-              odd={true}
-          />
-          <Ratio
-              leftText={"O(∩_∩)O"}
-              rightText={"ヽ( ▀̿ Ĺ̯ ▀̿)ノ♪♬"}
-              odd={false}
-          />
           <TitleText text={"Bjørn Møgelhøj"} subText="(Still a work in progress... "/>
 
         </div>
