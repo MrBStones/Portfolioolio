@@ -13,8 +13,8 @@ export default function ScrollIndicator({text, hoverText}: {text: string, hoverT
 
     const { contextSafe } = useGSAP(() => {
         const tl = gsap.timeline({repeat: -1, yoyo: true,});
-        tl.from("#down", {duration: 0.5, y: -10, ease: "power2.in"})
-        .to("#down", {duration: 0.2, y: 10, ease: "linear"})
+        tl.from("#down", {duration: 0.35, y: -10, ease: "power2.in"})
+        .to("#down", {duration: 0.15, y: 10, ease: "linear"})
     }, {scope: container});
 
     const handleMouseOver = contextSafe(() => {

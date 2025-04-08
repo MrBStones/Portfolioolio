@@ -33,7 +33,6 @@ export default async function Home() {
           <div className={"container flex flex-col h-screen"}>
             <div className={"container flex flex-col h-sc items-center justify-center h-3/4"}>
               <img src="logog.svg" className="text-hero"></img>
-              <TitleText text={"Bjørn Møgelhøj"} subText="(Still a work in progress... "/>
             </div>
             <ScrollIndicator text={"Try scrolling why dontcha?"} hoverText={"No like, using the scrool wheel..."}/>
           </div>
@@ -75,6 +74,8 @@ export default async function Home() {
               rightText={"ヽ( ▀̿ Ĺ̯ ▀̿)ノ♪♬"}
               odd={false}
           />
+          <TitleText text={"Bjørn Møgelhøj"} subText="(Still a work in progress... "/>
+
         </div>
       </main>
     </HydrateClient>

@@ -27,7 +27,7 @@ export default function Logo() {
           "container rounded-xl bg-dark/50 p-2 backdrop-blur-sm backdrop-filter"
         }
       >
-        <div className={"size-18 text-hero"}>
+        <div className={"size-18 text-light"}>
           <Tintable />
         </div>
       </div>
