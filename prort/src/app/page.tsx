@@ -11,6 +11,7 @@ import SpeechWithImg from "./_components/speechwimg";
 import TitleText from "./_components/titletext";
 import ScrollIndicator from "./_components/scrollindicator";
 import Bookshelf from "./_components/bookshelf";
+import NameLogo from "./_components/name/name";
 
 
 export default async function Home() {
@@ -32,7 +33,8 @@ export default async function Home() {
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 z-0">
           <div className={"container flex flex-col h-screen"}>
             <div className={"container flex flex-col h-sc items-center justify-center h-3/4"}>
-              <img src="logog.svg" className="text-hero"></img>
+              <NameLogo/>
+             
             </div>
             <ScrollIndicator text={"Try scrolling why dontcha?"} hoverText={"No like, using the scrool wheel..."}/>
           </div>
