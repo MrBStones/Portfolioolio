@@ -1,0 +1,141 @@
+"use client";
+
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import BsItem from "./bsitem";
+import { bsData } from "./bsdata";
+import { useRef, useState } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { CustomEase } from "gsap/CustomEase";
+import { EasePack } from "gsap/EasePack";
+
+gsap.registerPlugin(ScrollTrigger, EasePack, CustomEase);
+
+export default function Bookshelf() {
+  const scrollTopRef = useRef<HTMLDivElement>(null);
+  const scrollBotRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    CustomEase.create(
+      "speedEase",
+      "M0,0 C0,0 0.05,0.49 0.597,0.784 0.832,0.91 1,1 1,1 ",
+    );
+    let targetsTop = gsap.utils.toArray("#scrollTop");
+    let targetsBot = gsap.utils.toArray("#scrollBot");
+
+    const tl1 = gsap.timeline({ paused: true, scrollTrigger: "#scrollTop" });
+    // start animation
+    tl1
+      .from(targetsTop, {
+        duration: 3,
+        opacity: 0,
+        x: 824,
+        ease: "speedEase",
+      })
+      .from(
+        targetsBot,
+        {
+          duration: 3,
+          opacity: 0,
+          x: -824,
+          ease: "speedEase",
+        },
+        "<",
+      )
+      .call(() => {
+        // start the carousel animation when the page loads
+        tl2.play();
+      });
+
+    const tl2 = gsap.timeline({
+      paused: true,
+      repeat: -1,
+      onRepeat: () => {
+        // Directly manipulate the DOM to move the first child to the end
+        if (scrollTopRef.current) {
+          const firstChild = scrollTopRef.current.firstElementChild;
+          if (firstChild) {
+            scrollTopRef.current.appendChild(firstChild); // Move the first child to the end
+          }
+        }
+        if (scrollBotRef.current) {
+          const lastChild = scrollBotRef.current.lastElementChild;
+          if (lastChild) {
+            scrollBotRef.current.insertBefore(
+              // Move the last child to the beginning
+              lastChild,
+              scrollBotRef.current.firstElementChild,
+            );
+          }
+        }
+      },
+    });
+    // carousel animation
+    tl2
+      .to(targetsTop, {
+        duration: 3,
+        x: -412,
+        ease: "linear",
+      })
+      .to(
+        targetsBot,
+        {
+          duration: 3,
+          x: 412,
+          ease: "linear",
+        },
+        "<",
+      );
+  });
+
+  return (
+    <div
+      id="bookshelf"
+      className={
+        "h-sc container flex h-128 flex-col overflow-clip rounded-xl bg-dark/50 backdrop-blur-sm"
+      }
+    >
+      <div className="container flex flex-row justify-center">
+        <p className={"p-5 text-5xl"}>BOOKSHELF</p>
+      </div>
+      <div className="container flex h-full flex-col justify-center gap-3">
+        <div
+          ref={scrollTopRef}
+          id="scrollTop"
+          className="container flex flex-row justify-center gap-3 overflow-visible"
+        >
+          {bsData.map((item, index) => {
+            const isEven = index % 2 === 0;
+            if (isEven)
+              return (
+                <BsItem
+                  key={index}
+                  num={item.num}
+                  title={item.title}
+                  description={item.description}
+                />
+              );
+          })}
+        </div>
+        <div
+          ref={scrollBotRef}
+          id="scrollBot"
+          className="container flex flex-row justify-center gap-3 overflow-visible"
+        >
+          {bsData.map((item, index) => {
+            const isOdd = index % 2 !== 0;
+            if (isOdd)
+              return (
+                <BsItem
+                  key={index}
+                  num={item.num}
+                  title={item.title}
+                  description={item.description}
+                />
+              );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -8,9 +8,9 @@ import Image from 'next/image'
 import BgLogo from "~/app/_components/bglogo";
 import SpeechBubble from "~/app/_components/speechBubble";
 import SpeechWithImg from "./_components/speechwimg";
-import TitleText from "./_components/titletext";
+import TitleText from "./_components/name/titletext";
 import ScrollIndicator from "./_components/scrollindicator";
-import Bookshelf from "./_components/bookshelf";
+import Bookshelf from "./_components/bookshelf/bookshelf";
 import NameLogo from "./_components/name/name";
 
 
@@ -44,7 +44,7 @@ export default async function Home() {
           <Bookshelf/>
 
           <h1 className="text-2xl ">Current Colors:</h1>
-          <div className={"container flex flex-row outline-dashed outline-light outline-offset-4 rounded-xl gap-3 p-3"}>
+          <div className={"container flex flex-row outline-dashed outline-light -outline-offset-4 rounded-xl gap-3 p-3"}>
             <div className="bg-background h-28 w-full">background</div>
             <div className="bg-dark h-28 w-full">dark</div>
             <div className="bg-light h-28 w-full text-background">light</div>
