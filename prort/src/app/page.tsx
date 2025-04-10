@@ -19,7 +19,7 @@ export default async function Home() {
   return (
     <HydrateClient>
       <main
-          className="flex min-h-screen select-none flex-col items-center justify-center text-light -z-20">
+          className="flex min-h-screen select-none flex-col items-center justify-center text-light -z-20 overflow-hidden">
         <div className="fixed left-10 top-9 z-10">
           <Logo/>
         </div>
