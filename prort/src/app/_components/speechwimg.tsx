@@ -57,7 +57,7 @@ export default function SpeechWithImg() {
         }}
       >
         <Image
-          src={"/nextjs-github-pages/hisketch.png"}
+          src={"/MrBStones.github.io/hisketch.png"}
           width={694}
           height={841}
           alt={"Sketch of scrunches"}
@@ -91,7 +91,7 @@ export default function SpeechWithImg() {
           left={false}
         />
         <Image
-          src={"/nextjs-github-pages/showingsketch.png"}
+          src={"/MrBStones.github.io/showingsketch.png"}
           width={694}
           height={841}
           alt={"Sketch of scrunches"}
