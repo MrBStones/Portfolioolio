@@ -6,7 +6,7 @@ export default function BgLogo() {
   return (
     <div className={"size-128 opacity-10"}>
       <Image
-        src={"scrunchesvgwhite.svg"}
+        src={"/nextjs-github-pages/scrunchesvgwhite.svg"}
         alt={"Scrunches Logo"}
         height={500}
         width={500}
