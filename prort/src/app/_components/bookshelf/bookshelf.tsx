@@ -14,6 +14,8 @@ gsap.registerPlugin(ScrollTrigger, EasePack, CustomEase);
 export default function Bookshelf() {
   const scrollTopRef = useRef<HTMLDivElement>(null);
   const scrollBotRef = useRef<HTMLDivElement>(null);
+  const scrollTopRef2 = useRef<HTMLDivElement>(null);
+  const scrollBotRef2 = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     CustomEase.create(
@@ -68,6 +70,22 @@ export default function Bookshelf() {
             );
           }
         }
+        if (scrollTopRef2.current) {
+          const firstChild = scrollTopRef2.current.firstElementChild;
+          if (firstChild) {
+            scrollTopRef2.current.appendChild(firstChild); // Move the first child to the end
+          }
+        }
+        if (scrollBotRef2.current) {
+          const lastChild = scrollBotRef2.current.lastElementChild;
+          if (lastChild) {
+            scrollBotRef2.current.insertBefore(
+              // Move the last child to the beginning
+              lastChild,
+              scrollBotRef2.current.firstElementChild,
+            );
+          }
+        }
       },
     });
     // carousel animation
@@ -98,7 +116,7 @@ export default function Bookshelf() {
       <div className="container flex flex-row justify-center">
         <p className={"p-5 text-5xl"}>BOOKSHELF</p>
       </div>
-      <div className="container flex h-full flex-col justify-center gap-3">
+      <div className="container flex h-full -rotate-6 flex-col justify-center gap-3">
         <div
           ref={scrollTopRef}
           id="scrollTop"
@@ -125,6 +143,42 @@ export default function Bookshelf() {
           {bsData.map((item, index) => {
             const isOdd = index % 2 !== 0;
             if (isOdd)
+              return (
+                <BsItem
+                  key={index}
+                  num={item.num}
+                  title={item.title}
+                  description={item.description}
+                />
+              );
+          })}
+        </div>
+        <div
+          ref={scrollTopRef2}
+          id="scrollTop"
+          className="container flex flex-row justify-center gap-3 overflow-visible"
+        >
+          {bsData.map((item, index) => {
+            const isOdd = index % 2 !== 0;
+            if (isOdd)
+              return (
+                <BsItem
+                  key={index}
+                  num={item.num}
+                  title={item.title}
+                  description={item.description}
+                />
+              );
+          })}
+        </div>
+        <div
+          ref={scrollBotRef2}
+          id="scrollBot"
+          className="container flex flex-row justify-center gap-3 overflow-visible"
+        >
+          {bsData.map((item, index) => {
+            const isEven = index % 2 === 0;
+            if (isEven)
               return (
                 <BsItem
                   key={index}
