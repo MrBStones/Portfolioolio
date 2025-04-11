@@ -1,6 +1,6 @@
 "use client";
 
-import { bsItemProps } from "./bsdata";
+import type { bsItemProps } from "./bsdata";
 
 export default function BsItem({
   num,

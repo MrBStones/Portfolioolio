@@ -4,26 +4,30 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import BsItem from "./bsitem";
 import { bsData } from "./bsdata";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/CustomEase";
 import { EasePack } from "gsap/EasePack";
 
-gsap.registerPlugin(ScrollTrigger, EasePack, CustomEase);
-
 export default function Bookshelf() {
+  /* eslint-disable */
+  gsap.registerPlugin(ScrollTrigger, EasePack, CustomEase);
+  /* eslint-enable */
+
   const scrollTopRef = useRef<HTMLDivElement>(null);
   const scrollBotRef = useRef<HTMLDivElement>(null);
   const scrollTopRef2 = useRef<HTMLDivElement>(null);
   const scrollBotRef2 = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
+    /* eslint-disable */
     CustomEase.create(
       "speedEase",
       "M0,0 C0,0 0.05,0.49 0.597,0.784 0.832,0.91 1,1 1,1 ",
     );
-    let targetsTop = gsap.utils.toArray("#scrollTop");
-    let targetsBot = gsap.utils.toArray("#scrollBot");
+    /* eslint-enable */
+    const targetsTop = gsap.utils.toArray("#scrollTop");
+    const targetsBot = gsap.utils.toArray("#scrollBot");
 
     const tl1 = gsap.timeline({ paused: true, scrollTrigger: "#scrollTop" });
     // start animation
