@@ -6,7 +6,7 @@ export default function BgLogo() {
   return (
     <div className={"size-128 opacity-10"}>
       <Image
-        src={"/MrBStones.github.io/scrunchesvgwhite.svg"}
+        src={"/scrunchesvgwhite.svg"}
         alt={"Scrunches Logo"}
         height={500}
         width={500}
