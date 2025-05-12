@@ -28,6 +28,7 @@ export default function BsItemHover({
       ease: "power2.out",
       boxShadow: "0 0 20px rgba(0, 0, 0, 0.5)",
       backgroundColor: heroColor,
+      zIndex: 10,
     });
   });
 
@@ -35,12 +36,12 @@ export default function BsItemHover({
     const tl = gsap.timeline();
     tl.to(container.current, {
       duration: 0,
-      zIndex: 8,
+      zIndex: 9,
     }).to(container.current, {
       duration: 0.5,
       scale: 1,
       ease: "power2.out",
-
+      zIndex: 8,
       backgroundColor: lightColor,
     });
   });
