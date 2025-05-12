@@ -19,6 +19,7 @@ export default {
         '24': '6rem',
         'bs-item-w': '25rem',
         'bs-item-h': '6.25rem',
+        'bv-image-h': '13.25rem',
         '128': '32rem',
       },
       fontSize: {

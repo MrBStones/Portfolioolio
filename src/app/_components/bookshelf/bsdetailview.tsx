@@ -32,7 +32,7 @@ export default function BsDetailView({
 }: Readonly<bsDetailViewProps>) {
   return (
     <>
-      <div className="container flex w-128 flex-col gap-3 rounded-3xl bg-dark/50 p-3 backdrop-blur-xl backdrop-filter">
+      <div className="container flex max-w-128 flex-col gap-3 rounded-3xl bg-dark/50 p-3 backdrop-blur-xl backdrop-filter">
         <div className="container flex w-full flex-row gap-3">
           <img src={icon} alt={iconAlt} className="w-10 text-light" />
           <p className="text-right">{description}</p>
@@ -55,11 +55,11 @@ export default function BsDetailView({
               </div>
             </a>
           </div>
-          <div className="h-full w-full">
+          <div className="w-full">
             <img
               src={image}
               alt={imageAlt}
-              className="rounded-xl object-cover"
+              className="h-bv-image-h w-full rounded-xl object-cover"
             />
           </div>
         </div>
