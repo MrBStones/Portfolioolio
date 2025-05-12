@@ -14,8 +14,8 @@ export default function BsItemHover({
 }: Readonly<bsItemProps>) {
   const container = useRef<HTMLDivElement>(null);
   const { contextSafe } = useGSAP({ scope: container });
-  const heroColor = tailwindConfig.theme.extend.colors["hero"];
-  const lightColor = tailwindConfig.theme.extend.colors["light"];
+  const heroColor = tailwindConfig.theme.extend.colors.hero;
+  const lightColor = tailwindConfig.theme.extend.colors.light;
 
   const mouseEnter = contextSafe(() => {
     const tl = gsap.timeline();
