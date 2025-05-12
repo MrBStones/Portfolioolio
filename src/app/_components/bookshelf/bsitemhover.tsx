@@ -52,7 +52,7 @@ export default function BsItemHover({
         ref={container}
         onMouseEnter={mouseEnter}
         onMouseLeave={mouseLeave}
-        className="w-bs-item-w rounded-xl bg-light"
+        className="w-bs-item-w min-w-[400px] rounded-xl bg-light"
         id="bsItemHover"
       >
         <BsItem num={num} title={title} description={description} bgColor="" />

@@ -13,7 +13,7 @@ export default function BsItem({
   return (
     <>
       <div
-        className={`container flex h-bs-item-h min-w-[400px] flex-row rounded-xl text-dark ${bgColor}`}
+        className={`container flex h-bs-item-h flex-row rounded-xl text-dark ${bgColor}`}
       >
         <div className="container flex h-full w-fit flex-row content-center items-center justify-center text-6xl">
           <h1 className="w-bs-item-h text-center">{num}</h1>
