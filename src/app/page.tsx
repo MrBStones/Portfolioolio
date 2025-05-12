@@ -8,6 +8,7 @@ import TitleText from "./_components/name/titletext";
 import ScrollIndicator from "./_components/scrollindicator";
 import Bookshelf from "./_components/bookshelf/bookshelf";
 import NameLogo from "./_components/name/name";
+import BsDetailView from "./_components/bookshelf/bsdetailview";
 
 export default async function Home() {
   return (
@@ -37,10 +38,25 @@ export default async function Home() {
               hoverText={"No like, using the scrool wheel..."}
             />
           </div>
-
           <SpeechWithImg />
-
           <Bookshelf />
+          <BsDetailView
+            description={
+              "This is a project was created during the third semester of university. The site is written in c# using asp.net and is hosted on azure. Bla "
+            }
+            linkOneText={"GitHub repo → "}
+            linkOne={"https://github.com/ITU-BDSA2024-GROUP9/Chirp"}
+            linkTwoText={"Go to site → "}
+            linkTwo={"https://bdsagroup9chirprazor.azurewebsites.net/"}
+            image={"chirpimage.png"}
+            bsItem={{
+              num: "04",
+              title: "CHIRP",
+              description: "twitter clone",
+            }}
+            technologies={["asp.net", "C#", "azure"]}
+            icon={"language_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"}
+          />
 
           <h1 className="text-2xl">Current Colors:</h1>
           <div
@@ -56,7 +72,6 @@ export default async function Home() {
               dark-hero
             </div>
           </div>
-
           <Ratio
             leftText={"～(■_■)～♪"}
             rightText={"(づ ᴗ _ᴗ)づ♡"}

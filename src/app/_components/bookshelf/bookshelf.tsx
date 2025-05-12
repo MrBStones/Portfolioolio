@@ -2,7 +2,7 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import BsItem from "./bsitem";
+import BsItemHover from "./bsitemhover";
 import { bsData } from "./bsdata";
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -19,7 +19,7 @@ export default function Bookshelf() {
   const scrollTopRef2 = useRef<HTMLDivElement>(null);
   const scrollBotRef2 = useRef<HTMLDivElement>(null);
 
-  useGSAP(() => {
+  const { contextSafe } = useGSAP(() => {
     /* eslint-disable */
     CustomEase.create(
       "speedEase",
@@ -110,12 +110,30 @@ export default function Bookshelf() {
       );
   });
 
+  const onClick = contextSafe(() => {
+    const tl = gsap.timeline();
+    tl.to("#bookshelf div *", {
+      duration: 1,
+      scale: 1,
+      y: 60,
+      yoyo: true,
+      repeat: 1,
+      ease: "power1.Out",
+      alpha: 0,
+      stagger: {
+        amount: 1.5,
+        from: "start",
+      },
+    });
+  });
+
   return (
     <div
       id="bookshelf"
       className={
-        "h-sc container flex h-128 flex-col overflow-clip rounded-xl bg-dark/50 backdrop-blur-sm"
+        "h-sc container flex h-128 cursor-pointer flex-col overflow-clip rounded-xl bg-dark/50 backdrop-blur-sm"
       }
+      onClick={onClick}
     >
       <div className="container flex flex-row justify-center">
         <p className={"p-5 text-5xl"}>BOOKSHELF</p>
@@ -130,7 +148,7 @@ export default function Bookshelf() {
             const isEven = index % 2 === 0;
             if (isEven)
               return (
-                <BsItem
+                <BsItemHover
                   key={index}
                   num={item.num}
                   title={item.title}
@@ -148,7 +166,7 @@ export default function Bookshelf() {
             const isOdd = index % 2 !== 0;
             if (isOdd)
               return (
-                <BsItem
+                <BsItemHover
                   key={index}
                   num={item.num}
                   title={item.title}
@@ -166,7 +184,7 @@ export default function Bookshelf() {
             const isOdd = index % 2 !== 0;
             if (isOdd)
               return (
-                <BsItem
+                <BsItemHover
                   key={index}
                   num={item.num}
                   title={item.title}
@@ -184,7 +202,7 @@ export default function Bookshelf() {
             const isEven = index % 2 === 0;
             if (isEven)
               return (
-                <BsItem
+                <BsItemHover
                   key={index}
                   num={item.num}
                   title={item.title}

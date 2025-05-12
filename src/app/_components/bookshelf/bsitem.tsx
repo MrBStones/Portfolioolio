@@ -6,10 +6,15 @@ export default function BsItem({
   num,
   title,
   description,
-}: Readonly<bsItemProps>) {
+  bgColor = "bg-light",
+}: Readonly<bsItemProps> & {
+  bgColor?: string;
+}) {
   return (
     <>
-      <div className="container flex h-bs-item-h w-bs-item-w min-w-[400px] flex-row rounded-xl bg-light text-dark">
+      <div
+        className={`container flex h-bs-item-h min-w-[400px] flex-row rounded-xl text-dark ${bgColor}`}
+      >
         <div className="container flex h-full w-fit flex-row content-center items-center justify-center text-6xl">
           <h1 className="w-bs-item-h text-center">{num}</h1>
         </div>

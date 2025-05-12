@@ -93,13 +93,13 @@ export default function Nav() {
                         {session && <span>Logged in as {session.user?.name}</span>}
                     </p>*/}
         </div>
-        <p className="text-nowrap text-left text-2xl text-light opacity-0">
+        <p className="cursor-pointer text-nowrap text-left text-2xl text-light opacity-0">
           PLACEHOLDER LINK NAME →
         </p>
-        <p className="text-nowrap text-left text-2xl text-light opacity-0">
+        <p className="cursor-pointer text-nowrap text-left text-2xl text-light opacity-0">
           PLACEHOLDER LINK NAME →
         </p>
-        <p className="text-nowrap text-left text-2xl text-light opacity-0">
+        <p className="cursor-pointer text-nowrap text-left text-2xl text-light opacity-0">
           PLACEHOLDER LINK NAME →
         </p>
       </div>

@@ -114,7 +114,7 @@ export default function Hamburger({
     <div ref={container}>
       <div
         id={"container"}
-        className={`container flex size-12 flex-col items-center justify-center gap-1 rounded bg-dark-hero`}
+        className={`container flex size-12 cursor-pointer flex-col items-center justify-center gap-1 rounded bg-dark-hero`}
         onClick={handleToggle}
       >
         <svg
