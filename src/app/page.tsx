@@ -44,9 +44,9 @@ export default async function Home() {
             description={
               "This is a project was created during the third semester of university. The site is written in c# using asp.net and is hosted on azure. Bla "
             }
-            linkOneText={"GitHub repo → "}
+            linkOneText={"GitHub repo →"}
             linkOne={"https://github.com/ITU-BDSA2024-GROUP9/Chirp"}
-            linkTwoText={"Go to site → "}
+            linkTwoText={"Go to site →"}
             linkTwo={"https://bdsagroup9chirprazor.azurewebsites.net/"}
             image={"chirpimage.png"}
             bsItem={{
