@@ -8,12 +8,14 @@ import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/CustomEase";
 import { EasePack } from "gsap/EasePack";
+import { useRouter } from "next/navigation";
 
 export default function Bookshelf() {
   /* eslint-disable */
   gsap.registerPlugin(ScrollTrigger, EasePack, CustomEase);
   /* eslint-enable */
 
+  const router = useRouter();
   const scrollTopRef = useRef<HTMLDivElement>(null);
   const scrollBotRef = useRef<HTMLDivElement>(null);
   const scrollTopRef2 = useRef<HTMLDivElement>(null);
@@ -116,14 +118,15 @@ export default function Bookshelf() {
       duration: 1,
       scale: 1,
       y: 60,
-      yoyo: true,
-      repeat: 1,
       ease: "power1.Out",
       alpha: 0,
       stagger: {
         amount: 1.5,
         from: "start",
       },
+    }).call(() => {
+      // Navigate to the projects page
+      router.push("/projects");
     });
   });
 

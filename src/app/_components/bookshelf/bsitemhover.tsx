@@ -11,7 +11,8 @@ export default function BsItemHover({
   num,
   title,
   description,
-}: Readonly<bsItemProps>) {
+  fixedWidth = true,
+}: Readonly<bsItemProps> & { fixedWidth?: boolean }) {
   const container = useRef<HTMLDivElement>(null);
   const { contextSafe } = useGSAP({ scope: container });
   const heroColor = tailwindConfig.theme.extend.colors.hero;
@@ -42,6 +43,7 @@ export default function BsItemHover({
       scale: 1,
       ease: "power2.out",
       zIndex: 8,
+      boxShadow: "0 0 0 rgba(0, 0, 0, 0)",
       backgroundColor: lightColor,
     });
   });
@@ -52,7 +54,7 @@ export default function BsItemHover({
         ref={container}
         onMouseEnter={mouseEnter}
         onMouseLeave={mouseLeave}
-        className="w-bs-item-w min-w-[400px] rounded-xl bg-light"
+        className={`${fixedWidth ? "w-bs-item-w min-w-[400px]" : ""} rounded-xl bg-light`}
         id="bsItemHover"
       >
         <BsItem num={num} title={title} description={description} bgColor="" />

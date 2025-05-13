@@ -14,16 +14,6 @@ export default async function Home() {
   return (
     <HydrateClient>
       <main className="-z-20 flex min-h-screen select-none flex-col items-center justify-center overflow-hidden text-light">
-        <div className="fixed left-10 top-9 z-10">
-          <Logo />
-        </div>
-        <div className="fixed right-10 top-12 z-10">
-          <Nav />
-        </div>
-        <div className="fixed bottom-0 right-0 z-0">
-          <BgLogo />
-        </div>
-
         <div className="container z-0 flex flex-col items-center justify-center gap-12 px-4 py-16">
           <div className={"container flex h-screen flex-col"}>
             <div

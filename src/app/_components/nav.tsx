@@ -5,6 +5,7 @@ import Hamburger from "~/app/_components/hamburger";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { TextPlugin } from "gsap/TextPlugin";
+import Link from "next/link";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(TextPlugin);
@@ -93,13 +94,16 @@ export default function Nav() {
                         {session && <span>Logged in as {session.user?.name}</span>}
                     </p>*/}
         </div>
-        <p className="cursor-pointer text-nowrap text-left text-2xl text-light opacity-0">
+        <Link href={"/projects"}>
+          <p className="text-nowrap text-left text-2xl text-light opacity-0">
+            PROJECTS →
+          </p>
+        </Link>
+
+        <p className="text-nowrap text-left text-2xl text-light opacity-0">
           PLACEHOLDER LINK NAME →
         </p>
-        <p className="cursor-pointer text-nowrap text-left text-2xl text-light opacity-0">
-          PLACEHOLDER LINK NAME →
-        </p>
-        <p className="cursor-pointer text-nowrap text-left text-2xl text-light opacity-0">
+        <p className="text-nowrap text-left text-2xl text-light opacity-0">
           PLACEHOLDER LINK NAME →
         </p>
       </div>
