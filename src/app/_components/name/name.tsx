@@ -1,8 +1,26 @@
 "use client";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
+
 export default function NameLogo() {
+  const svgRef = useRef<HTMLDivElement>(null);
+  useGSAP(
+    () => {
+      gsap.from("#svg1 *", {
+        duration: 1,
+        y: 10,
+        opacity: 0,
+        ease: "power2.out",
+        stagger: 0.1,
+      });
+    },
+    { scope: svgRef },
+  );
+
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full" ref={svgRef}>
       <svg
         width="1280"
         height="720"
@@ -21,8 +39,11 @@ export default function NameLogo() {
             />
           </linearGradient>
         </defs>
-        <g id="layer3" style={{ display: "inline", fill: "currentColor" }}
-            className="text-dark-hero">
+        <g
+          id="layer3"
+          style={{ display: "inline", fill: "currentColor" }}
+          className="text-dark-hero"
+        >
           <path
             id="path21"
             style={{
@@ -63,7 +84,7 @@ export default function NameLogo() {
           <path
             d="m 59.3481,42.3829 -6.9364,-27.261 c -1.1183,-4.3871 -7.3431,-4.3871 -8.4614,0 l -6.9364,27.261 c -0.391,1.5249 -1.564,2.7214 -3.0812,3.1359 L 3.75487,53.769 c -4.371449,1.1965 -4.24631,7.4369 0.16424,8.4614 l 27.79269,6.4515 c 1.5719,0.3676 2.8231,1.5719 3.2297,3.1359 l 9.0088,34.1272 c 1.1418,4.332 7.2962,4.332 8.4379,0 L 61.397,71.8178 c 0.4145,-1.564 1.6579,-2.7683 3.2297,-3.1359 L 92.4194,62.2304 C 96.83,61.2059 96.9551,54.9655 92.5837,53.769 L 62.4058,45.5188 C 60.9121,45.0965 59.7392,43.9 59.3481,42.3829 Z"
             id="path1-3"
-            style={{ display: "inline", fillOpacity: 1,  }}
+            style={{ display: "inline", fillOpacity: 1 }}
             transform="matrix(0.26458333,0,0,0.26458333,148.03199,25.059742)"
           />
           <path
@@ -75,7 +96,7 @@ export default function NameLogo() {
           <path
             d="m -17.233905,510.60411 -2.7762,-10.90904 c -0.4457,-1.75171 -2.9403,-1.75171 -3.3861,0 l -2.7761,10.90904 c -0.1564,0.61 -0.6256,1.087 -1.2278,1.2512 l -12.0742,3.3001 c -1.7517,0.4771 -1.697,2.9717 0.0625,3.3862 l 11.1202,2.5806 c 0.6335,0.1486 1.1261,0.6256 1.2903,1.259 l 3.6051,13.654 c 0.4614,1.736 2.917,1.736 3.3783,0 l 3.6051,-13.654 c 0.1642,-0.6256 0.6647,-1.1104 1.2903,-1.259 l 11.1200004,-2.5806 c 1.768,-0.4067 1.815,-2.9091 0.063,-3.3862 l -12.0745004,-3.3001 c -0.5943,-0.1642 -1.0635,-0.6412 -1.2199,-1.2512 z"
             id="path17"
-            style={{ display: "inline", fillOpacity: 1, }}
+            style={{ display: "inline", fillOpacity: 1 }}
             transform="matrix(0.26458333,0,0,0.26458333,148.03199,25.059742)"
           />
         </g>
