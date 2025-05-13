@@ -20,13 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`bg-background font-jetbrains`}>
       <body className={"overflow-x-hidden bg-background"}>
-        <div className="fixed left-10 top-9 z-10">
+        <div className="fixed left-10 top-9 z-20">
           <Logo />
         </div>
-        <div className="fixed right-10 top-12 z-10">
+        <div className="fixed right-10 top-12 z-20">
           <Nav />
         </div>
-        <div className="fixed bottom-0 right-0 z-0">
+        <div className="fixed bottom-0 right-0 -z-0">
           <BgLogo />
         </div>
         <TRPCReactProvider>{children}</TRPCReactProvider>

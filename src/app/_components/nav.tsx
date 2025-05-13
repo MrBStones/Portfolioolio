@@ -15,24 +15,30 @@ export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const [fst, setFst] = useState(true);
   const containerDefault = { width: 65, height: 65 };
+  const containerOpen = { width: 300, height: 200 };
 
   useGSAP(
     () => {
       if (fst) {
-        gsap.set("#nav p", { opacity: 0, x: 40 });
+        gsap.set("#nav .link", { opacity: 0, x: 40 });
         setFst(false);
+        setIsOpen(false);
       }
 
-      const tl = gsap.timeline();
+      const tl1 = gsap.timeline();
+      const tl2 = gsap.timeline();
+      gsap.killTweensOf("#nav, #nav .link");
+
       if (isOpen) {
-        tl.from("#nav", {
-          duration: 0.5,
-          width: containerDefault.width,
-          height: containerDefault.height,
-          ease: "power2.in",
-        })
+        tl1
+          .from("#nav", {
+            duration: 0.5,
+            width: containerDefault.width,
+            height: containerDefault.height,
+            ease: "power2.in",
+          })
           .from(
-            "#nav p",
+            "#nav .link",
             {
               duration: 0.5,
               x: 40,
@@ -44,11 +50,16 @@ export default function Nav() {
           )
           .to(
             "#nav",
-            { duration: 0.5, width: 400, height: 200, ease: "power2.out" },
+            {
+              duration: 0.5,
+              width: containerOpen.width,
+              height: containerOpen.height,
+              ease: "power2.out",
+            },
             "<",
           )
           .to(
-            "#nav p",
+            "#nav .link",
             {
               duration: 0.5,
               x: 0,
@@ -59,13 +70,14 @@ export default function Nav() {
             "<",
           );
       } else {
-        tl.to("#nav p", {
-          duration: 0.25,
-          opacity: 0,
-          x: 40,
-          stagger: 0.1,
-          ease: "power2.in",
-        })
+        tl2
+          .to("#nav .link", {
+            duration: 0.25,
+            opacity: 0,
+            x: 40,
+            stagger: 0.1,
+            ease: "power2.in",
+          })
           .to(
             "#nav",
             {
@@ -76,7 +88,7 @@ export default function Nav() {
             },
             "<",
           )
-          .set("#nav p", { opacity: 0, x: 40 });
+          .set("#nav .link", { opacity: 0, x: 40 });
       }
     },
     { dependencies: [isOpen], scope: container },
@@ -94,18 +106,29 @@ export default function Nav() {
                         {session && <span>Logged in as {session.user?.name}</span>}
                     </p>*/}
         </div>
-        <Link href={"/projects"}>
-          <p className="text-nowrap text-left text-2xl text-light opacity-0">
+        <Link href={"/"} className="link" onClick={() => setIsOpen(false)}>
+          <p className="link text-nowrap text-left text-2xl text-light opacity-0">
+            HOME →
+          </p>
+        </Link>
+        <Link
+          href={"/projects"}
+          className="link"
+          onClick={() => setIsOpen(false)}
+        >
+          <p className="link text-nowrap text-left text-2xl text-light opacity-0">
             PROJECTS →
           </p>
         </Link>
-
-        <p className="text-nowrap text-left text-2xl text-light opacity-0">
-          PLACEHOLDER LINK NAME →
-        </p>
-        <p className="text-nowrap text-left text-2xl text-light opacity-0">
-          PLACEHOLDER LINK NAME →
-        </p>
+        <Link
+          href={"/projects"}
+          className="link"
+          onClick={() => setIsOpen(false)}
+        >
+          <p className="link text-nowrap text-left text-2xl text-light opacity-0">
+            CONTACT →
+          </p>
+        </Link>
       </div>
     </div>
   );

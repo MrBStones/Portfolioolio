@@ -34,14 +34,14 @@ export default function Bookshelf() {
     const tl1 = gsap.timeline({ paused: true, scrollTrigger: "#scrollTop" });
     // start animation
     tl1
-      .from(targetsTop, {
+      .from("#scrollTop", {
         duration: 3,
         opacity: 0,
         x: 824,
         ease: "speedEase",
       })
       .from(
-        targetsBot,
+        "#scrollBot",
         {
           duration: 3,
           opacity: 0,
@@ -115,19 +115,21 @@ export default function Bookshelf() {
   const onClick = contextSafe(() => {
     const tl = gsap.timeline();
     tl.to("#bookshelf div *", {
-      duration: 1,
+      duration: 0.5,
       scale: 1,
       y: 60,
       ease: "power1.Out",
       alpha: 0,
       stagger: {
-        amount: 1.5,
+        amount: 1,
         from: "start",
       },
-    }).call(() => {
-      // Navigate to the projects page
-      router.push("/projects");
-    });
+    })
+
+      .call(() => {
+        // Navigate to the projects page
+        router.push("/projects");
+      });
   });
 
   return (
@@ -151,12 +153,13 @@ export default function Bookshelf() {
             const isEven = index % 2 === 0;
             if (isEven)
               return (
-                <BsItemHover
-                  key={index}
-                  num={item.num}
-                  title={item.title}
-                  description={item.description}
-                />
+                <div key={index}>
+                  <BsItemHover
+                    num={item.num}
+                    title={item.title}
+                    description={item.description}
+                  />
+                </div>
               );
           })}
         </div>
@@ -169,12 +172,13 @@ export default function Bookshelf() {
             const isOdd = index % 2 !== 0;
             if (isOdd)
               return (
-                <BsItemHover
-                  key={index}
-                  num={item.num}
-                  title={item.title}
-                  description={item.description}
-                />
+                <div key={index}>
+                  <BsItemHover
+                    num={item.num}
+                    title={item.title}
+                    description={item.description}
+                  />
+                </div>
               );
           })}
         </div>
@@ -187,12 +191,13 @@ export default function Bookshelf() {
             const isOdd = index % 2 !== 0;
             if (isOdd)
               return (
-                <BsItemHover
-                  key={index}
-                  num={item.num}
-                  title={item.title}
-                  description={item.description}
-                />
+                <div key={index}>
+                  <BsItemHover
+                    num={item.num}
+                    title={item.title}
+                    description={item.description}
+                  />
+                </div>
               );
           })}
         </div>
@@ -205,12 +210,13 @@ export default function Bookshelf() {
             const isEven = index % 2 === 0;
             if (isEven)
               return (
-                <BsItemHover
-                  key={index}
-                  num={item.num}
-                  title={item.title}
-                  description={item.description}
-                />
+                <div key={index}>
+                  <BsItemHover
+                    num={item.num}
+                    title={item.title}
+                    description={item.description}
+                  />
+                </div>
               );
           })}
         </div>

@@ -6,6 +6,7 @@ import { bsItemProps } from "./bsdata";
 import BsItem from "./bsitem";
 import { Flip } from "gsap/Flip";
 import { useState } from "react";
+import BsItemHover from "./bsitemhover";
 
 gsap.registerPlugin(Flip);
 
@@ -60,10 +61,11 @@ export default function BsDetailView({
           <img src={icon} alt={iconAlt} className="w-10 text-light" />
           <p className="text-right">{description}</p>
         </div>
-        <BsItem
+        <BsItemHover
           num={bsItem.num}
           title={bsItem.title}
           description={bsItem.description}
+          fixedWidth={false}
         />
         <div
           className={`container flex ${toggled ? "flex-col" : "flex-row"} gap-3`}

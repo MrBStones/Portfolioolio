@@ -1,7 +1,7 @@
 "use client";
 
 import type { Dispatch, SetStateAction } from "react";
-import { useRef } from "react";
+import { use, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import tailwindConfig from "../../../tailwind.config";
@@ -37,78 +37,83 @@ export default function Hamburger({
   const { contextSafe } = useGSAP({ scope: container });
 
   const handleToggle = contextSafe(() => {
-    if (toggled) {
-      const tl = gsap.timeline();
-      tl.to("#top", {
-        duration: duration,
-        attr: { d: straightLineTop },
-        ease: easeMode,
-      })
-        .to(
-          "#mid",
-          {
-            duration: duration,
-            attr: { d: straightLineMid },
-            ease: easeMode,
-          },
-          "<",
-        )
-        .to(
-          "#bot",
-          {
-            duration: duration,
-            attr: { d: straightLineBot },
-            ease: easeMode,
-          },
-          "<",
-        )
-        .to(
-          "#container",
-          {
-            duration: duration,
-            backgroundColor: originalColor,
-            ease: easeMode,
-          },
-          "<",
-        );
-    } else {
-      const tl = gsap.timeline();
-      tl.to("#top", {
-        duration: duration,
-        attr: { d: originalPathTop },
-        ease: easeMode,
-      })
-        .to(
-          "#mid",
-          {
-            duration: duration,
-            attr: { d: originalPathMid },
-            ease: easeMode,
-          },
-          "<",
-        )
-        .to(
-          "#bot",
-          {
-            duration: duration,
-            attr: { d: originalPathBot },
-            ease: easeMode,
-          },
-          "<",
-        )
-        .to(
-          "#container",
-          {
-            duration: duration,
-            backgroundColor: newColor,
-            ease: easeMode,
-          },
-          "<",
-        );
-    }
-
     toggleAction(!toggled);
   });
+
+  useGSAP(
+    () => {
+      if (!toggled) {
+        const tl = gsap.timeline();
+        tl.to("#top", {
+          duration: duration,
+          attr: { d: straightLineTop },
+          ease: easeMode,
+        })
+          .to(
+            "#mid",
+            {
+              duration: duration,
+              attr: { d: straightLineMid },
+              ease: easeMode,
+            },
+            "<",
+          )
+          .to(
+            "#bot",
+            {
+              duration: duration,
+              attr: { d: straightLineBot },
+              ease: easeMode,
+            },
+            "<",
+          )
+          .to(
+            "#container",
+            {
+              duration: duration,
+              backgroundColor: originalColor,
+              ease: easeMode,
+            },
+            "<",
+          );
+      } else {
+        const tl = gsap.timeline();
+        tl.to("#top", {
+          duration: duration,
+          attr: { d: originalPathTop },
+          ease: easeMode,
+        })
+          .to(
+            "#mid",
+            {
+              duration: duration,
+              attr: { d: originalPathMid },
+              ease: easeMode,
+            },
+            "<",
+          )
+          .to(
+            "#bot",
+            {
+              duration: duration,
+              attr: { d: originalPathBot },
+              ease: easeMode,
+            },
+            "<",
+          )
+          .to(
+            "#container",
+            {
+              duration: duration,
+              backgroundColor: newColor,
+              ease: easeMode,
+            },
+            "<",
+          );
+      }
+    },
+    { dependencies: [toggled], scope: container },
+  );
 
   return (
     <div ref={container}>

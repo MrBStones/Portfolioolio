@@ -14,7 +14,12 @@ export default function BsItemHover({
   fixedWidth = true,
 }: Readonly<bsItemProps> & { fixedWidth?: boolean }) {
   const container = useRef<HTMLDivElement>(null);
-  const { contextSafe } = useGSAP({ scope: container });
+  const { contextSafe } = useGSAP(
+    () => {
+      gsap.set(container.current, { zIndex: 8 });
+    },
+    { scope: container },
+  );
   const heroColor = tailwindConfig.theme.extend.colors.hero;
   const lightColor = tailwindConfig.theme.extend.colors.light;
 
@@ -23,6 +28,8 @@ export default function BsItemHover({
     tl.to(container.current, {
       duration: 0,
       zIndex: 10,
+      overwrite: true,
+      position: "relative",
     }).to(container.current, {
       duration: 0.5,
       scale: 1.2,
@@ -30,6 +37,7 @@ export default function BsItemHover({
       boxShadow: "0 0 20px rgba(0, 0, 0, 0.5)",
       backgroundColor: heroColor,
       zIndex: 10,
+      overwrite: true,
     });
   });
 
@@ -38,6 +46,8 @@ export default function BsItemHover({
     tl.to(container.current, {
       duration: 0,
       zIndex: 9,
+      overwrite: true,
+      position: "relative",
     }).to(container.current, {
       duration: 0.5,
       scale: 1,
@@ -45,6 +55,7 @@ export default function BsItemHover({
       zIndex: 8,
       boxShadow: "0 0 0 rgba(0, 0, 0, 0)",
       backgroundColor: lightColor,
+      overwrite: true,
     });
   });
 
