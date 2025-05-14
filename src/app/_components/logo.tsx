@@ -11,7 +11,7 @@ export default function Logo() {
   const container = useRef<HTMLDivElement>(null);
   const { contextSafe } = useGSAP(
     () => {
-      gsap.from(container.current, {
+      gsap.from("#logo", {
         duration: 1,
         x: -100,
         filter: "blur(5px)",
@@ -36,6 +36,7 @@ export default function Logo() {
   return (
     <div ref={container}>
       <div
+        id={"logo"}
         onClick={handleClick}
         className={
           "container rounded-xl bg-dark/50 p-2 backdrop-blur-sm backdrop-filter"

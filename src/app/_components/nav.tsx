@@ -27,6 +27,7 @@ export default function Nav() {
           width: containerDefault.width,
           height: containerDefault.height,
         });
+
         gsap.from(container.current, {
           duration: 1,
           x: 100,
