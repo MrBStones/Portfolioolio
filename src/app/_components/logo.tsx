@@ -11,6 +11,13 @@ export default function Logo() {
   const container = useRef<HTMLDivElement>(null);
   const { contextSafe } = useGSAP(
     () => {
+      gsap.from(container.current, {
+        duration: 1,
+        x: -100,
+        filter: "blur(5px)",
+        ease: "power2.out",
+        opacity: 0,
+      });
       gsap.from("#logoSvg *", { duration: 1, drawSVG: 0, stagger: 0.1 });
     },
     { scope: container },

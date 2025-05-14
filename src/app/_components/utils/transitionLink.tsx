@@ -60,7 +60,9 @@ export default function TransitionLink({
       id="link"
       href={href}
       onClick={(e) => {
-        onClick && onClick();
+        if (onClick) {
+          onClick();
+        }
         e.preventDefault();
         handleClick();
       }}

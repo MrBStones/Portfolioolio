@@ -27,6 +27,14 @@ export default function Nav() {
           width: containerDefault.width,
           height: containerDefault.height,
         });
+        gsap.from(container.current, {
+          duration: 1,
+          x: 100,
+          filter: "blur(5px)",
+          ease: "power2.out",
+          opacity: 0,
+        });
+
         setFst(false);
         setIsOpen(false);
       }
