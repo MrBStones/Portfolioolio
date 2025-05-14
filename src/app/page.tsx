@@ -32,7 +32,24 @@ export default async function Home() {
               hoverText={"No like, using the scrool wheel..."}
             />
           </div>
-          <SpeechWithImg />
+          <div className="container flex w-full flex-row flex-wrap gap-3">
+            <h1 className="text-3xl">
+              Creating the future of programming,
+              <b className="text-hero"> one line of code at a time :)</b>
+            </h1>
+            <p className="text-right text-xl">
+              I am a software engineer with a passion for creating innovative
+              solutions. I have experience in a variety of programming languages
+              and frameworks, and I am always looking to learn new technologies.
+            </p>
+          </div>
+          <div className="container flex w-full flex-row flex-wrap gap-3">
+            <h1 className="text-3xl">My projects:</h1>
+            <p className="text-right text-xl">
+              Here are some of the projects I have worked on. Click on the tabs
+              to see more details.
+            </p>
+          </div>
           <Bookshelf />
           <BsDetailView
             description={
