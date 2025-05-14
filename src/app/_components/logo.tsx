@@ -3,10 +3,18 @@
 import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+
+gsap.registerPlugin(DrawSVGPlugin);
 
 export default function Logo() {
   const container = useRef<HTMLDivElement>(null);
-  const { contextSafe } = useGSAP({ scope: container });
+  const { contextSafe } = useGSAP(
+    () => {
+      gsap.from("#logoSvg *", { duration: 1, drawSVG: 0, stagger: 0.1 });
+    },
+    { scope: container },
+  );
   const [toggled, setToggle] = useState(false);
 
   const handleClick = contextSafe(() => {
@@ -45,7 +53,7 @@ function Tintable() {
     <svg
       viewBox="0 0 111 111"
       version="1.1"
-      id="svg1"
+      id="logoSvg"
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs id="defs1" />

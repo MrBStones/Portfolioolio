@@ -10,7 +10,7 @@ export default function Projects() {
     const tl = gsap.timeline();
     tl.from("#projects > *", {
       duration: 1,
-
+      filter: "blur(5px)",
       x: -100,
       ease: "power2.out",
       opacity: 0,
@@ -20,7 +20,10 @@ export default function Projects() {
 
   return (
     <main className="-z-20 flex min-h-screen select-none flex-col items-center justify-center overflow-hidden text-light">
-      <div className="container flex w-full flex-col gap-3" id="projects">
+      <div
+        className="mainContainer container flex w-full flex-col gap-3"
+        id="projects"
+      >
         <div className="h-[30svh]" />
         <h1 className="text-4xl font-bold">Projects</h1>
         <p className="text-xl">
@@ -40,6 +43,7 @@ export default function Projects() {
             );
           })}
         </div>
+        <div className="h-[30svh]" />
       </div>
     </main>
   );

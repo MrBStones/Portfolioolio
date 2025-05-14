@@ -24,6 +24,15 @@ export default function ScrollIndicator({
         "#down",
         { duration: 0.15, y: 10, ease: "linear" },
       );
+
+      gsap.from(container.current, {
+        delay: 3,
+        duration: 1,
+        x: -100,
+        filter: "blur(5px)",
+        ease: "power2.out",
+        opacity: 0,
+      });
     },
     { scope: container },
   );

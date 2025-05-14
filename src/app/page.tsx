@@ -9,12 +9,16 @@ import ScrollIndicator from "./_components/scrollindicator";
 import Bookshelf from "./_components/bookshelf/bookshelf";
 import NameLogo from "./_components/name/name";
 import BsDetailView from "./_components/bookshelf/bsdetailview";
+import AnimateIdOnOpen from "./_components/utils/animateIdOnOpen";
 
 export default async function Home() {
   return (
     <HydrateClient>
       <main className="-z-20 flex min-h-screen select-none flex-col items-center justify-center overflow-hidden text-light">
-        <div className="container z-0 flex flex-col items-center justify-center gap-12 px-4 py-16">
+        <div
+          className="mainContainer container z-0 flex flex-col items-center justify-center gap-12 px-4 py-16"
+          id="home"
+        >
           <div className={"container flex h-screen flex-col"}>
             <div
               className={

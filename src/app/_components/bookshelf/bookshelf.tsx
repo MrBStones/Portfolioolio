@@ -125,6 +125,19 @@ export default function Bookshelf() {
         from: "start",
       },
     })
+      .to(
+        "#home > *",
+        {
+          delay: 0.5,
+          duration: 1,
+          x: 100,
+          ease: "power1.In",
+          filter: "blur(5px)",
+          alpha: 0,
+          stagger: 0.1,
+        },
+        "<",
+      )
 
       .call(() => {
         // Navigate to the projects page

@@ -6,6 +6,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { TextPlugin } from "gsap/TextPlugin";
 import Link from "next/link";
+import TransitionLink from "./utils/transitionLink";
+import { useRouter } from "next/navigation";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(TextPlugin);
@@ -21,6 +23,10 @@ export default function Nav() {
     () => {
       if (fst) {
         gsap.set("#nav .link", { opacity: 0, x: 40 });
+        gsap.set("#nav", {
+          width: containerDefault.width,
+          height: containerDefault.height,
+        });
         setFst(false);
         setIsOpen(false);
       }
@@ -106,12 +112,16 @@ export default function Nav() {
                         {session && <span>Logged in as {session.user?.name}</span>}
                     </p>*/}
         </div>
-        <Link href={"/"} className="link" onClick={() => setIsOpen(false)}>
+        <TransitionLink
+          href={"/"}
+          className="link"
+          onClick={() => setIsOpen(false)}
+        >
           <p className="link text-nowrap text-left text-2xl text-light opacity-0">
             HOME →
           </p>
-        </Link>
-        <Link
+        </TransitionLink>
+        <TransitionLink
           href={"/projects"}
           className="link"
           onClick={() => setIsOpen(false)}
@@ -119,8 +129,8 @@ export default function Nav() {
           <p className="link text-nowrap text-left text-2xl text-light opacity-0">
             PROJECTS →
           </p>
-        </Link>
-        <Link
+        </TransitionLink>
+        <TransitionLink
           href={"/projects"}
           className="link"
           onClick={() => setIsOpen(false)}
@@ -128,7 +138,7 @@ export default function Nav() {
           <p className="link text-nowrap text-left text-2xl text-light opacity-0">
             CONTACT →
           </p>
-        </Link>
+        </TransitionLink>
       </div>
     </div>
   );
