@@ -32,7 +32,7 @@ export default async function Home() {
               hoverText={"No like, using the scrool wheel..."}
             />
           </div>
-          <div className="container flex w-full flex-row flex-wrap gap-3">
+          <div className="container flex w-full flex-col gap-3">
             <h1 className="text-3xl">
               Creating the future of programming,
               <b className="text-hero"> one line of code at a time :)</b>
@@ -42,8 +42,6 @@ export default async function Home() {
               solutions. I have experience in a variety of programming languages
               and frameworks, and I am always looking to learn new technologies.
             </p>
-          </div>
-          <div className="container flex w-full flex-row flex-wrap gap-3">
             <h1 className="text-3xl">My projects:</h1>
             <p className="text-right text-xl">
               Here are some of the projects I have worked on. Click on the tabs
