@@ -7,7 +7,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 import Logo from "./_components/logo";
 import Nav from "./_components/nav";
 import BgLogo from "./_components/bglogo";
-import FadeInPage from "./_components/fadeInPage";
+import FadeInPage from "./_components/utils/fadeInPage";
 
 export const metadata: Metadata = {
   title: "Portfolio",
