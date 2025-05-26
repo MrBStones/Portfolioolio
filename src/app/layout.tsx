@@ -7,6 +7,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 import Logo from "./_components/logo";
 import Nav from "./_components/nav";
 import BgLogo from "./_components/bglogo";
+import FadeInPage from "./_components/fadeInPage";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`bg-background font-jetbrains`}>
       <body className={"overflow-x-hidden bg-background"}>
+        <FadeInPage />
         <div className="fixed left-10 top-9 z-20">
           <Logo />
         </div>
