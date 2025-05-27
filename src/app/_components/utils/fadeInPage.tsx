@@ -10,7 +10,7 @@ export default function FadeInPage() {
   useGSAP(() => {
     gsap
       .timeline()
-      .to("#fadeId", {
+      .to(fadeRef.current, {
         alpha: 0,
         opacity: 0,
         duration: 1,
@@ -23,11 +23,5 @@ export default function FadeInPage() {
       });
   });
 
-  return (
-    <div
-      ref={fadeRef}
-      id="fadeId"
-      className="fixed inset-0 z-50 bg-background"
-    ></div>
-  );
+  return <div ref={fadeRef} className="fixed inset-0 z-50 bg-background"></div>;
 }
