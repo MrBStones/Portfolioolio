@@ -2,7 +2,7 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { bsItemProps } from "./bsdata";
+import { bsDetailViewProps, bsItemProps } from "./bsdata";
 import BsItem from "./bsitem";
 import { Flip } from "gsap/Flip";
 import { useRef, useState } from "react";
@@ -10,20 +10,6 @@ import BsItemHover from "./bsitemhover";
 import { set } from "zod";
 
 gsap.registerPlugin(Flip);
-
-interface bsDetailViewProps {
-  description: string;
-  linkOne?: string;
-  linkTwo?: string;
-  linkOneText: string;
-  linkTwoText: string;
-  image: string;
-  imageAlt?: string;
-  bsItem: bsItemProps;
-  icon: string;
-  iconAlt?: string;
-  technologies?: string[];
-}
 
 export default function BsDetailView({
   description,
@@ -69,13 +55,14 @@ export default function BsDetailView({
     setAnimationRunning(true);
 
     if (viewToggled) {
-      setViewToggled(false);
       const state = Flip.getState([
         bsItemRef.current,
         detailViewContainer.current,
         innerContainer.current,
         outerContainer.current,
       ]);
+
+      setViewToggled(false);
 
       if (outerContainer.current && bsItemRef.current) {
         outerContainer.current.appendChild(bsItemRef.current);
@@ -85,7 +72,7 @@ export default function BsDetailView({
 
       requestAnimationFrame(() => {
         Flip.from(state, {
-          duration: 1,
+          duration: 0.5,
           ease: "power3.out",
           onComplete: () => {
             const state2 = Flip.getState([detailViewContainer.current]);
@@ -95,7 +82,7 @@ export default function BsDetailView({
             requestAnimationFrame(() => {
               Flip.from(state2, {
                 duration: 1,
-                ease: "power3.out",
+                ease: "linear",
                 onComplete: () => {
                   const state3 = Flip.getState([detailViewContainer.current]);
                   setFullyClosed(true);
@@ -116,7 +103,11 @@ export default function BsDetailView({
         });
       });
     } else {
-      const state = Flip.getState([detailViewContainer.current]);
+      const state = Flip.getState([
+        detailViewContainer.current,
+        bsItemRef.current,
+      ]);
+
       setViewToggled(true);
 
       setFullyClosed(false);
@@ -124,7 +115,7 @@ export default function BsDetailView({
       requestAnimationFrame(() => {
         Flip.from(state, {
           duration: 1,
-          ease: "power3.out",
+          ease: "power3.in",
           onComplete: () => {
             const state2 = Flip.getState([detailViewContainer.current]);
 
@@ -143,13 +134,14 @@ export default function BsDetailView({
                   ]);
 
                   setFullyOpen(true);
-                  if (innerContainer.current && bsItemRef.current) {
-                    innerContainer.current.appendChild(bsItemRef.current);
-                  }
+
                   requestAnimationFrame(() => {
+                    if (innerContainer.current && bsItemRef.current) {
+                      innerContainer.current.appendChild(bsItemRef.current);
+                    }
                     Flip.from(state3, {
-                      duration: 1,
-                      ease: "power3.out",
+                      duration: 0.5,
+                      ease: "power3.inOut",
                       onComplete: () => {
                         setAnimationRunning(false);
                       },
@@ -170,19 +162,16 @@ export default function BsDetailView({
 
   return (
     <>
-      <div
-        ref={fullContainer}
-        className="container flex w-full flex-col items-center justify-center"
-      >
+      <div ref={fullContainer}>
         <div
           ref={detailViewContainer}
           className={`container flex flex-col gap-3 rounded-3xl bg-dark/50 backdrop-blur-xl backdrop-filter ${fullyOpen ? "" : "overflow-clip"} ${fullyClosed ? "h-0 w-0" : midAnim ? "max-w-128 p-3" : "h-0 max-w-128 p-3"}`}
         >
+          <div ref={innerContainer}></div>
           <div className="container flex w-full flex-row gap-3">
             <img src={icon} alt={iconAlt} className="w-10 text-light" />
             <p className="text-right">{description}</p>
           </div>
-          <div ref={innerContainer}></div>
 
           <div
             id="imageAndLinksContainer"

@@ -2,8 +2,9 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-import { bsData } from "../_components/bookshelf/bsdata";
+import { bsData, projectsData } from "../_components/bookshelf/bsdata";
 import BsItemHover from "../_components/bookshelf/bsitemhover";
+import BsDetailView from "../_components/bookshelf/bsdetailview";
 
 export default function Projects() {
   useGSAP(() => {
@@ -31,14 +32,21 @@ export default function Projects() {
           see more details.
         </p>
         <div className="container flex flex-wrap items-stretch justify-center gap-3">
-          {bsData.map((item, index) => {
+          {projectsData.map((item, index) => {
             return (
-              <BsItemHover
+              <BsDetailView
                 key={index}
-                num={item.num}
-                title={item.title}
                 description={item.description}
-                fixedWidth={false}
+                linkOneText={item.linkOneText}
+                linkOne={item.linkOne}
+                linkTwoText={item.linkTwoText}
+                linkTwo={item.linkTwo}
+                image={item.image}
+                imageAlt={item.imageAlt}
+                icon={item.icon}
+                iconAlt={item.iconAlt}
+                bsItem={item.bsItem}
+                technologies={item.technologies}
               />
             );
           })}
