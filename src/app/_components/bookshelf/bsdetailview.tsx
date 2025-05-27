@@ -99,7 +99,6 @@ export default function BsDetailView({
                 onComplete: () => {
                   const state3 = Flip.getState([detailViewContainer.current]);
                   setFullyClosed(true);
-                  setAnimationRunning(false);
 
                   requestAnimationFrame(() => {
                     Flip.from(state3, {
