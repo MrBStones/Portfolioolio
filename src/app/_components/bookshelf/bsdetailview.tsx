@@ -24,7 +24,6 @@ export default function BsDetailView({
   iconAlt = "",
   technologies = [],
 }: Readonly<bsDetailViewProps>) {
-  const { contextSafe } = useGSAP({});
   const bsItemRef = useRef<HTMLDivElement>(null);
   const outerContainer = useRef<HTMLDivElement>(null);
   const innerContainer = useRef<HTMLDivElement>(null);
@@ -36,6 +35,7 @@ export default function BsDetailView({
   const [fullyClosed, setFullyClosed] = useState(true);
   const [midAnim, setMidAnim] = useState(false);
   const [fullyOpen, setFullyOpen] = useState(false);
+  const { contextSafe } = useGSAP({ scope: fullContainer });
 
   const onImageClicked = contextSafe(() => {
     const state = Flip.getState("#imageContainer, #linkContainer a");
@@ -162,7 +162,7 @@ export default function BsDetailView({
 
   return (
     <>
-      <div ref={fullContainer}>
+      <div ref={fullContainer} className="flex flex-col items-center">
         <div
           ref={detailViewContainer}
           className={`container flex flex-col gap-3 rounded-3xl bg-dark/50 backdrop-blur-xl backdrop-filter ${fullyOpen ? "" : "overflow-clip"} ${fullyClosed ? "h-0 w-0" : midAnim ? "max-w-128 p-3" : "h-0 max-w-128 p-3"}`}
@@ -225,7 +225,7 @@ export default function BsDetailView({
               num={bsItem.num}
               title={bsItem.title}
               description={bsItem.description}
-              fixedWidth={false}
+              fixedWidth={!fullyOpen}
             />
           </div>
         </div>

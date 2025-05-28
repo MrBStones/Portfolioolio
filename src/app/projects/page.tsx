@@ -31,7 +31,7 @@ export default function Projects() {
           Here are some of the projects I have worked on. Click on the tabs to
           see more details.
         </p>
-        <div className="container flex flex-wrap items-stretch justify-center gap-3">
+        <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-3">
           {projectsData.map((item, index) => {
             return (
               <BsDetailView
