@@ -32,23 +32,30 @@ export default async function Home() {
               hoverText={"No like, using the scrool wheel..."}
             />
           </div>
-          <div className="container flex w-full flex-col gap-3">
-            <h1 className="text-3xl">
-              Creating the future of programming,
-              <b className="text-hero"> one line of code at a time :)</b>
-            </h1>
-            <p className="text-right text-xl">
-              I am a software engineer with a passion for creating innovative
-              solutions. I have experience in a variety of programming languages
-              and frameworks, and I am always looking to learn new technologies.
-            </p>
-            <h1 className="text-3xl">My projects:</h1>
-            <p className="text-right text-xl">
-              Here are some of the projects I have worked on. Click on the tabs
-              to see more details.
-            </p>
+          <div className="container flex w-full flex-col gap-12 lg:flex-row">
+            <div className="container flex w-full basis-1/2 flex-col gap-3">
+              <h1 className="text-3xl">
+                Writing,
+                <b className="text-hero"> one line of code at a time :)</b>
+              </h1>
+              <p className="text-right text-xl">
+                Hi! I'm Bjørn, a friendly developer who loves to solve problems
+                and build cool things with code. I enjoy learning new
+                technologies, collaborating with others, and turning ideas into
+                reality—one line at a time. Welcome to my portfolio!
+              </p>
+              <br />
+              <h1 className="text-3xl">My projects:</h1>
+              <p className="text-right text-xl">
+                Here are some of the projects I have worked on. Click on the
+                bookshelf to see them all in detail.
+              </p>
+            </div>
+            <div className="w-full lg:w-1/2">
+              <Bookshelf />
+            </div>
           </div>
-          <Bookshelf />
+
           <BsDetailView
             description={
               "This is a project was created during the third semester of university. The site is written in c# using asp.net and is hosted on azure. Bla "
