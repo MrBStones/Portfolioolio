@@ -34,7 +34,7 @@ export default function BsItemHover({
       duration: 0.5,
       scale: 1.2,
       ease: "power2.out",
-      boxShadow: "0 0 20px rgba(0, 0, 0, 0.5)",
+      boxShadow: "0px 0px 20px 0px rgba(0,0,0,0.5)", // use full syntax
       backgroundColor: heroColor,
       zIndex: 10,
       overwrite: true,
@@ -53,7 +53,7 @@ export default function BsItemHover({
       scale: 1,
       ease: "power2.out",
       zIndex: 8,
-      boxShadow: "0 0 0 rgba(0, 0, 0, 0)",
+      boxShadow: "0px 0px 0px 0px rgba(0,0,0,0)", // use full syntax
       backgroundColor: lightColor,
       overwrite: true,
     });

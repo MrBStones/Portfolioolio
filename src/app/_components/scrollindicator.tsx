@@ -49,10 +49,7 @@ export default function ScrollIndicator({
   });
 
   return (
-    <div
-      ref={container}
-      className="container flex flex-row gap-2 text-2xl text-light"
-    >
+    <div ref={container} className="container flex flex-row gap-2 text-2xl">
       <p id={"text"} onMouseOver={handleMouseOver}>
         {text}
       </p>

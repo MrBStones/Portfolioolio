@@ -54,13 +54,11 @@ export default function TitleText({ text, subText }: Readonly<TitleTextProps>) {
 
   return (
     <div ref={container} className="w-[32rem]">
-      <h1 id="title" className="text-6xl text-light">
+      <h1 id="title" className="text-light-light text-6xl dark:text-light">
         {reversedText}
       </h1>
       <div className="flex flex-row">
-        <div id="scramble" className="text-light">
-          (Scrunches
-        </div>
+        <div id="scramble">(Scrunches</div>
         <p>)</p>
       </div>
     </div>

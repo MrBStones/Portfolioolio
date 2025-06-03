@@ -8,6 +8,7 @@ import Logo from "./_components/logo";
 import Nav from "./_components/nav";
 import BgLogo from "./_components/bglogo";
 import FadeInPage from "./_components/utils/fadeInPage";
+import ThemeInit from "./_components/themeInit";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -19,8 +20,15 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`bg-background font-jetbrains`}>
-      <body className={"overflow-x-hidden bg-background"}>
+    <html
+      lang="en"
+      className={`bg-light-background font-jetbrains dark:bg-background`}
+    >
+      <body
+        className={"bg-light-background overflow-x-hidden dark:bg-background"}
+      >
+        <ThemeInit />
+
         <FadeInPage />
         <div className="fixed left-10 top-9 z-20">
           <Logo />

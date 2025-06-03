@@ -14,7 +14,7 @@ import AnimateIdOnOpen from "./_components/utils/animateIdOnOpen";
 export default async function Home() {
   return (
     <HydrateClient>
-      <main className="-z-20 flex min-h-screen select-none flex-col items-center justify-center overflow-hidden text-light">
+      <main className="text-light-light -z-20 flex min-h-screen select-none flex-col items-center justify-center overflow-hidden dark:text-light">
         <div
           className="mainContainer container z-0 flex flex-col items-center justify-center gap-12 px-4 py-16"
           id="home"
@@ -77,12 +77,18 @@ export default async function Home() {
           <h1 className="text-2xl">Current Colors:</h1>
           <div
             className={
-              "container flex flex-row gap-3 rounded-xl p-3 outline-dashed -outline-offset-4 outline-light"
+              "outline-light-light container flex flex-row gap-3 rounded-xl p-3 outline-dashed -outline-offset-4 dark:outline-light"
             }
           >
-            <div className="h-28 w-full bg-background">background</div>
-            <div className="h-28 w-full bg-dark">dark</div>
-            <div className="h-28 w-full bg-light text-background">light</div>
+            <div className="bg-light-background text-light-light h-28 w-full dark:bg-background dark:text-light">
+              background
+            </div>
+            <div className="bg-light-dark text-light-light h-28 w-full dark:bg-dark dark:text-light">
+              dark
+            </div>
+            <div className="bg-light-light text-light-background h-28 w-full dark:bg-light dark:text-background">
+              light
+            </div>
             <div className="h-28 w-full bg-hero text-background">hero</div>
             <div className="h-28 w-full bg-dark-hero text-background">
               dark-hero

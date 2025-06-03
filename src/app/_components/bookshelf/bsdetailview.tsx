@@ -165,7 +165,7 @@ export default function BsDetailView({
       <div ref={fullContainer} className="flex flex-col items-center">
         <div
           ref={detailViewContainer}
-          className={`container flex flex-col gap-3 rounded-3xl bg-dark/50 backdrop-blur-xl backdrop-filter ${fullyOpen ? "" : "overflow-clip"} ${fullyClosed ? "h-0 w-0" : midAnim ? "max-w-128 p-3" : "h-0 max-w-128 p-3"}`}
+          className={`bg-light-dark/50 container flex flex-col gap-3 rounded-3xl backdrop-blur-xl backdrop-filter dark:bg-dark/50 ${fullyOpen ? "" : "overflow-clip"} ${fullyClosed ? "h-0 w-0" : midAnim ? "max-w-128 p-3" : "h-0 max-w-128 p-3"}`}
         >
           <div ref={innerContainer}></div>
           <div className="container flex w-full flex-row gap-3">

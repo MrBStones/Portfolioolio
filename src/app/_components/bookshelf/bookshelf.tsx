@@ -149,7 +149,7 @@ export default function Bookshelf() {
     <div
       id="bookshelf"
       className={
-        "h-sc container flex h-128 cursor-pointer flex-col overflow-clip rounded-xl bg-dark/50 backdrop-blur-sm"
+        "h-sc bg-light-dark/50 container flex h-128 cursor-pointer flex-col overflow-clip rounded-xl backdrop-blur-sm dark:bg-dark/50"
       }
       onClick={onClick}
     >

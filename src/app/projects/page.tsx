@@ -20,7 +20,7 @@ export default function Projects() {
   });
 
   return (
-    <main className="-z-20 flex min-h-screen select-none flex-col items-center justify-center overflow-hidden text-light">
+    <main className="text-light-light -z-20 flex min-h-screen select-none flex-col items-center justify-center overflow-hidden dark:text-light">
       <div
         className="mainContainer container flex w-full flex-col gap-3"
         id="projects"

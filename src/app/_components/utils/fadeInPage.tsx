@@ -23,5 +23,10 @@ export default function FadeInPage() {
       });
   });
 
-  return <div ref={fadeRef} className="fixed inset-0 z-50 bg-background"></div>;
+  return (
+    <div
+      ref={fadeRef}
+      className="bg-light-background fixed inset-0 z-50 dark:bg-background"
+    ></div>
+  );
 }

@@ -3,6 +3,7 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
   content: ["./src/**/*.tsx"],
+  darkMode: "class", // Enable class-based dark mode
   theme: {
     extend: {
       fontFamily: {
@@ -12,7 +13,18 @@ export default {
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
-          'background': '#000000', 'dark': '#141414', 'light': '#dcd6d1', 'hero' : '#3ddc97', 'dark-hero': '#69b578',
+        // Default (dark mode)
+        background: '#000000',
+        dark: '#141414',
+        light: '#dcd6d1',
+        hero: '#3ddc97',
+        'dark-hero': '#69b578',
+        // Light mode overrides
+        'light-background': '#f7f4f2',
+        'light-dark': '#DCD6D1',
+        'light-light': '#141414',
+        'light-hero': '#3ddc97',
+        'light-dark-hero': '#69b578',
       },
       spacing: {
         '18': '4.5rem',
@@ -23,9 +35,7 @@ export default {
         '128': '32rem',
       },
       fontSize: {
-        'bs-item-num': 
-          ['4 rem', '5.333 rem']
-        
+        'bs-item-num': ['4 rem', '5.333 rem'],
       },
     },
   },
