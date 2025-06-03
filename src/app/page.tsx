@@ -39,7 +39,7 @@ export default async function Home() {
                 <b className="text-hero"> one line of code at a time :)</b>
               </h1>
               <p className="text-right text-xl">
-                Hi! I'm Bjørn, a friendly developer who loves to solve problems
+                Hi! Im Bjørn, a friendly developer who loves to solve problems
                 and build cool things with code. I enjoy learning new
                 technologies, collaborating with others, and turning ideas into
                 reality—one line at a time. Welcome to my portfolio!
