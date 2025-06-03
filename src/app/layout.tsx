@@ -8,7 +8,8 @@ import Logo from "./_components/logo";
 import Nav from "./_components/nav";
 import BgLogo from "./_components/bglogo";
 import FadeInPage from "./_components/utils/fadeInPage";
-import ThemeInit from "./_components/themeInit";
+import ThemeInit from "./_components/utils/themeInit";
+import ScrollSmootherWrapper from "./_components/utils/scrollSmootherWrapper";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -39,7 +40,9 @@ export default function RootLayout({
         <div className="fixed bottom-0 right-0 -z-0">
           <BgLogo />
         </div>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <ScrollSmootherWrapper>
+          <TRPCReactProvider>{children}</TRPCReactProvider>
+        </ScrollSmootherWrapper>
       </body>
     </html>
   );
