@@ -36,7 +36,10 @@ export default async function Home() {
             <div className="container flex w-full basis-1/2 flex-col gap-3">
               <h1 className="text-3xl">
                 Writing,
-                <b className="text-hero"> one line of code at a time :)</b>
+                <b className="text-light-dark-hero dark:text-hero">
+                  {" "}
+                  one line of code at a time :)
+                </b>
               </h1>
               <p className="text-right text-xl">
                 Hi! Im Bjørn, a friendly developer who loves to solve problems
