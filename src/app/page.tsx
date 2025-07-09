@@ -14,7 +14,7 @@ import AnimateIdOnOpen from "./_components/utils/animateIdOnOpen";
 export default async function Home() {
   return (
     <HydrateClient>
-      <main className="text-light-light -z-20 flex min-h-screen select-none flex-col items-center justify-center overflow-hidden dark:text-light">
+      <main className="-z-20 flex min-h-screen select-none flex-col items-center justify-center overflow-hidden text-light-light dark:text-light">
         <div
           className="mainContainer container z-0 flex flex-col items-center justify-center gap-12 px-4 py-16"
           id="home"
@@ -59,37 +59,19 @@ export default async function Home() {
             </div>
           </div>
 
-          <BsDetailView
-            description={
-              "This is a project was created during the third semester of university. The site is written in c# using asp.net and is hosted on azure. Bla "
-            }
-            linkOneText={"GitHub repo →"}
-            linkOne={"https://github.com/ITU-BDSA2024-GROUP9/Chirp"}
-            linkTwoText={"Go to site →"}
-            linkTwo={"https://bdsagroup9chirprazor.azurewebsites.net/"}
-            image={"chirpimage.png"}
-            bsItem={{
-              num: "04",
-              title: "CHIRP",
-              description: "twitter clone",
-            }}
-            technologies={["asp.net", "C#", "azure"]}
-            icon={"language_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"}
-          />
-
           <h1 className="text-2xl">Current Colors:</h1>
           <div
             className={
-              "outline-light-light container flex flex-row gap-3 rounded-xl p-3 outline-dashed -outline-offset-4 dark:outline-light"
+              "container flex flex-row gap-3 rounded-xl p-3 outline-dashed -outline-offset-4 outline-light-light dark:outline-light"
             }
           >
-            <div className="bg-light-background text-light-light h-28 w-full dark:bg-background dark:text-light">
+            <div className="h-28 w-full bg-light-background text-light-light dark:bg-background dark:text-light">
               background
             </div>
-            <div className="bg-light-dark text-light-light h-28 w-full dark:bg-dark dark:text-light">
+            <div className="h-28 w-full bg-light-dark text-light-light dark:bg-dark dark:text-light">
               dark
             </div>
-            <div className="bg-light-light text-light-background h-28 w-full dark:bg-light dark:text-background">
+            <div className="h-28 w-full bg-light-light text-light-background dark:bg-light dark:text-background">
               light
             </div>
             <div className="h-28 w-full bg-hero text-background">hero</div>
