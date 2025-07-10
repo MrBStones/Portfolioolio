@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Hamburger from "~/app/_components/hamburger";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -110,12 +110,27 @@ export default function Nav() {
     { dependencies: [isOpen], scope: container },
   );
 
-  const [isDark, setIsDark] = useState(
-    typeof window !== "undefined"
-      ? window.matchMedia("(prefers-color-scheme: dark)").matches
-      : false,
-  );
-  const html = document.documentElement;
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    setIsDark(
+      window.matchMedia("(prefers-color-scheme: dark)").matches ||
+        document.documentElement.classList.contains("dark"),
+    );
+  }, []);
+
+  const toggleTheme = () => {
+    if (typeof window !== "undefined") {
+      const html = document.documentElement;
+      if (isDark) {
+        html.classList.remove("dark");
+        setIsDark(false);
+      } else {
+        html.classList.add("dark");
+        setIsDark(true);
+      }
+    }
+  };
 
   return (
     <div ref={container}>
@@ -124,17 +139,7 @@ export default function Nav() {
         className={`container flex flex-col gap-2 divide-y divide-hero overflow-hidden rounded-xl bg-light-dark/50 p-2 backdrop-blur-xl backdrop-filter dark:bg-dark/50 ${"h-[" + containerDefault.height + "px]" + "w-[" + containerDefault.width + "px]"}`}
       >
         <div className="container flex flex-row items-center justify-end gap-2 backdrop-filter">
-          <div
-            onClick={() => {
-              if (isDark) {
-                html.classList.remove("dark");
-                setIsDark(false);
-              } else {
-                html.classList.add("dark");
-                setIsDark(true);
-              }
-            }}
-          >
+          <div onClick={toggleTheme}>
             {isDark ? (
               <img
                 src={"/light_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"}
