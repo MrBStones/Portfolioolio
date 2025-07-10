@@ -8,6 +8,7 @@ import { TextPlugin } from "gsap/TextPlugin";
 import Link from "next/link";
 import TransitionLink from "./utils/transitionLink";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(TextPlugin);
@@ -109,13 +110,48 @@ export default function Nav() {
     { dependencies: [isOpen], scope: container },
   );
 
+  const [isDark, setIsDark] = useState(
+    typeof window !== "undefined"
+      ? window.matchMedia("(prefers-color-scheme: dark)").matches
+      : false,
+  );
+  const html = document.documentElement;
+
   return (
     <div ref={container}>
       <div
         id="nav"
-        className={`bg-light-dark/50 container flex flex-col gap-2 divide-y divide-hero overflow-hidden rounded-xl p-2 backdrop-blur-xl backdrop-filter dark:bg-dark/50 ${"h-[" + containerDefault.height + "px]" + "w-[" + containerDefault.width + "px]"}`}
+        className={`container flex flex-col gap-2 divide-y divide-hero overflow-hidden rounded-xl bg-light-dark/50 p-2 backdrop-blur-xl backdrop-filter dark:bg-dark/50 ${"h-[" + containerDefault.height + "px]" + "w-[" + containerDefault.width + "px]"}`}
       >
         <div className="container flex flex-row items-center justify-end gap-2 backdrop-filter">
+          <div
+            onClick={() => {
+              if (isDark) {
+                html.classList.remove("dark");
+                setIsDark(false);
+              } else {
+                html.classList.add("dark");
+                setIsDark(true);
+              }
+            }}
+          >
+            {isDark ? (
+              <Image
+                src={"/light_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"}
+                alt="Theme Toggle"
+                width={24}
+                height={24}
+              />
+            ) : (
+              <Image
+                src={"/dark_mode_24dp_00000_FILL0_wght400_GRAD0_opsz24.svg"}
+                alt="Theme Toggle"
+                width={24}
+                height={24}
+              />
+            )}
+          </div>
+
           <Hamburger toggled={isOpen} toggleAction={setIsOpen} />
           {/*<p className="text-center text-2xl text-white">
                         {session && <span>Logged in as {session.user?.name}</span>}
@@ -126,7 +162,7 @@ export default function Nav() {
           className="link"
           onClick={() => setIsOpen(false)}
         >
-          <p className="link text-light-light text-nowrap text-left text-2xl opacity-0 dark:text-light">
+          <p className="link text-nowrap text-left text-2xl text-light-light opacity-0 dark:text-light">
             HOME →
           </p>
         </TransitionLink>
@@ -135,16 +171,16 @@ export default function Nav() {
           className="link"
           onClick={() => setIsOpen(false)}
         >
-          <p className="link text-light-light text-nowrap text-left text-2xl opacity-0 dark:text-light">
+          <p className="link text-nowrap text-left text-2xl text-light-light opacity-0 dark:text-light">
             PROJECTS →
           </p>
         </TransitionLink>
         <TransitionLink
-          href={"/projects"}
+          href={"/contact"}
           className="link"
           onClick={() => setIsOpen(false)}
         >
-          <p className="link text-light-light text-nowrap text-left text-2xl opacity-0 dark:text-light">
+          <p className="link text-nowrap text-left text-2xl text-light-light opacity-0 dark:text-light">
             CONTACT →
           </p>
         </TransitionLink>

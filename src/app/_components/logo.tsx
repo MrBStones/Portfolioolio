@@ -39,10 +39,10 @@ export default function Logo() {
         id={"logo"}
         onClick={handleClick}
         className={
-          "bg-light-dark/50 container rounded-xl p-2 backdrop-blur-sm backdrop-filter dark:bg-dark/50"
+          "container rounded-xl bg-light-dark/50 p-2 backdrop-blur-sm backdrop-filter dark:bg-dark/50"
         }
       >
-        <div className={"text-light-light size-18 dark:text-light"}>
+        <div className={"size-18 text-light-light dark:text-light"}>
           <Tintable />
         </div>
       </div>
