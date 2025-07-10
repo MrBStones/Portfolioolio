@@ -136,14 +136,14 @@ export default function Nav() {
             }}
           >
             {isDark ? (
-              <Image
+              <img
                 src={"/light_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"}
                 alt="Theme Toggle"
                 width={24}
                 height={24}
               />
             ) : (
-              <Image
+              <img
                 src={"/dark_mode_24dp_00000_FILL0_wght400_GRAD0_opsz24.svg"}
                 alt="Theme Toggle"
                 width={24}
