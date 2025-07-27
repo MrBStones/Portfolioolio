@@ -1,14 +1,12 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import Hamburger from "~/app/_components/hamburger";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { TextPlugin } from "gsap/TextPlugin";
-import Link from "next/link";
 import TransitionLink from "./utils/transitionLink";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
+import { useDarkModeClass } from "./utils/useDarkModeClass";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(TextPlugin);
@@ -109,25 +107,15 @@ export default function Nav() {
     },
     { dependencies: [isOpen], scope: container },
   );
-
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    setIsDark(
-      window.matchMedia("(prefers-color-scheme: dark)").matches ||
-        document.documentElement.classList.contains("dark"),
-    );
-  }, []);
+  const isDark = useDarkModeClass();
 
   const toggleTheme = () => {
     if (typeof window !== "undefined") {
       const html = document.documentElement;
       if (isDark) {
         html.classList.remove("dark");
-        setIsDark(false);
       } else {
         html.classList.add("dark");
-        setIsDark(true);
       }
     }
   };
