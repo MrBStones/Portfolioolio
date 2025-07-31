@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
 
 export function useDarkModeClass() {
-  const [isDark, setIsDark] = useState(() =>
-    typeof document !== "undefined"
-      ? document.documentElement.classList.contains("dark")
-      : false,
-  );
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     const html = document.documentElement;
+    setIsDark(html.classList.contains("dark"));
     const observer = new MutationObserver(() => {
       setIsDark(html.classList.contains("dark"));
     });
