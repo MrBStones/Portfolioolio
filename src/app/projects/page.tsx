@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { bsData, projectsData } from "../_components/bookshelf/bsdata";
 import BsItemHover from "../_components/bookshelf/bsitemhover";
 import BsDetailView from "../_components/bookshelf/bsdetailview";
+import ContactButton from "../_components/contactButton";
 
 export default function Projects() {
   useGSAP(() => {
@@ -20,7 +21,7 @@ export default function Projects() {
   });
 
   return (
-    <main className="text-light-light -z-20 flex min-h-screen select-none flex-col items-center justify-center overflow-hidden dark:text-light">
+    <main className="-z-20 flex min-h-screen select-none flex-col items-center justify-center overflow-hidden text-light-light dark:text-light">
       <div
         className="mainContainer container flex w-full flex-col gap-3"
         id="projects"
@@ -51,7 +52,9 @@ export default function Projects() {
             );
           })}
         </div>
-        <div className="h-[30svh]" />
+        <div className="container flex h-[30svh] items-center justify-center">
+          <ContactButton />
+        </div>
       </div>
     </main>
   );

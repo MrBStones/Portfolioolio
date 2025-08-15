@@ -10,6 +10,8 @@ import Bookshelf from "./_components/bookshelf/bookshelf";
 import NameLogo from "./_components/name/name";
 import BsDetailView from "./_components/bookshelf/bsdetailview";
 import AnimateIdOnOpen from "./_components/utils/animateIdOnOpen";
+import TransitionLink from "./_components/utils/transitionLink";
+import ContactButton from "./_components/contactButton";
 
 export default async function Home() {
   return (
@@ -58,7 +60,26 @@ export default async function Home() {
               <Bookshelf />
             </div>
           </div>
+          <ContactButton />
+        </div>
 
+        <div className="mainContainer w-full" id="home">
+          <div
+            className="flex h-fit w-full items-center justify-center"
+            style={{
+              background:
+                "repeating-linear-gradient( -45deg, rgba(0,0,0,0),rgba(0,0,0,0) 20px, #69b578 20px, #69b578 100px )",
+            }}
+          >
+            <h1 className="my-3 w-fit bg-hero text-center text-4xl text-background">
+              FUN ZONE:
+            </h1>
+          </div>
+        </div>
+        <div
+          className="mainContainer container z-0 flex flex-col items-center justify-center gap-12 px-4 py-16"
+          id="home"
+        >
           <h1 className="text-2xl">Current Colors:</h1>
           <div
             className={
@@ -88,11 +109,6 @@ export default async function Home() {
             text={"Bjørn Møgelhøj"}
             subText="(Still a work in progress... "
           />
-        </div>
-        <div className="h-fit w-full items-center bg-hero">
-          <h1 className="my-3 text-center text-4xl text-background">
-            FUN ZONE:
-          </h1>
         </div>
       </main>
     </HydrateClient>

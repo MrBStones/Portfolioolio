@@ -53,8 +53,8 @@ export default function TitleText({ text, subText }: Readonly<TitleTextProps>) {
   );
 
   return (
-    <div ref={container} className="w-[32rem]">
-      <h1 id="title" className="text-light-light text-6xl dark:text-light">
+    <div ref={container} className="w-FIT">
+      <h1 id="title" className="text-6xl text-light-light dark:text-light">
         {reversedText}
       </h1>
       <div className="flex flex-row">

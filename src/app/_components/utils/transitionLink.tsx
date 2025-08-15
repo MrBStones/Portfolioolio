@@ -29,7 +29,7 @@ export default function TransitionLink({
       .timeline()
       .to(".mainContainer", {
         duration: 1,
-        opacity: 0,
+        alpha: 0,
         filter: "blur(5px)",
         x: 100,
         ease: "power3.out",
