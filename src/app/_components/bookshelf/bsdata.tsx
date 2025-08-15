@@ -54,10 +54,8 @@ export const projectsData: bsDetailViewProps[] = [
   {
     description:
       "This is a project was created during the second semester of university. The program is created using java and javafx. It uses openstreetmap to display a map of Denmark with markers for different locations, and navigigation.",
-    linkOneText: "Source →",
-    linkOne: "https://chatgpt.com/",
-    linkTwoText: "Open Street Map →",
-    linkTwo: "https://www.openstreetmap.org/",
+    linkOneText: "Project",
+    linkTwoText: "Unavailable",
     image: "mapofdk.png",
     bsItem: {
       num: "02",
@@ -72,8 +70,7 @@ export const projectsData: bsDetailViewProps[] = [
       "This is a project was created during the fourth semester of university. The app is created using kotlin and android studio. It uses firebase to store and create events, adn native android components to create a slick UI.",
     linkOneText: "GitHub Repo →",
     linkOne: "https://github.com/MrBStones/CopenhagenBuzz",
-    linkTwoText: "Firebase →",
-    linkTwo: "https://firebase.google.com/",
+    linkTwoText: "",
     image: "copenhagenbuzz.png",
     bsItem: {
       num: "03",

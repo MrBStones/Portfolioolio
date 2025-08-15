@@ -9,6 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/CustomEase";
 import { EasePack } from "gsap/EasePack";
 import { useRouter } from "next/navigation";
+import TransitionLink from "../utils/transitionLink";
 
 export default function Bookshelf() {
   /* eslint-disable */
@@ -125,19 +126,13 @@ export default function Bookshelf() {
         from: "start",
       },
     })
-      .to(
-        "#home > *",
-        {
-          delay: 0.5,
-          duration: 1,
-          x: 100,
-          ease: "power1.In",
-          filter: "blur(5px)",
-          alpha: 0,
-          stagger: 0.1,
-        },
-        "<",
-      )
+      .to("#home > *", {
+        duration: 1,
+        x: 100,
+        ease: "power1.In",
+        filter: "blur(5px)",
+        alpha: 0,
+      })
 
       .call(() => {
         // Navigate to the projects page
@@ -149,7 +144,7 @@ export default function Bookshelf() {
     <div
       id="bookshelf"
       className={
-        "h-sc bg-light-dark/50 container flex h-128 cursor-pointer flex-col overflow-clip rounded-xl backdrop-blur-sm dark:bg-dark/50"
+        "h-sc container flex h-128 cursor-pointer flex-col overflow-clip rounded-xl bg-light-dark/50 backdrop-blur-sm dark:bg-dark/50"
       }
       onClick={onClick}
     >

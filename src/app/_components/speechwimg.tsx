@@ -57,7 +57,7 @@ export default function SpeechWithImg() {
         }}
       >
         <Image
-          src={"/hisketch.png"}
+          src={"/drawing.png"}
           width={694}
           height={841}
           alt={"Sketch of scrunches"}
@@ -91,7 +91,7 @@ export default function SpeechWithImg() {
           left={false}
         />
         <Image
-          src={"/showingsketch.png"}
+          src={"/drawing.png"}
           width={694}
           height={841}
           alt={"Sketch of scrunches"}

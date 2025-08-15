@@ -89,6 +89,11 @@ export default async function Home() {
             subText="(Still a work in progress... "
           />
         </div>
+        <div className="h-fit w-full items-center bg-hero">
+          <h1 className="my-3 text-center text-4xl text-background">
+            FUN ZONE:
+          </h1>
+        </div>
       </main>
     </HydrateClient>
   );

@@ -65,6 +65,7 @@ export default function BsItemHover({
         ref={container}
         onMouseEnter={mouseEnter}
         onMouseLeave={mouseLeave}
+        onClick={mouseLeave}
         className={`${fixedWidth ? "w-bs-item-w min-w-[400px]" : ""} rounded-xl bg-light`}
         id="bsItemHover"
       >

@@ -8,6 +8,7 @@ import { Flip } from "gsap/Flip";
 import { useRef, useState } from "react";
 import BsItemHover from "./bsitemhover";
 import { set } from "zod";
+import Image from "next/image";
 
 gsap.registerPlugin(Flip);
 
@@ -165,11 +166,18 @@ export default function BsDetailView({
       <div ref={fullContainer} className="flex flex-col items-center">
         <div
           ref={detailViewContainer}
-          className={`bg-light-dark/50 container flex flex-col gap-3 rounded-3xl backdrop-blur-xl backdrop-filter dark:bg-dark/50 ${fullyOpen ? "" : "overflow-clip"} ${fullyClosed ? "h-0 w-0" : midAnim ? "max-w-128 p-3" : "h-0 max-w-128 p-3"}`}
+          className={`container flex flex-col gap-3 rounded-3xl bg-light-dark/50 backdrop-blur-xl backdrop-filter dark:bg-dark/50 ${fullyOpen ? "" : "overflow-clip"} ${fullyClosed ? "h-0 w-0" : midAnim ? "max-w-128 p-3" : "h-0 max-w-128 p-3"}`}
         >
+          <Image
+            src={icon}
+            alt={iconAlt}
+            className="w-10 invert dark:invert-0"
+            width={24}
+            height={24}
+          />
           <div ref={innerContainer}></div>
-          <div className="container flex w-full flex-row gap-3">
-            <img src={icon} alt={iconAlt} className="w-10 text-light" />
+
+          <div className="container flex w-full flex-col gap-3">
             <p className="text-right">{description}</p>
           </div>
 

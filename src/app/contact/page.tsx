@@ -39,11 +39,7 @@ export default function Projects() {
             bjornmogelhoj@gmail.com
           </a>
         </p>
-        <p className="text-xl">Or you can find me in the silly asylum :)</p>
-
-        <div className="w-fit overflow-hidden rounded-lg shadow-md shadow-light-light dark:shadow-light">
-          <Image src="/sillyness.jpg" alt="Silly" width={735} height={581} />
-        </div>
+        <Image src="/drawing.png" alt="Silly" width={291} height={432} />
 
         <div className="h-[30svh]" />
       </div>
