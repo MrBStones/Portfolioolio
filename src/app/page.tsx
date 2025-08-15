@@ -18,7 +18,7 @@ export default async function Home() {
     <HydrateClient>
       <main className="-z-20 flex min-h-screen select-none flex-col items-center justify-center overflow-hidden text-light-light dark:text-light">
         <div
-          className="mainContainer container z-0 flex flex-col items-center justify-center gap-12 px-4 py-16"
+          className="mainContainer container z-0 flex flex-col items-center justify-center gap-16 px-4 py-16"
           id="home"
         >
           <div className={"container flex h-screen flex-col"}>
