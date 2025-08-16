@@ -12,6 +12,7 @@ import BsDetailView from "./_components/bookshelf/bsdetailview";
 import AnimateIdOnOpen from "./_components/utils/animateIdOnOpen";
 import TransitionLink from "./_components/utils/transitionLink";
 import ContactButton from "./_components/contactButton";
+import tailwindConfig from "tailwind.config";
 
 export default async function Home() {
   return (
@@ -68,7 +69,11 @@ export default async function Home() {
             className="flex h-fit w-full items-center justify-center"
             style={{
               background:
-                "repeating-linear-gradient( -45deg, rgba(0,0,0,0),rgba(0,0,0,0) 20px, #69b578 20px, #69b578 100px )",
+                "repeating-linear-gradient( -45deg, rgba(0,0,0,0),rgba(0,0,0,0) 20px, " +
+                tailwindConfig.theme.extend.colors["dark-hero"] +
+                " 20px, " +
+                tailwindConfig.theme.extend.colors["dark-hero"] +
+                " 100px )",
             }}
           >
             <h1 className="my-3 w-fit bg-hero text-center text-4xl text-background">

@@ -17,14 +17,14 @@ export default {
         background: '#000000',
         dark: '#141414',
         light: '#dcd6d1',
-        hero: '#3ddc97',
-        'dark-hero': '#69b578',
+        hero: '#FF715B',
+        'dark-hero': '#EBE684',
         // Light mode overrides
         'light-background': '#f7f4f2',
         'light-dark': '#DCD6D1',
         'light-light': '#141414',
-        'light-hero': '#3ddc97',
-        'light-dark-hero': '#69b578',
+        'light-hero': '#EBE684',
+        'light-dark-hero': '#FF715B',
       },
       spacing: {
         '18': '4.5rem',
