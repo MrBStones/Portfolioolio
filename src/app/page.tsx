@@ -76,7 +76,7 @@ export default async function Home() {
                 " 100px )",
             }}
           >
-            <h1 className="my-3 w-fit bg-hero text-center text-4xl text-background">
+            <h1 className="my-3 w-fit bg-hero px-4 py-2 text-center text-4xl text-background">
               FUN ZONE:
             </h1>
           </div>
