@@ -72,8 +72,9 @@ export default function BsDetailView({
       setFullyOpen(false);
 
       requestAnimationFrame(() => {
+        // CLOSE ANIMATION
         Flip.from(state, {
-          duration: 0.5,
+          duration: 0.25,
           ease: "power3.out",
           onComplete: () => {
             const state2 = Flip.getState([detailViewContainer.current]);
@@ -82,15 +83,15 @@ export default function BsDetailView({
 
             requestAnimationFrame(() => {
               Flip.from(state2, {
-                duration: 1,
-                ease: "linear",
+                duration: 0.5,
+                ease: "power3.in",
                 onComplete: () => {
                   const state3 = Flip.getState([detailViewContainer.current]);
                   setFullyClosed(true);
 
                   requestAnimationFrame(() => {
                     Flip.from(state3, {
-                      duration: 1,
+                      duration: 0.25,
                       ease: "power3.out",
                       onComplete: () => {
                         setAnimationRunning(false);
@@ -114,8 +115,9 @@ export default function BsDetailView({
       setFullyClosed(false);
 
       requestAnimationFrame(() => {
+        // OPEN ANIMATION
         Flip.from(state, {
-          duration: 1,
+          duration: 0.25,
           ease: "power3.in",
           onComplete: () => {
             const state2 = Flip.getState([detailViewContainer.current]);
@@ -124,7 +126,7 @@ export default function BsDetailView({
 
             requestAnimationFrame(() => {
               Flip.from(state2, {
-                duration: 1,
+                duration: 0.5,
                 ease: "power3.out",
                 onComplete: () => {
                   const state3 = Flip.getState([
@@ -141,7 +143,7 @@ export default function BsDetailView({
                       innerContainer.current.appendChild(bsItemRef.current);
                     }
                     Flip.from(state3, {
-                      duration: 0.5,
+                      duration: 0.25,
                       ease: "power3.inOut",
                       onComplete: () => {
                         setAnimationRunning(false);
