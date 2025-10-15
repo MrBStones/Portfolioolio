@@ -19,21 +19,6 @@ export type bsDetailViewProps = {
   technologies?: string[];
 };
 
-export const bsData: bsItemProps[] = [
-  { num: "01", title: "CHIRP", description: "clone of twitter" },
-  { num: "02", title: "MAP OF DK", description: "openstreetmap viewer" },
-  { num: "03", title: "COPENHAGEN BUZZ", description: "event planner app" },
-  { num: "04", title: "CMN EMAILS", description: "dynamic market reports" },
-  { num: "05", title: "PORTFOLIO SITE", description: "this site ur on rn" },
-  { num: "06", title: "SKETCHES", description: "art i made" },
-  { num: "07", title: "OTHER PROJECT", description: "lorem" },
-  { num: "08", title: "OTHER PROJECT", description: "ipsum" },
-  { num: "09", title: "OTHER PROJECT", description: "dolor" },
-  { num: "10", title: "OTHER PROJECT", description: "dolor" },
-  { num: "11", title: "OTHER PROJECT", description: "dolor" },
-  { num: "12", title: "OTHER PROJECT", description: "dolor" },
-];
-
 export const projectsData: bsDetailViewProps[] = [
   {
     description:
@@ -47,7 +32,7 @@ export const projectsData: bsDetailViewProps[] = [
     bsItem: {
       num: "01",
       title: "CHIRP",
-      description: "twitter clone",
+      description: "Twitter clone",
     },
     technologies: ["asp.net", "C#", "azure"],
     icon: "language_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg",
@@ -61,7 +46,7 @@ export const projectsData: bsDetailViewProps[] = [
     bsItem: {
       num: "02",
       title: "MAP OF DK",
-      description: "openstreetmap viewer",
+      description: "OpenStreetMap viewer",
     },
     technologies: ["java", "javafx", "openstreetmap"],
     icon: "desktop_windows_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg",
@@ -76,7 +61,7 @@ export const projectsData: bsDetailViewProps[] = [
     bsItem: {
       num: "03",
       title: "COPENHAGEN BUZZ",
-      description: "event planner app",
+      description: "Event planner app",
     },
     technologies: ["android", "kotlin", "firebase", "google maps"],
     icon: "smartphone_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg",
@@ -90,7 +75,7 @@ export const projectsData: bsDetailViewProps[] = [
     bsItem: {
       num: "04",
       title: "MARKET REPORTS",
-      description: "email generation system",
+      description: "Email generation system",
     },
     technologies: ["typescript", "react", "neondb", "prisma"],
     icon: "language_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg",
@@ -106,7 +91,7 @@ export const projectsData: bsDetailViewProps[] = [
     bsItem: {
       num: "05",
       title: "PORTFOLIO SITE",
-      description: "this site ur on rn",
+      description: "This site you're on right now",
     },
     technologies: ["typescript", "react", "tailwind", "gsap"],
     icon: "language_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg",
@@ -118,7 +103,7 @@ export const projectsData: bsDetailViewProps[] = [
     linkOne: "https://github.com/MrBStones/Portfolioolio",
     linkTwoText: "",
     image: "drawing.png",
-    bsItem: { num: "06", title: "SKETCHES", description: "art i made" },
+    bsItem: { num: "06", title: "SKETCHES", description: "Art I made" },
     technologies: ["pen", "paper", "samsung galaxy tab s8"],
     icon: "brush_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg",
   },
@@ -137,3 +122,11 @@ export const projectsData: bsDetailViewProps[] = [
     icon: "desktop_windows_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg",
   },
 ];
+
+export const bsData: bsItemProps[] = Array.from({ length: 12 }, (_, i) => {
+  const project = projectsData[i % projectsData.length];
+  if (!project) {
+    throw new Error(`Project not found at index ${i % projectsData.length}`);
+  }
+  return project.bsItem;
+});
