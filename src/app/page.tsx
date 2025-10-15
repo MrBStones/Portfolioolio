@@ -32,27 +32,36 @@ export default async function Home() {
             </div>
             <ScrollIndicator
               text={"Try scrolling why dontcha?"}
-              hoverText={"No like, using the scrool wheel..."}
+              hoverText={"You know, using the scrool wheel..."}
             />
           </div>
           <div className="container flex w-full flex-col gap-12 lg:flex-row">
             <div className="container flex w-full basis-1/2 flex-col gap-3">
               <h1 className="text-3xl">
-                Writing,
+                Hard working
                 <b className="text-light-dark-hero dark:text-hero">
                   {" "}
-                  one line of code at a time :)
+                  student of IT :)
                 </b>
               </h1>
-              <p className="text-right text-xl">
-                Hi! Im Bjørn, a friendly developer who loves to solve problems
-                and build cool things with code. I enjoy learning new
-                technologies, collaborating with others, and turning ideas into
-                reality—one line at a time. Welcome to my portfolio!
+              <p className="text-justify text-xl">
+                Hi! Im Bjørn, a friendly student from the IT University of
+                Copenhagen who loves to solve problems and build cool things
+                with code. From my studies at ITU i have become well versed in
+                IT.
+              </p>
+              <br />
+              <p className="text-justify text-xl">
+                I enjoy learning new technologies, collaborating with my peers,
+                and turning ideas into reality, one line of code at a time.
+                <b className="text-light-dark-hero dark:text-hero">
+                  {" "}
+                  Welcome to my portfolio!
+                </b>
               </p>
               <br />
               <h1 className="text-3xl">My projects:</h1>
-              <p className="text-right text-xl">
+              <p className="text-justify text-xl">
                 Here are some of the projects I have worked on. Click on the
                 bookshelf to see them all in detail.
               </p>

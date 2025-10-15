@@ -2,6 +2,7 @@ export type bsItemProps = {
   num: string;
   title: string;
   description: string;
+  className?: string;
 };
 
 export type bsDetailViewProps = {

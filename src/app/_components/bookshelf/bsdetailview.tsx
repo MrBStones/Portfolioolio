@@ -179,8 +179,8 @@ export default function BsDetailView({
           />
           <div ref={innerContainer}></div>
 
-          <div className="container flex w-full flex-col gap-3">
-            <p className="text-right">{description}</p>
+          <div className="container flex w-full flex-col gap-3 p-3">
+            <p className="text-justify">{description}</p>
           </div>
 
           <div
@@ -214,11 +214,11 @@ export default function BsDetailView({
               />
             </div>
           </div>
-          <div className="container flex h-bs-item-h flex-row items-center justify-end gap-3 hover:cursor-pointer">
+          <div className="container flex h-bs-item-h flex-wrap items-center justify-end gap-3 hover:cursor-pointer">
             {technologies.map((tech, index) => (
               <div
                 key={index}
-                className="rounded-xl bg-dark-hero px-4 py-2 text-right text-dark transition-colors duration-100 hover:bg-light"
+                className="w-fit rounded-xl bg-dark-hero px-4 py-2 text-right text-dark transition-colors duration-100 hover:bg-light"
               >
                 {tech}
               </div>
@@ -236,6 +236,7 @@ export default function BsDetailView({
               title={bsItem.title}
               description={bsItem.description}
               fixedWidth={!fullyOpen}
+              className={""}
             />
           </div>
         </div>

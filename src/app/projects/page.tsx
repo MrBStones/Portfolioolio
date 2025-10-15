@@ -27,17 +27,21 @@ export default function Projects() {
   return (
     <main className="-z-20 flex min-h-screen select-none flex-col items-center justify-center overflow-hidden text-light-light dark:text-light">
       <div
-        className="mainContainer container flex w-full flex-col gap-6"
+        className="mainContainer container flex w-full flex-col gap-6 px-4"
         id="projects"
       >
         <div className="h-[30svh]" />
         <h1 className="text-4xl font-bold">Projects</h1>
         <p className="text-xl">
-          Here are some of the projects I have worked on. Click on the tabs to
-          see more details.
+          Here are some of the projects I have worked on. Some are personal
+          projects but most are university activities.
+          <b className="text-light-dark-hero dark:text-hero">
+            {" "}
+            Click on the tabs to see more details.
+          </b>{" "}
         </p>
         <div className="flex w-full justify-center">
-          <div className="flex flex-col items-center gap-3 md:w-[calc(64rem+12px)] md:flex-row md:items-start md:justify-center">
+          <div className="flex flex-wrap items-center gap-3 md:w-[270rem] md:flex-row md:items-start md:justify-center">
             <div className="flex w-full flex-col gap-3 md:w-128">
               {colA.map((item, idx) => {
                 const key = idx; // first half

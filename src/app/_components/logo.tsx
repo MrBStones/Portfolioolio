@@ -31,6 +31,7 @@ export default function Logo() {
       ease: "elastic",
     });
     setToggle(!toggled);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   return (

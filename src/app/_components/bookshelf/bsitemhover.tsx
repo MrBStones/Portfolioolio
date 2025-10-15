@@ -12,6 +12,7 @@ export default function BsItemHover({
   title,
   description,
   fixedWidth = true,
+  className,
 }: Readonly<bsItemProps> & { fixedWidth?: boolean }) {
   const container = useRef<HTMLDivElement>(null);
   const { contextSafe } = useGSAP(
@@ -66,7 +67,7 @@ export default function BsItemHover({
         onMouseEnter={mouseEnter}
         onMouseLeave={mouseLeave}
         onClick={mouseLeave}
-        className={`${fixedWidth ? "w-bs-item-w min-w-[400px]" : ""} rounded-xl bg-light`}
+        className={`${fixedWidth ? "w-bs-item-w min-w-[375px]" : ""} ${className} rounded-xl bg-light`}
         id="bsItemHover"
       >
         <BsItem num={num} title={title} description={description} bgColor="" />

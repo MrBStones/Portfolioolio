@@ -22,14 +22,12 @@ export default function Projects() {
   return (
     <main className="-z-20 flex min-h-screen select-none flex-col items-center justify-center overflow-hidden text-light-light dark:text-light">
       <div
-        className="mainContainer container flex w-full flex-col gap-3"
+        className="mainContainer container flex w-full flex-col gap-3 px-4"
         id="contact"
       >
         <div className="h-[30svh]" />
         <h1 className="text-4xl font-bold">Contact</h1>
-        <p className="text-xl">
-          PLEEEAAASE CONTACT ME PLEASE PLEASE PLEASE CONTACT ME PLEASE!
-        </p>
+        <p className="text-xl">Feel free to reach out!</p>
         <p className="text-xl">
           You can reach me at:{" "}
           <a
