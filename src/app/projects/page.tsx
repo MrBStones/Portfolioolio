@@ -27,22 +27,24 @@ export default function Projects() {
   return (
     <main className="-z-20 flex min-h-screen select-none flex-col items-center justify-center overflow-hidden text-light-light dark:text-light">
       <div
-        className="mainContainer container flex w-full flex-col gap-6 px-4"
+        className="mainContainer container flex w-full flex-col gap-16 px-4"
         id="projects"
       >
-        <div className="h-[30svh]" />
-        <h1 className="text-4xl font-bold">Projects</h1>
-        <p className="text-xl">
-          Here are some of the projects I have worked on. Some are personal
-          projects but most are university activities.
-          <b className="text-light-dark-hero dark:text-hero">
-            {" "}
-            Click on the tabs to see more details.
-          </b>{" "}
-        </p>
+        <div className="gap-6">
+          <div className="h-[30svh]" />
+          <h1 className="text-4xl font-bold">Projects</h1>
+          <p className="text-xl">
+            Here are some of the projects I have worked on. Some are personal
+            projects but most are university activities.
+            <b className="text-light-dark-hero dark:text-hero">
+              {" "}
+              Click on the tabs to see more details.
+            </b>{" "}
+          </p>
+        </div>
         <div className="flex w-full justify-center">
-          <div className="flex flex-wrap items-center gap-3 md:w-[270rem] md:flex-row md:items-start md:justify-center">
-            <div className="flex w-full flex-col gap-3 md:w-128">
+          <div className="flex w-full flex-wrap items-center gap-3 md:flex-row md:items-start md:justify-center">
+            <div className="flex w-full flex-col gap-3 xl:w-[50%]">
               {colA.map((item, idx) => {
                 const key = idx; // first half
                 return (
@@ -63,7 +65,7 @@ export default function Projects() {
                 );
               })}
             </div>
-            <div className="flex w-full flex-col gap-3 md:w-128">
+            <div className="flex w-full flex-col gap-3 xl:w-[49%]">
               {colB.map((item, idx) => {
                 const key = mid + idx; // offset for uniqueness
                 return (
@@ -86,10 +88,7 @@ export default function Projects() {
             </div>
           </div>
         </div>
-
-        <div className="container flex h-[30svh] items-center justify-center">
-          <ContactButton />
-        </div>
+        <ContactButton />
       </div>
     </main>
   );

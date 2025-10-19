@@ -37,6 +37,15 @@ export default function Projects() {
             bjornmogelhoj@gmail.com
           </a>
         </p>
+        <p className="text-xl">
+          LinkedIn:{" "}
+          <a
+            href="https://www.linkedin.com/in/bj%C3%B8rn-m%C3%B8gelh%C3%B8j/"
+            className="text-light-dark-hero dark:text-hero"
+          >
+            @Bjørn-Møgelhøj
+          </a>
+        </p>
         <Image src="/drawing.png" alt="Silly" width={291} height={432} />
 
         <div className="h-[30svh]" />
