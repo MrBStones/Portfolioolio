@@ -192,12 +192,12 @@ export default function BsDetailView({
               className={`container flex ${imageToggled ? "flex-row-reverse" : "flex-col"} gap-3`}
             >
               <a href={linkOne} className="basis-1/2">
-                <div className="h-bs-item-h w-full rounded-xl bg-hero p-3 text-right text-3xl text-dark transition-colors duration-100 hover:bg-light">
+                <div className="h-bs-item-h w-full rounded-xl bg-hero p-3 text-right text-2xl text-dark transition-colors duration-100 hover:bg-light">
                   {linkOneText}
                 </div>
               </a>
               <a href={linkTwo} className="basis-1/2">
-                <div className="h-bs-item-h w-full rounded-xl bg-dark-hero p-3 text-right text-3xl text-dark transition-colors duration-100 hover:bg-light">
+                <div className="h-bs-item-h w-full rounded-xl bg-dark-hero p-3 text-right text-2xl text-dark transition-colors duration-100 hover:bg-light">
                   {linkTwoText}
                 </div>
               </a>

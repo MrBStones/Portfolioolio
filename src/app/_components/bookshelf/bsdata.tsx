@@ -40,8 +40,8 @@ export const projectsData: bsDetailViewProps[] = [
   {
     description:
       "This project was created during the second semester of university. The program is created using Java and JavaFX. It uses OpenStreetMap to display a map of Denmark with markers for different locations and navigation.",
-    linkOneText: "Project",
-    linkTwoText: "Unavailable",
+    linkOneText: "Project Unavailable",
+    linkTwoText: "",
     image: "mapofdk.png",
     bsItem: {
       num: "02",
@@ -61,7 +61,7 @@ export const projectsData: bsDetailViewProps[] = [
     bsItem: {
       num: "03",
       title: "COPENHAGEN BUZZ",
-      description: "Event planner app",
+      description: "Event app",
     },
     technologies: ["android", "kotlin", "firebase", "google maps"],
     icon: "smartphone_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg",
@@ -69,13 +69,13 @@ export const projectsData: bsDetailViewProps[] = [
   {
     description:
       "This project was created during the fourth semester of university. Our group was tasked with creating a system that automatically generates market report emails and sends them to users. The project was created in collaboration with CM-Navigator. Project organization was handled using the Scrum framework.",
-    linkOneText: "Project",
-    linkTwoText: "Unavailable",
+    linkOneText: "Project Unavailable",
+    linkTwoText: "",
     image: "cmnav.png",
     bsItem: {
       num: "04",
       title: "MARKET REPORTS",
-      description: "Email generation system",
+      description: "Email generation",
     },
     technologies: ["typescript", "react", "neondb", "prisma"],
     icon: "language_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg",
@@ -90,7 +90,7 @@ export const projectsData: bsDetailViewProps[] = [
     image: "scrunchesvgwithbg.svg",
     bsItem: {
       num: "05",
-      title: "PORTFOLIO SITE",
+      title: "PORTFOLIO",
       description: "This site you're on right now",
     },
     technologies: ["typescript", "react", "tailwind", "gsap"],
