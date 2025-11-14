@@ -32,32 +32,7 @@ export default function Bookshelf() {
     const targetsTop = gsap.utils.toArray("#scrollTop");
     const targetsBot = gsap.utils.toArray("#scrollBot");
 
-    const tl1 = gsap.timeline({ paused: true, scrollTrigger: "#scrollTop" });
-    // start animation
-    tl1
-      .from("#scrollTop", {
-        duration: 3,
-        opacity: 0,
-        x: 824,
-        ease: "speedEase",
-      })
-      .from(
-        "#scrollBot",
-        {
-          duration: 3,
-          opacity: 0,
-          x: -824,
-          ease: "speedEase",
-        },
-        "<",
-      )
-      .call(() => {
-        // start the carousel animation when the page loads
-        tl2.play();
-      });
-
     const tl2 = gsap.timeline({
-      paused: true,
       repeat: -1,
       onRepeat: () => {
         // Directly manipulate the DOM to move the first child to the end
@@ -113,122 +88,96 @@ export default function Bookshelf() {
       );
   });
 
-  const onClick = contextSafe(() => {
-    const tl = gsap.timeline();
-    tl.to("#bookshelf div *", {
-      duration: 0.5,
-      scale: 1,
-      y: 60,
-      ease: "power1.Out",
-      alpha: 0,
-      stagger: {
-        amount: 1,
-        from: "start",
-      },
-    })
-      .to("#home > *", {
-        duration: 1,
-        x: 100,
-        ease: "power1.In",
-        filter: "blur(5px)",
-        alpha: 0,
-      })
-
-      .call(() => {
-        // Navigate to the projects page
-        router.push("/projects");
-      });
-  });
-
   return (
-    <div
-      id="bookshelf"
-      className={
-        "h-sc container flex h-128 cursor-pointer flex-col overflow-clip rounded-xl bg-light-dark/50 backdrop-blur-sm dark:bg-dark/50"
-      }
-      onClick={onClick}
-    >
-      <div className="container flex flex-row justify-center">
-        <p className={"p-5 text-5xl"}>BOOKSHELF</p>
+    <TransitionLink href="/projects">
+      <div
+        id="bookshelf"
+        className={
+          "h-sc container flex h-128 cursor-pointer flex-col overflow-clip rounded-xl bg-light-dark dark:bg-dark"
+        }
+      >
+        <div className="container flex flex-row justify-center">
+          <p className={"p-5 text-5xl"}>BOOKSHELF</p>
+        </div>
+        <div className="container flex h-full -rotate-6 flex-col justify-center gap-3">
+          <div
+            ref={scrollTopRef}
+            id="scrollTop"
+            className="container flex flex-row justify-center gap-3 overflow-visible"
+          >
+            {bsData.map((item, index) => {
+              const isEven = index % 2 === 0;
+              if (isEven)
+                return (
+                  <div key={index}>
+                    <BsItemHover
+                      num={item.num}
+                      title={item.title}
+                      description={item.description}
+                    />
+                  </div>
+                );
+            })}
+          </div>
+          <div
+            ref={scrollBotRef}
+            id="scrollBot"
+            className="container flex flex-row justify-center gap-3 overflow-visible"
+          >
+            {bsData.map((item, index) => {
+              const isOdd = index % 2 !== 0;
+              if (isOdd)
+                return (
+                  <div key={index}>
+                    <BsItemHover
+                      num={item.num}
+                      title={item.title}
+                      description={item.description}
+                    />
+                  </div>
+                );
+            })}
+          </div>
+          <div
+            ref={scrollTopRef2}
+            id="scrollTop"
+            className="container flex flex-row justify-center gap-3 overflow-visible"
+          >
+            {bsData.map((item, index) => {
+              const isOdd = index % 2 !== 0;
+              if (isOdd)
+                return (
+                  <div key={index}>
+                    <BsItemHover
+                      num={item.num}
+                      title={item.title}
+                      description={item.description}
+                    />
+                  </div>
+                );
+            })}
+          </div>
+          <div
+            ref={scrollBotRef2}
+            id="scrollBot"
+            className="container flex flex-row justify-center gap-3 overflow-visible"
+          >
+            {bsData.map((item, index) => {
+              const isEven = index % 2 === 0;
+              if (isEven)
+                return (
+                  <div key={index}>
+                    <BsItemHover
+                      num={item.num}
+                      title={item.title}
+                      description={item.description}
+                    />
+                  </div>
+                );
+            })}
+          </div>
+        </div>
       </div>
-      <div className="container flex h-full -rotate-6 flex-col justify-center gap-3">
-        <div
-          ref={scrollTopRef}
-          id="scrollTop"
-          className="container flex flex-row justify-center gap-3 overflow-visible"
-        >
-          {bsData.map((item, index) => {
-            const isEven = index % 2 === 0;
-            if (isEven)
-              return (
-                <div key={index}>
-                  <BsItemHover
-                    num={item.num}
-                    title={item.title}
-                    description={item.description}
-                  />
-                </div>
-              );
-          })}
-        </div>
-        <div
-          ref={scrollBotRef}
-          id="scrollBot"
-          className="container flex flex-row justify-center gap-3 overflow-visible"
-        >
-          {bsData.map((item, index) => {
-            const isOdd = index % 2 !== 0;
-            if (isOdd)
-              return (
-                <div key={index}>
-                  <BsItemHover
-                    num={item.num}
-                    title={item.title}
-                    description={item.description}
-                  />
-                </div>
-              );
-          })}
-        </div>
-        <div
-          ref={scrollTopRef2}
-          id="scrollTop"
-          className="container flex flex-row justify-center gap-3 overflow-visible"
-        >
-          {bsData.map((item, index) => {
-            const isOdd = index % 2 !== 0;
-            if (isOdd)
-              return (
-                <div key={index}>
-                  <BsItemHover
-                    num={item.num}
-                    title={item.title}
-                    description={item.description}
-                  />
-                </div>
-              );
-          })}
-        </div>
-        <div
-          ref={scrollBotRef2}
-          id="scrollBot"
-          className="container flex flex-row justify-center gap-3 overflow-visible"
-        >
-          {bsData.map((item, index) => {
-            const isEven = index % 2 === 0;
-            if (isEven)
-              return (
-                <div key={index}>
-                  <BsItemHover
-                    num={item.num}
-                    title={item.title}
-                    description={item.description}
-                  />
-                </div>
-              );
-          })}
-        </div>
-      </div>
-    </div>
+    </TransitionLink>
   );
 }

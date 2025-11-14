@@ -25,11 +25,11 @@ export default function Projects() {
         className="mainContainer container flex w-full flex-col gap-3 px-4"
         id="contact"
       >
-        <div className="h-[30svh]" />
+        <div className="h-[128px]" />
         <h1 className="text-4xl font-bold">Contact</h1>
         <p className="text-xl">Feel free to reach out!</p>
         <p className="text-xl">
-          You can reach me at:{" "}
+          E-Mail:{" "}
           <a
             href="mailto: bjornmogelhoj@gmail.com"
             className="text-light-dark-hero dark:text-hero"
@@ -47,8 +47,6 @@ export default function Projects() {
           </a>
         </p>
         <Image src="/drawing.png" alt="Silly" width={291} height={432} />
-
-        <div className="h-[30svh]" />
       </div>
     </main>
   );
