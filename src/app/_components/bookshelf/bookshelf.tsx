@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import BsItemHover from "./bsitemhover";
 import { bsData } from "./bsdata";
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/CustomEase";
 import { EasePack } from "gsap/EasePack";
@@ -22,6 +22,10 @@ export default function Bookshelf() {
   const scrollTopRef2 = useRef<HTMLDivElement>(null);
   const scrollBotRef2 = useRef<HTMLDivElement>(null);
 
+  // Memoize filtered data to avoid recalculating on every render
+  const evenItems = useMemo(() => bsData.filter((_, i) => i % 2 === 0), []);
+  const oddItems = useMemo(() => bsData.filter((_, i) => i % 2 !== 0), []);
+
   const { contextSafe } = useGSAP(() => {
     /* eslint-disable */
     CustomEase.create(
@@ -29,8 +33,8 @@ export default function Bookshelf() {
       "M0,0 C0,0 0.05,0.49 0.597,0.784 0.832,0.91 1,1 1,1 ",
     );
     /* eslint-enable */
-    const targetsTop = gsap.utils.toArray("#scrollTop");
-    const targetsBot = gsap.utils.toArray("#scrollBot");
+    const targetsTop = [scrollTopRef.current, scrollTopRef2.current];
+    const targetsBot = [scrollBotRef.current, scrollBotRef2.current];
 
     const tl2 = gsap.timeline({
       repeat: -1,
@@ -88,93 +92,50 @@ export default function Bookshelf() {
       );
   });
 
+  const renderItems = (items: typeof bsData) =>
+    items.map((item, index) => (
+      <div key={`${item.num}-${index}`}>
+        <BsItemHover
+          num={item.num}
+          title={item.title}
+          description={item.description}
+        />
+      </div>
+    ));
+
   return (
     <TransitionLink href="/projects">
       <div
         id="bookshelf"
-        className={
-          "h-sc container flex h-128 cursor-pointer flex-col overflow-clip rounded-xl bg-light-dark dark:bg-dark"
-        }
+        className="h-sc container flex h-128 cursor-pointer flex-col overflow-clip rounded-xl bg-light-dark dark:bg-dark"
       >
         <div className="container flex flex-row justify-center">
-          <p className={"p-5 text-5xl"}>BOOKSHELF</p>
+          <p className="p-5 text-5xl">BOOKSHELF</p>
         </div>
         <div className="container flex h-full -rotate-6 flex-col justify-center gap-3">
           <div
             ref={scrollTopRef}
-            id="scrollTop"
-            className="container flex flex-row justify-center gap-3 overflow-visible"
+            className="container flex flex-row justify-center gap-3 overflow-visible will-change-transform"
           >
-            {bsData.map((item, index) => {
-              const isEven = index % 2 === 0;
-              if (isEven)
-                return (
-                  <div key={index}>
-                    <BsItemHover
-                      num={item.num}
-                      title={item.title}
-                      description={item.description}
-                    />
-                  </div>
-                );
-            })}
+            {renderItems(evenItems)}
           </div>
           <div
             ref={scrollBotRef}
-            id="scrollBot"
-            className="container flex flex-row justify-center gap-3 overflow-visible"
+            className="container flex flex-row justify-center gap-3 overflow-visible will-change-transform"
           >
-            {bsData.map((item, index) => {
-              const isOdd = index % 2 !== 0;
-              if (isOdd)
-                return (
-                  <div key={index}>
-                    <BsItemHover
-                      num={item.num}
-                      title={item.title}
-                      description={item.description}
-                    />
-                  </div>
-                );
-            })}
+            {renderItems(oddItems)}
           </div>
           <div
             ref={scrollTopRef2}
-            id="scrollTop"
-            className="container flex flex-row justify-center gap-3 overflow-visible"
+            className="container flex flex-row justify-center gap-3 overflow-visible will-change-transform"
           >
-            {bsData.map((item, index) => {
-              const isOdd = index % 2 !== 0;
-              if (isOdd)
-                return (
-                  <div key={index}>
-                    <BsItemHover
-                      num={item.num}
-                      title={item.title}
-                      description={item.description}
-                    />
-                  </div>
-                );
-            })}
+            {renderItems(oddItems)}
           </div>
           <div
             ref={scrollBotRef2}
-            id="scrollBot"
-            className="container flex flex-row justify-center gap-3 overflow-visible"
+            className="container flex flex-row justify-center gap-3 overflow-visible will-change-transform"
           >
-            {bsData.map((item, index) => {
-              const isEven = index % 2 === 0;
-              if (isEven)
-                return (
-                  <div key={index}>
-                    <BsItemHover
-                      num={item.num}
-                      title={item.title}
-                      description={item.description}
-                    />
-                  </div>
-                );
-            })}
+            {renderItems(evenItems)}
           </div>
         </div>
       </div>
