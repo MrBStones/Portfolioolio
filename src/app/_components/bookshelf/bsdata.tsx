@@ -121,6 +121,22 @@ export const projectsData: bsDetailViewProps[] = [
     technologies: ["c#", "godot"],
     icon: "desktop_windows_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg",
   },
+  {
+    description:
+      "I made a tool to calculate angles and distances for spotters in the game foxhole.",
+    linkOneText: "Go to page →",
+    linkOne: "/foxhole_calc",
+    linkTwoText: "Source →",
+    linkTwo: "https://github.com/MrBStones/Portfolioolio",
+    image: "https://openclipart.org/download/237080/gis-in-foxhole.svg",
+    bsItem: {
+      num: "08",
+      title: "FOXHOLE CALC",
+      description: "azimut x distance",
+    },
+    technologies: ["tsx"],
+    icon: "language_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg",
+  },
 ];
 
 export const bsData: bsItemProps[] = Array.from({ length: 12 }, (_, i) => {
