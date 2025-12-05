@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useState } from "react";
 
-export default function foxhole_calc() {
+export default function FoxholeCalc() {
   const [azimut, setAzimut] = useState(0);
   const [distance, setDistance] = useState(0);
 
