@@ -57,9 +57,10 @@ export default function FoxholeCalc() {
   return (
     <main className="-z-20 flex min-h-screen select-none flex-col items-center justify-center overflow-hidden text-light-light dark:text-light">
       <div
-        className="mainContainer container flex w-full flex-col gap-16 px-4"
+        className="mainContainer container flex w-full flex-col gap-8 px-4"
         id="foxhole_calc"
       >
+        <div className="h-24" />
         <h1 className="text-center text-3xl text-light-dark-hero dark:text-hero">
           Foxhole Arty Calc
         </h1>
