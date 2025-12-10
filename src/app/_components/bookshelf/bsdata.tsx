@@ -68,20 +68,6 @@ export const projectsData: bsDetailViewProps[] = [
   },
   {
     description:
-      "This project was created during the fourth semester of university. Our group was tasked with creating a system that automatically generates market report emails and sends them to users. The project was created in collaboration with CM-Navigator. Project organization was handled using the Scrum framework.",
-    linkOneText: "Project Unavailable",
-    linkTwoText: "",
-    image: "cmnav.png",
-    bsItem: {
-      num: "04",
-      title: "MARKET REPORTS",
-      description: "Email generation",
-    },
-    technologies: ["typescript", "react", "neondb", "prisma"],
-    icon: "language_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg",
-  },
-  {
-    description:
       "I like messing about with this website from time to time. It has been a fun side project to work on when I have had some downtime. In the process, it taught me a lot of TypeScript and React. It feels a bit backwards to create the portfolio before I have anything to show, but I guess that's just how it is. :P",
     linkOneText: "GitHub repo →",
     linkOne: "https://github.com/MrBStones/Portfolioolio",
@@ -89,7 +75,7 @@ export const projectsData: bsDetailViewProps[] = [
     linkTwo: "https://portfolioolio.vercel.app/",
     image: "scrunchesvgwithbg.svg",
     bsItem: {
-      num: "05",
+      num: "04",
       title: "PORTFOLIO",
       description: "This site you're on right now",
     },
@@ -103,7 +89,7 @@ export const projectsData: bsDetailViewProps[] = [
     linkOne: "https://github.com/MrBStones/Portfolioolio",
     linkTwoText: "",
     image: "drawing.png",
-    bsItem: { num: "06", title: "SKETCHES", description: "Art I made" },
+    bsItem: { num: "05", title: "SKETCHES", description: "Art I made" },
     technologies: ["pen", "paper", "samsung galaxy tab s8"],
     icon: "brush_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg",
   },
@@ -114,7 +100,7 @@ export const projectsData: bsDetailViewProps[] = [
     linkTwoText: "",
     image: "https://img.itch.zone/aW1nLzIyNTAyOTg4LnBuZw==/original/dTUi69.png",
     bsItem: {
-      num: "07",
+      num: "06",
       title: "REGURGITATE",
       description: "gmtk game jam 2025",
     },
@@ -130,7 +116,7 @@ export const projectsData: bsDetailViewProps[] = [
     linkTwo: "https://github.com/MrBStones/Portfolioolio",
     image: "https://openclipart.org/download/237080/gis-in-foxhole.svg",
     bsItem: {
-      num: "08",
+      num: "07",
       title: "FOXHOLE CALC",
       description: "azimut x distance",
     },
