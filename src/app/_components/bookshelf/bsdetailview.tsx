@@ -2,7 +2,7 @@
 
 import gsap from "gsap";
 import { bsDetailViewProps } from "./bsdata";
-import { Flip } from "gsap/Flip";
+import { Flip } from "gsap/dist/Flip";
 import { useRef, useState } from "react";
 import BsItemHover from "./bsitemhover";
 import Image from "next/image";
