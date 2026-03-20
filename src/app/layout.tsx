@@ -26,7 +26,7 @@ export default function RootLayout({
       className={`bg-light-background font-jetbrains dark:bg-background`}
     >
       <body
-        className={"bg-light-background overflow-x-hidden dark:bg-background"}
+        className={"overflow-x-hidden bg-light-background dark:bg-background"}
       >
         <ThemeInit />
 
@@ -37,9 +37,7 @@ export default function RootLayout({
         <div className="fixed right-10 top-12 z-20">
           <Nav />
         </div>
-        <div className="fixed bottom-0 right-0 -z-0">
-          <BgLogo />
-        </div>
+
         <ScrollSmootherWrapper>
           <TRPCReactProvider>{children}</TRPCReactProvider>
         </ScrollSmootherWrapper>

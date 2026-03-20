@@ -15,7 +15,7 @@ export default function BsItemHover({
   className,
 }: Readonly<bsItemProps> & { fixedWidth?: boolean }) {
   const container = useRef<HTMLDivElement>(null);
-  const { contextSafe } = useGSAP(
+  useGSAP(
     () => {
       gsap.set(container.current, { zIndex: 8 });
     },
@@ -24,7 +24,7 @@ export default function BsItemHover({
   const heroColor = tailwindConfig.theme.extend.colors.hero;
   const lightColor = tailwindConfig.theme.extend.colors.light;
 
-  const mouseEnter = contextSafe(() => {
+  const mouseEnter = () => {
     const tl = gsap.timeline();
     tl.to(container.current, {
       duration: 0,
@@ -40,9 +40,9 @@ export default function BsItemHover({
       zIndex: 10,
       overwrite: true,
     });
-  });
+  };
 
-  const mouseLeave = contextSafe(() => {
+  const mouseLeave = () => {
     const tl = gsap.timeline();
     tl.to(container.current, {
       duration: 0,
@@ -58,7 +58,7 @@ export default function BsItemHover({
       backgroundColor: lightColor,
       overwrite: true,
     });
-  });
+  };
 
   return (
     <>

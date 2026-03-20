@@ -30,7 +30,6 @@ export default function Nav() {
         gsap.from(container.current, {
           duration: 1,
           x: 100,
-          filter: "blur(5px)",
           ease: "power2.out",
           opacity: 0,
         });

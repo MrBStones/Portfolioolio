@@ -9,7 +9,7 @@ gsap.registerPlugin(DrawSVGPlugin);
 
 export default function Logo() {
   const container = useRef<HTMLDivElement>(null);
-  const { contextSafe } = useGSAP(
+  useGSAP(
     () => {
       gsap.from("#logo", {
         duration: 1,
@@ -24,7 +24,7 @@ export default function Logo() {
   );
   const [toggled, setToggle] = useState(false);
 
-  const handleClick = contextSafe(() => {
+  const handleClick = () => {
     gsap.to(container.current, {
       duration: 1,
       rotation: getRandomIntInclusive(toggled ? -27 : 7, toggled ? -7 : 27),
@@ -32,7 +32,7 @@ export default function Logo() {
     });
     setToggle(!toggled);
     window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+  };
 
   return (
     <div ref={container}>

@@ -1,13 +1,10 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { bsDetailViewProps, bsItemProps } from "./bsdata";
-import BsItem from "./bsitem";
+import { bsDetailViewProps } from "./bsdata";
 import { Flip } from "gsap/Flip";
 import { useRef, useState } from "react";
 import BsItemHover from "./bsitemhover";
-import { set } from "zod";
 import Image from "next/image";
 
 gsap.registerPlugin(Flip);
@@ -36,9 +33,7 @@ export default function BsDetailView({
   const [fullyClosed, setFullyClosed] = useState(true);
   const [midAnim, setMidAnim] = useState(false);
   const [fullyOpen, setFullyOpen] = useState(false);
-  const { contextSafe } = useGSAP({ scope: fullContainer });
-
-  const onImageClicked = contextSafe(() => {
+  const onImageClicked = () => {
     const state = Flip.getState("#imageContainer, #linkContainer a");
 
     setImageToggled((prev) => !prev);
@@ -49,9 +44,9 @@ export default function BsDetailView({
         ease: "power3.out",
       });
     });
-  });
+  };
 
-  const onBsItemClicked = contextSafe(() => {
+  const onBsItemClicked = () => {
     if (animationRunning) return;
     setAnimationRunning(true);
 
@@ -161,7 +156,7 @@ export default function BsDetailView({
       
       */
     }
-  });
+  };
 
   return (
     <>

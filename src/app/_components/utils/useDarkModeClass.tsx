@@ -1,20 +1,19 @@
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 export function useDarkModeClass() {
-  const [isDark, setIsDark] = useState(false);
+  return useSyncExternalStore(
+    (onStoreChange) => {
+      if (typeof document === "undefined") return () => {};
+      const html = document.documentElement;
+      const observer = new MutationObserver(onStoreChange);
 
-  useEffect(() => {
-    const html = document.documentElement;
-    setIsDark(html.classList.contains("dark"));
-    const observer = new MutationObserver(() => {
-      setIsDark(html.classList.contains("dark"));
-    });
-
-    observer.observe(html, { attributes: true, attributeFilter: ["class"] });
-
-    // Cleanup
-    return () => observer.disconnect();
-  }, []);
-
-  return isDark;
+      observer.observe(html, { attributes: true, attributeFilter: ["class"] });
+      return () => observer.disconnect();
+    },
+    () => {
+      if (typeof document === "undefined") return false;
+      return document.documentElement.classList.contains("dark");
+    },
+    () => false,
+  );
 }

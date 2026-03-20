@@ -1,6 +1,5 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -19,9 +18,8 @@ export default function TransitionLink({
 }) {
   const router = useRouter();
   const linkRef = useRef<HTMLAnchorElement>(null);
-  const { contextSafe } = useGSAP({});
 
-  const handleClick = contextSafe(() => {
+  const handleClick = () => {
     // if already on the same page, do nothing
     if (window.location.pathname === href) return;
 
@@ -37,22 +35,22 @@ export default function TransitionLink({
       .call(() => {
         router.push(href);
       });
-  });
+  };
 
-  const handleMouseEnter = contextSafe(() => {
+  const handleMouseEnter = () => {
     gsap.to(linkRef.current, {
       duration: 0.4,
       x: 10,
       ease: "power3.out",
     });
-  });
-  const handleMouseLeave = contextSafe(() => {
+  };
+  const handleMouseLeave = () => {
     gsap.to(linkRef.current, {
       duration: 0.4,
       x: 0,
       ease: "power3.out",
     });
-  });
+  };
 
   return (
     <Link

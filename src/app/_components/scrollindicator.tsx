@@ -15,9 +15,9 @@ export default function ScrollIndicator({
   hoverText: string;
 }) {
   const container = useRef<HTMLDivElement>(null);
-  let toggle = false;
+  const toggle = useRef(false);
 
-  const { contextSafe } = useGSAP(
+  useGSAP(
     () => {
       const tl = gsap.timeline({ repeat: -1, yoyo: true });
       tl.from("#down", { duration: 0.35, y: -10, ease: "power2.in" }).to(
@@ -37,16 +37,16 @@ export default function ScrollIndicator({
     { scope: container },
   );
 
-  const handleMouseOver = contextSafe(() => {
+  const handleMouseOver = () => {
     const tl = gsap.timeline();
-    if (toggle) {
-      toggle = false;
+    if (toggle.current) {
+      toggle.current = false;
       tl.to("#text", { text: { value: text, speed: 2 } });
     } else {
       gsap.to("#text", { text: { value: hoverText, speed: 2 } });
-      toggle = true;
+      toggle.current = true;
     }
-  });
+  };
 
   return (
     <div ref={container} className="container flex flex-row gap-2 text-2xl">
