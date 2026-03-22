@@ -46,6 +46,15 @@ export default function Projects() {
             @Bjørn-Møgelhøj
           </a>
         </p>
+        <p className="text-xl">
+          GitHub:{" "}
+          <a
+            href="https://github.com/MrBStones"
+            className="text-light-dark-hero dark:text-hero"
+          >
+            @MrBStones
+          </a>
+        </p>
         <Image src="/drawing.png" alt="Silly" width={291} height={432} />
       </div>
     </main>

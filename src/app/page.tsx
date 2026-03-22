@@ -121,7 +121,8 @@ export default async function Home() {
           />
           <TitleText
             text={"Bjørn Møgelhøj"}
-            subText="(Still a work in progress... "
+            subTextFrom={"^_^"}
+            subTextTo="Still a work in progress... "
           />
         </div>
       </main>

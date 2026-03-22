@@ -11,10 +11,15 @@ gsap.registerPlugin(TextPlugin);
 
 interface TitleTextProps {
   text: string;
-  subText: string;
+  subTextFrom: string;
+  subTextTo: string;
 }
 
-export default function TitleText({ text, subText }: Readonly<TitleTextProps>) {
+export default function TitleText({
+  text,
+  subTextFrom,
+  subTextTo,
+}: Readonly<TitleTextProps>) {
   const container = useRef<HTMLDivElement>(null);
   const fullConfig = resolveConfig(tailwindConfig);
   const easeMode = "power2.Out";
@@ -43,7 +48,7 @@ export default function TitleText({ text, subText }: Readonly<TitleTextProps>) {
           "#scramble",
           {
             duration: 2,
-            text: { delimiter: "", value: subText },
+            text: { delimiter: "", value: subTextTo },
             ease: easeMode,
           },
           "<",
@@ -58,7 +63,8 @@ export default function TitleText({ text, subText }: Readonly<TitleTextProps>) {
         {reversedText}
       </h1>
       <div className="flex flex-row">
-        <div id="scramble">(Scrunches</div>
+        <p>(</p>
+        <div id="scramble">{subTextFrom}</div>
         <p>)</p>
       </div>
     </div>
