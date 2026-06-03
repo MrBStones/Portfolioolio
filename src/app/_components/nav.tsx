@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Hamburger from "~/app/_components/hamburger";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -17,6 +17,30 @@ export default function Nav() {
   const [fst, setFst] = useState(true);
   const containerDefault = { width: 65, height: 65 };
   const containerOpen = { width: 300, height: 200 };
+
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const handlePointerDown = (event: PointerEvent) => {
+      const target = event.target;
+
+      if (
+        container.current &&
+        target instanceof Node &&
+        !container.current.contains(target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+    };
+  }, [isOpen]);
 
   useGSAP(
     () => {
