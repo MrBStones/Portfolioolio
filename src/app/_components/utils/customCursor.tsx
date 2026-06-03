@@ -123,6 +123,8 @@ export default function CustomCursor() {
           height: rect.height + 2,
           borderRadius: 15,
           duration: 0.3,
+          opacity: 1,
+          scale: 1,
           ease: "power3.out",
         });
       } else if (cursorType === "outline") {
@@ -132,6 +134,8 @@ export default function CustomCursor() {
           height: rect.height + 2,
           borderRadius: 3,
           duration: 0.3,
+          scale: 1,
+          opacity: 1,
           ease: "power3.out",
         });
       } else if (cursorType === "outlinexl") {
@@ -141,6 +145,8 @@ export default function CustomCursor() {
           height: rect.height + 2,
           borderRadius: 11,
           duration: 0.3,
+          opacity: 1,
+          scale: 1,
           ease: "power3.out",
         });
       } else {
@@ -149,6 +155,8 @@ export default function CustomCursor() {
           duration: 0.3,
           borderRadius: 20,
           opacity: 0.5,
+          width: 32,
+          height: 32,
           ease: "power3.out",
         });
       }
