@@ -27,7 +27,7 @@ export default function Projects() {
   return (
     <main className="-z-20 flex min-h-screen select-none flex-col items-center justify-center overflow-hidden text-light-light dark:text-light">
       <div
-        className="mainContainer container flex w-full flex-col gap-16 px-4"
+        className="mainContainer container flex w-full flex-col gap-16 px-4 pb-8"
         id="projects"
       >
         <div className="gap-6">

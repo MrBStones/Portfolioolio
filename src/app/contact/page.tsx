@@ -31,6 +31,7 @@ export default function Projects() {
         <p className="text-xl">
           E-Mail:{" "}
           <a
+            data-cursor="outline"
             href="mailto: bjornmogelhoj@gmail.com"
             className="text-light-dark-hero dark:text-hero"
           >
@@ -40,6 +41,7 @@ export default function Projects() {
         <p className="text-xl">
           LinkedIn:{" "}
           <a
+            data-cursor="outline"
             href="https://www.linkedin.com/in/bj%C3%B8rn-m%C3%B8gelh%C3%B8j/"
             className="text-light-dark-hero dark:text-hero"
           >
@@ -49,6 +51,7 @@ export default function Projects() {
         <p className="text-xl">
           GitHub:{" "}
           <a
+            data-cursor="outline"
             href="https://github.com/MrBStones"
             className="text-light-dark-hero dark:text-hero"
           >

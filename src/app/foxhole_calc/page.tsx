@@ -161,12 +161,12 @@ export default function FoxholeCalc() {
               type="submit"
               name="Submit"
               value="Submit"
-              className="mt-4 w-full cursor-pointer rounded-md bg-light-dark-hero px-6 py-3 font-semibold text-light transition-colors hover:bg-light-hero dark:bg-dark-hero dark:hover:bg-hero"
+              className="mt-4 w-full rounded-md bg-light-dark-hero px-6 py-3 font-semibold text-light transition-colors hover:bg-light-hero dark:bg-dark-hero dark:hover:bg-hero"
             />
             <input
               type="reset"
               name="reset"
-              className="mt-4 w-full cursor-pointer rounded-md bg-light-dark-hero px-6 py-3 font-semibold text-light transition-colors hover:bg-light-hero dark:bg-dark-hero dark:hover:bg-hero"
+              className="mt-4 w-full rounded-md bg-light-dark-hero px-6 py-3 font-semibold text-light transition-colors hover:bg-light-hero dark:bg-dark-hero dark:hover:bg-hero"
             />
           </div>
         </form>

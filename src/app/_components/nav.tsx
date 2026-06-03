@@ -126,20 +126,24 @@ export default function Nav() {
         className={`container flex flex-col gap-2 divide-y divide-hero overflow-hidden rounded-xl bg-light-dark/50 p-2 backdrop-blur-xl backdrop-filter dark:bg-dark/50 ${"h-[" + containerDefault.height + "px]" + "w-[" + containerDefault.width + "px]"}`}
       >
         <div className="container flex flex-row items-center justify-end gap-2 backdrop-filter">
-          <div onClick={toggleTheme} className="cursor-pointer">
+          <div
+            data-cursor="outline"
+            onClick={toggleTheme}
+            className="flex size-12 items-center justify-center"
+          >
             {isDark ? (
               <img
                 src={"/light_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"}
                 alt="Theme Toggle"
-                width={24}
-                height={24}
+                width={40}
+                height={40}
               />
             ) : (
               <img
                 src={"/dark_mode_24dp_00000_FILL0_wght400_GRAD0_opsz24.svg"}
                 alt="Theme Toggle"
-                width={24}
-                height={24}
+                width={40}
+                height={40}
               />
             )}
           </div>
@@ -154,7 +158,10 @@ export default function Nav() {
           className="link"
           onClick={() => setIsOpen(false)}
         >
-          <p className="link text-nowrap text-left text-2xl text-light-light opacity-0 dark:text-light">
+          <p
+            data-cursor="big"
+            className="link text-nowrap text-left text-2xl text-light-light opacity-0 dark:text-light"
+          >
             HOME →
           </p>
         </TransitionLink>
@@ -163,7 +170,10 @@ export default function Nav() {
           className="link"
           onClick={() => setIsOpen(false)}
         >
-          <p className="link text-nowrap text-left text-2xl text-light-light opacity-0 dark:text-light">
+          <p
+            data-cursor="big"
+            className="link text-nowrap text-left text-2xl text-light-light opacity-0 dark:text-light"
+          >
             PROJECTS →
           </p>
         </TransitionLink>
@@ -172,7 +182,10 @@ export default function Nav() {
           className="link"
           onClick={() => setIsOpen(false)}
         >
-          <p className="link text-nowrap text-left text-2xl text-light-light opacity-0 dark:text-light">
+          <p
+            data-cursor="big"
+            className="link text-nowrap text-left text-2xl text-light-light opacity-0 dark:text-light"
+          >
             CONTACT →
           </p>
         </TransitionLink>

@@ -35,7 +35,7 @@ export default function Logo() {
   };
 
   return (
-    <div ref={container}>
+    <div ref={container} data-cursor="big">
       <div
         id={"logo"}
         onClick={handleClick}

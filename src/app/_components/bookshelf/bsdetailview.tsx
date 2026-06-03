@@ -186,20 +186,21 @@ export default function BsDetailView({
               id="linkContainer"
               className={`container flex ${imageToggled ? "flex-row-reverse" : "flex-col"} gap-3`}
             >
-              <a href={linkOne} className="basis-1/2">
+              <a data-cursor="outlinexl" href={linkOne} className="basis-1/2">
                 <div className="h-bs-item-h w-full rounded-xl bg-hero p-3 text-right text-2xl text-dark transition-colors duration-100 hover:bg-light">
                   {linkOneText}
                 </div>
               </a>
-              <a href={linkTwo} className="basis-1/2">
+              <a data-cursor="outlinexl" href={linkTwo} className="basis-1/2">
                 <div className="h-bs-item-h w-full rounded-xl bg-dark-hero p-3 text-right text-2xl text-dark transition-colors duration-100 hover:bg-light">
                   {linkTwoText}
                 </div>
               </a>
             </div>
             <div
-              className="w-full hover:cursor-pointer"
+              className="w-full"
               onClick={onImageClicked}
+              data-cursor="outlinexl"
             >
               <img
                 id="imageContainer"
@@ -209,7 +210,7 @@ export default function BsDetailView({
               />
             </div>
           </div>
-          <div className="container flex h-bs-item-h flex-wrap items-center justify-end gap-3 hover:cursor-pointer">
+          <div className="container flex h-bs-item-h flex-wrap items-center justify-end gap-3">
             {technologies.map((tech, index) => (
               <div
                 key={index}
@@ -221,17 +222,14 @@ export default function BsDetailView({
           </div>
         </div>
         <div ref={outerContainer} className="w-full">
-          <div
-            ref={bsItemRef}
-            onClick={onBsItemClicked}
-            className="hover:cursor-pointer"
-          >
+          <div ref={bsItemRef} onClick={onBsItemClicked}>
             <BsItemHover
               num={bsItem.num}
               title={bsItem.title}
               description={bsItem.description}
               fixedWidth={false}
               className={""}
+              dataCursor="outline2xl"
             />
           </div>
         </div>

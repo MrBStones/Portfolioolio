@@ -10,6 +10,7 @@ import BgLogo from "./_components/bglogo";
 import FadeInPage from "./_components/utils/fadeInPage";
 import ThemeInit from "./_components/utils/themeInit";
 import ScrollSmootherWrapper from "./_components/utils/scrollSmootherWrapper";
+import CustomCursor from "./_components/utils/customCursor";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -26,9 +27,12 @@ export default function RootLayout({
       className={`bg-light-background font-jetbrains dark:bg-background`}
     >
       <body
-        className={"overflow-x-hidden bg-light-background dark:bg-background"}
+        className={
+          "!cursor-none overflow-x-hidden bg-light-background dark:bg-background [&_*]:!cursor-none"
+        }
       >
         <ThemeInit />
+        <CustomCursor />
 
         <FadeInPage />
         <div className="fixed left-10 top-9 z-20">

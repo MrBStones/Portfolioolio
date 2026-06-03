@@ -3,6 +3,7 @@ export type bsItemProps = {
   title: string;
   description: string;
   className?: string;
+  dataCursor?: string;
 };
 
 export type bsDetailViewProps = {

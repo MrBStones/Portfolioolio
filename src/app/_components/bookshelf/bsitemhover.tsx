@@ -13,6 +13,7 @@ export default function BsItemHover({
   description,
   fixedWidth = true,
   className,
+  dataCursor,
 }: Readonly<bsItemProps> & { fixedWidth?: boolean }) {
   const container = useRef<HTMLDivElement>(null);
   useGSAP(
@@ -63,6 +64,7 @@ export default function BsItemHover({
   return (
     <>
       <div
+        data-cursor={dataCursor}
         ref={container}
         onMouseEnter={mouseEnter}
         onMouseLeave={mouseLeave}
