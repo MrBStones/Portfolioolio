@@ -99,7 +99,6 @@ export default function Bookshelf() {
           num={item.num}
           title={item.title}
           description={item.description}
-          dataCursor="big"
         />
       </div>
     ));
@@ -107,6 +106,7 @@ export default function Bookshelf() {
   return (
     <TransitionLink href="/projects">
       <div
+        data-cursor="outlinexl"
         id="bookshelf"
         className="h-sc container flex h-128 flex-col overflow-clip rounded-xl bg-light-dark dark:bg-dark"
       >
