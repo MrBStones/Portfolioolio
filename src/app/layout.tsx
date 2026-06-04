@@ -11,6 +11,8 @@ import FadeInPage from "./_components/utils/fadeInPage";
 import ThemeInit from "./_components/utils/themeInit";
 import ScrollSmootherWrapper from "./_components/utils/scrollSmootherWrapper";
 import CustomCursor from "./_components/utils/customCursor";
+import { PageTransitionProvider } from "./_components/utils/pageTransitionState";
+import { PageTransitionReset } from "./_components/utils/PageTransitionReset";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -32,19 +34,22 @@ export default function RootLayout({
         }
       >
         <ThemeInit />
-        <CustomCursor />
+        <PageTransitionProvider>
+          <PageTransitionReset />
+          <CustomCursor />
 
-        <FadeInPage />
-        <div className="fixed left-10 top-9 z-20">
-          <Logo />
-        </div>
-        <div className="fixed right-10 top-12 z-20">
-          <Nav />
-        </div>
+          <FadeInPage />
+          <div className="fixed left-10 top-9 z-20">
+            <Logo />
+          </div>
+          <div className="fixed right-10 top-12 z-20">
+            <Nav />
+          </div>
 
-        <ScrollSmootherWrapper>
-          <TRPCReactProvider>{children}</TRPCReactProvider>
-        </ScrollSmootherWrapper>
+          <ScrollSmootherWrapper>
+            <TRPCReactProvider>{children}</TRPCReactProvider>
+          </ScrollSmootherWrapper>
+        </PageTransitionProvider>
       </body>
     </html>
   );

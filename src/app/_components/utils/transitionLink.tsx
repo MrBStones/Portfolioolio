@@ -4,6 +4,7 @@ import gsap from "gsap";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useRef } from "react";
+import { usePageTransitionState } from "./pageTransitionState";
 
 export default function TransitionLink({
   children,
@@ -18,10 +19,14 @@ export default function TransitionLink({
 }) {
   const router = useRouter();
   const linkRef = useRef<HTMLAnchorElement>(null);
+  const { setState } = usePageTransitionState();
 
   const handleClick = () => {
     // if already on the same page, do nothing
     if (window.location.pathname === href) return;
+    setState({
+      inPageTransition: true,
+    });
 
     gsap
       .timeline()

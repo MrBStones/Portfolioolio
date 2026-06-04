@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useHoveredElement } from "./useHoveredElement";
+import { usePageTransitionState } from "./pageTransitionState";
 
 export default function CustomCursor() {
   const [enabled, setEnabled] = useState(() => {
@@ -15,6 +16,7 @@ export default function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement | null>(null);
   const cursorDotRef = useRef<HTMLDivElement | null>(null);
   const { element, rect, cursorType } = useHoveredElement();
+  const { state: pageTransitionState } = usePageTransitionState();
 
   const cursorTypeRef = useRef(cursorType);
   const xToRef = useRef<((v: number) => void) | null>(null);
@@ -74,9 +76,10 @@ export default function CustomCursor() {
 
       // only move directly with pointer when NOT in outline mode
       if (
-        cursorTypeRef.current !== "outline" &&
-        cursorTypeRef.current !== "outlinexl" &&
-        cursorTypeRef.current !== "outline2xl"
+        (cursorTypeRef.current !== "outline" &&
+          cursorTypeRef.current !== "outlinexl" &&
+          cursorTypeRef.current !== "outline2xl") ||
+        pageTransitionState.inPageTransition
       ) {
         xToRef.current?.(e.clientX - 16);
         yToRef.current?.(e.clientY - 16);
@@ -85,7 +88,7 @@ export default function CustomCursor() {
 
     window.addEventListener("mousemove", onMove);
     return () => window.removeEventListener("mousemove", onMove);
-  }, []);
+  });
 
   // When outline mode is active, drive cursor position from `rect`.
   // When outline ends, snap/animate immediately back to last mouse pos.
@@ -98,7 +101,8 @@ export default function CustomCursor() {
       (cursorType === "outline" ||
         cursorType === "outlinexl" ||
         cursorType === "outline2xl") &&
-      rect
+      rect &&
+      !!!pageTransitionState.inPageTransition
     ) {
       // position to element's top-left so the outline matches size set elsewhere
       xTo(rect.left);
@@ -108,14 +112,14 @@ export default function CustomCursor() {
       xTo(lastPosRef.current.x - 16);
       yTo(lastPosRef.current.y - 16);
     }
-  }, [cursorType, rect]);
+  }, [cursorType, rect, pageTransitionState.inPageTransition]);
 
   // sizing/visual state (unchanged logic, still driven by element/cursorType/rect)
   useEffect(() => {
     const cursor = cursorRef.current;
     if (!cursor) return;
 
-    if (element) {
+    if (element && pageTransitionState.inPageTransition === false) {
       if (cursorType === "outline2xl") {
         if (!rect) return;
         gsap.to(cursor, {
@@ -171,7 +175,7 @@ export default function CustomCursor() {
         ease: "power3.out",
       });
     }
-  }, [element, cursorType, rect]);
+  }, [element, cursorType, rect, pageTransitionState.inPageTransition]);
 
   if (!enabled) {
     return null;
