@@ -73,52 +73,10 @@ export default async function Home() {
           <ContactButton />
         </div>
 
-        <div className="mainContainer w-full" id="home">
-          <div
-            className="flex h-fit w-full items-center justify-center"
-            style={{
-              background:
-                "repeating-linear-gradient( -45deg, rgba(0,0,0,0),rgba(0,0,0,0) 20px, " +
-                tailwindConfig.theme.extend.colors["dark-hero"] +
-                " 20px, " +
-                tailwindConfig.theme.extend.colors["dark-hero"] +
-                " 100px )",
-            }}
-          >
-            <h1 className="my-3 w-fit bg-hero px-4 py-2 text-center text-4xl text-background">
-              FUN ZONE:
-            </h1>
-          </div>
-        </div>
         <div
           className="mainContainer container z-0 flex flex-col items-center justify-center gap-12 px-4 py-16"
           id="home"
         >
-          <h1 className="text-2xl">Current Colors:</h1>
-          <div
-            className={
-              "container flex flex-row gap-3 rounded-xl p-3 outline-dashed -outline-offset-4 outline-light-light dark:outline-light"
-            }
-          >
-            <div className="h-28 w-full bg-light-background text-light-light dark:bg-background dark:text-light">
-              background
-            </div>
-            <div className="h-28 w-full bg-light-dark text-light-light dark:bg-dark dark:text-light">
-              dark
-            </div>
-            <div className="h-28 w-full bg-light-light text-light-background dark:bg-light dark:text-background">
-              light
-            </div>
-            <div className="h-28 w-full bg-hero text-background">hero</div>
-            <div className="h-28 w-full bg-dark-hero text-background">
-              dark-hero
-            </div>
-          </div>
-          <Ratio
-            leftText={"～(■_■)～♪"}
-            rightText={"(づ ᴗ _ᴗ)づ♡"}
-            odd={false}
-          />
           <TitleText
             text={"Bjørn Møgelhøj"}
             subTextFrom={"^_^"}
