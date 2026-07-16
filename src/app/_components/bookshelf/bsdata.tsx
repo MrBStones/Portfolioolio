@@ -23,6 +23,21 @@ export type bsDetailViewProps = {
 export const projectsData: bsDetailViewProps[] = [
   {
     description:
+      "This is my bachelor project: Slop Engine. Many game engines have begun integrating MCP, which allows LLMs to assist in more areas of game development. We wanted to see if creating a game engine where AI assistance is integrated from the start into every feature would be more effective. That's why we created Slop Engine, a fully featured 3D engine built for AI. The project taught me a lot about integrating AI into web apps, and it has made me see the true potential of AI assistance in software development.",
+    linkOneText: "GitHub repo →",
+    linkOne: "https://github.com/alexop1000/slop-engine",
+    linkTwoText: "",
+    image: "https://opengraph.githubassets.com/1/alexop1000/slop-engine",
+    bsItem: {
+      num: "01",
+      title: "SLOP ENGINE",
+      description: "Bachelor project",
+    },
+    icon: "desktop_windows_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg",
+    technologies: ["SolidJS", "BabylonJS", "Typescript", "AISDK"],
+  },
+  {
+    description:
       "This project was created during the third semester of university. The site is written in C# using ASP.NET and is hosted on Azure.",
 
     linkOneText: "GitHub repo →",
@@ -31,7 +46,7 @@ export const projectsData: bsDetailViewProps[] = [
     linkTwo: "https://bdsagroup9chirprazor.azurewebsites.net/",
     image: "chirpimage.png",
     bsItem: {
-      num: "01",
+      num: "02",
       title: "CHIRP",
       description: "Twitter clone",
     },
@@ -45,7 +60,7 @@ export const projectsData: bsDetailViewProps[] = [
     linkTwoText: "",
     image: "mapofdk.png",
     bsItem: {
-      num: "02",
+      num: "03",
       title: "MAP OF DK",
       description: "OpenStreetMap viewer",
     },
@@ -60,7 +75,7 @@ export const projectsData: bsDetailViewProps[] = [
     linkTwoText: "",
     image: "copenhagenbuzz.png",
     bsItem: {
-      num: "03",
+      num: "04",
       title: "COPENHAGEN BUZZ",
       description: "Event app",
     },
@@ -76,7 +91,7 @@ export const projectsData: bsDetailViewProps[] = [
     linkTwo: "https://portfolioolio.vercel.app/",
     image: "scrunchesvgwithbg.svg",
     bsItem: {
-      num: "04",
+      num: "05",
       title: "PORTFOLIO",
       description: "This site you're on right now",
     },
@@ -90,7 +105,7 @@ export const projectsData: bsDetailViewProps[] = [
     linkOne: "https://github.com/MrBStones/Portfolioolio",
     linkTwoText: "",
     image: "drawing.png",
-    bsItem: { num: "05", title: "SKETCHES", description: "Art I made" },
+    bsItem: { num: "06", title: "SKETCHES", description: "Art I made" },
     technologies: ["pen", "paper", "samsung galaxy tab s8"],
     icon: "brush_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg",
   },
@@ -101,7 +116,7 @@ export const projectsData: bsDetailViewProps[] = [
     linkTwoText: "",
     image: "https://img.itch.zone/aW1nLzIyNTAyOTg4LnBuZw==/original/dTUi69.png",
     bsItem: {
-      num: "06",
+      num: "07",
       title: "REGURGITATE",
       description: "gmtk game jam 2025",
     },
@@ -117,7 +132,7 @@ export const projectsData: bsDetailViewProps[] = [
     linkTwo: "https://github.com/MrBStones/Portfolioolio",
     image: "https://openclipart.org/download/237080/gis-in-foxhole.svg",
     bsItem: {
-      num: "07",
+      num: "08",
       title: "FOXHOLE CALC",
       description: "azimut x distance",
     },
