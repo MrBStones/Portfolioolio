@@ -45,10 +45,9 @@ export default async function Home() {
                 </b>
               </h1>
               <p className="text-justify text-xl">
-                Hi! Im Bjørn, a friendly student from the IT University of
-                Copenhagen who loves to solve problems and build cool things
-                with code. From my studies at ITU i have become well versed in
-                IT.
+                Hi! Im Bjørn, a friendly individual currently studing at the IT-University
+                of Copenhagen who loves to solve problems and build cool things with code.
+                I am currently taking a MSc in Computer Science which i will finish in 2028.
               </p>
               <br />
               <p className="text-justify text-xl">
@@ -63,7 +62,7 @@ export default async function Home() {
               <h1 className="text-3xl">My projects:</h1>
               <p className="text-justify text-xl">
                 Here are some of the projects I have worked on. Click on the
-                bookshelf to see them all in detail.
+                panel to see them all in detail.
               </p>
             </div>
             <div className="w-full lg:w-1/2">

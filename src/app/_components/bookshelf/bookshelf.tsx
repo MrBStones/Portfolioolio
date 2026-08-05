@@ -111,7 +111,7 @@ export default function Bookshelf() {
         className="h-sc container flex h-128 flex-col overflow-clip rounded-xl bg-light-dark dark:bg-dark"
       >
         <div className="container flex flex-row justify-center">
-          <p className="p-5 text-5xl">BOOKSHELF</p>
+          <p className="p-5 text-5xl">PROJECTS</p>
         </div>
         <div className="container flex h-full -rotate-6 flex-col justify-center gap-3">
           <div

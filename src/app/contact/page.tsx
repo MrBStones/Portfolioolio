@@ -58,7 +58,6 @@ export default function Projects() {
             @MrBStones
           </a>
         </p>
-        <Image src="/drawing.png" alt="Silly" width={291} height={432} />
       </div>
     </main>
   );

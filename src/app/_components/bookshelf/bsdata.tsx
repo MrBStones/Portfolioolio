@@ -39,12 +39,11 @@ export const projectsData: bsDetailViewProps[] = [
   },
   {
     description:
-      "This project was created during the third semester of university. The site is written in C# using ASP.NET and is hosted on Azure.",
+      "This project was created during the third semester of university. The site is written in C# using ASP.NET and was hosted on Azure. Chirp is a twitter clone with a few extra features. I had a lot of fun working on the backend, and I think we did a pretty good job updating and maintaining the site during the semester.",
 
     linkOneText: "GitHub repo →",
     linkOne: "https://github.com/ITU-BDSA2024-GROUP9/Chirp",
-    linkTwoText: "Go to site →",
-    linkTwo: "https://bdsagroup9chirprazor.azurewebsites.net/",
+    linkTwoText: "",
     image: "chirpimage.png",
     bsItem: {
       num: "02",
@@ -56,8 +55,8 @@ export const projectsData: bsDetailViewProps[] = [
   },
   {
     description:
-      "This project was created during the second semester of university. The program is created using Java and JavaFX. It uses OpenStreetMap to display a map of Denmark with markers for different locations and navigation.",
-    linkOneText: "Project Unavailable",
+      "This project was created during the second semester of university. The program is created using Java and JavaFX. It uses OpenStreetMap to display a map of Denmark with markers for different locations and navigation. The source code for this project is unavailable as it was hosted on an internal github within ITU.",
+    linkOneText: "",
     linkTwoText: "",
     image: "mapofdk.png",
     bsItem: {
@@ -66,11 +65,11 @@ export const projectsData: bsDetailViewProps[] = [
       description: "OpenStreetMap viewer",
     },
     technologies: ["java", "javafx", "openstreetmap"],
-    icon: "desktop_windows_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg",
+    icon: "desktop_windows_24dp_E3E3E3_FILL0_wght400_GRAD0_OPSz24.svg",
   },
   {
     description:
-      "This project was created during the fourth semester of university. The app is created using Kotlin and Android Studio. It uses Firebase to store and create events, and native Android components to create a slick UI.",
+      "This project was created during the fourth semester of university. The app is created using Kotlin and Android Studio. It uses Firebase for the backend to store and display events created by users. The UI uses native Android components. It also had integration with the google maps api, which allowed us to display events near the user's location.",
     linkOneText: "GitHub Repo →",
     linkOne: "https://github.com/MrBStones/CopenhagenBuzz",
     linkTwoText: "",
