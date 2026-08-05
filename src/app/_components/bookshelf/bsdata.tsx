@@ -26,8 +26,9 @@ export const projectsData: bsDetailViewProps[] = [
       "This is my bachelor project: Slop Engine. Many game engines have begun integrating MCP, which allows LLMs to assist in more areas of game development. We wanted to see if creating a game engine where AI assistance is integrated from the start into every feature would be more effective. That's why we created Slop Engine, a fully featured 3D engine built for AI. The project taught me a lot about integrating AI into web apps, and it has made me see the true potential of AI assistance in software development.",
     linkOneText: "GitHub repo →",
     linkOne: "https://github.com/alexop1000/slop-engine",
-    linkTwoText: "",
-    image: "https://opengraph.githubassets.com/1/alexop1000/slop-engine",
+    linkTwoText: "Paper →",
+    linkTwo: "/Slop Engine - Bachelor Project-1.pdf",
+    image: "slopengine.png",
     bsItem: {
       num: "01",
       title: "SLOP ENGINE",
