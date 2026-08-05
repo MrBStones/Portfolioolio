@@ -110,7 +110,7 @@ export const projectsData: bsDetailViewProps[] = [
     icon: "brush_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg",
   },
   {
-    description: "This game sucks. I made it in two days.",
+    description: "This game sucks. I made it in one day.",
     linkOneText: "Go to itch →",
     linkOne: "https://mrstones.itch.io/regurgitate",
     linkTwoText: "",
@@ -125,7 +125,7 @@ export const projectsData: bsDetailViewProps[] = [
   },
   {
     description:
-      "I made a tool to calculate angles and distances for spotters in the game foxhole.",
+      "This is a tool I made for the game foxhole. It is used to calculate angles and distances for spotters.",
     linkOneText: "Go to page →",
     linkOne: "/foxhole_calc",
     linkTwoText: "Source →",
