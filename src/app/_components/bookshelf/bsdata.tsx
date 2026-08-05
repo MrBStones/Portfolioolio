@@ -35,7 +35,7 @@ export const projectsData: bsDetailViewProps[] = [
       description: "Bachelor project",
     },
     icon: "desktop_windows_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg",
-    technologies: ["SolidJS", "BabylonJS", "Typescript", "AISDK"],
+    technologies: ["SolidJS", "BabylonJS", "Typescript", "AISDK", "Microsoft Foundry"],
   },
   {
     description:
